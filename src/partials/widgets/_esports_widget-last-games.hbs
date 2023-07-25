@@ -1,0 +1,55 @@
+<!-- Last Game Log -->
+<div className="card card--has-table">
+	<div className="card__header">
+		<h4>Recent Matches Stats</h4>
+	</div>
+	<div className="card__content">
+		<div className="table-responsive">
+			<table className="table table-hover game-player-result">
+				<thead>
+					<tr>
+						<th className="game-player-result__date text-left">Date</th>
+						<th className="game-player-result__vs text-left">Versus</th>
+						<th className="game-player-result__character text-left">Character</th>
+						<th className="game-player-result__kills">Kills</th>
+						<th className="game-player-result__deaths">Deaths</th>
+						<th className="game-player-result__ast">Assists</th>
+						<th className="game-player-result__pkills">Pentakills</th>
+						<th className="game-player-result__mvp"></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					{{#each esports.sp.single-player.log }}
+					<tr>
+						<td className="game-player-result__date">{{date}}</td>
+						<td className="game-player-result__vs">
+							<div className="team-meta">
+								<figure className="team-meta__logo">
+									<img src="{{../root}}assets/images/samples/logos/{{team.logo}}" alt="">
+								</figure>
+								<div className="team-meta__info">
+									<h6 className="team-meta__name">{{team.name}}</h6>
+									<span className="team-meta__place">{{team.place}}</span>
+								</div>
+							</div>
+						</td>
+						<td className="game-player-result__character highlight text-left">{{character}}</td>
+						<td className="game-player-result__kills highlight">{{stats.kills}}</td>
+						<td className="game-player-result__deaths highlight">{{stats.deaths}}</td>
+						<td className="game-player-result__ast highlight">{{stats.ast}}</td>
+						<td className="game-player-result__pkills highlight">{{stats.pkills}}</td>
+						<td className="game-player-result__mvp">
+							<div className="{{#unless featured}}alc-icon--disabled{{/unless}} alc-icon alc-icon--circle alc-icon--xs alc-icon--outline alc-icon--outline-md">
+								<i className="fas fa-star"></i>
+							</div>
+						</td>
+					</tr>
+					{{/each}}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Last Game Log / End -->

@@ -1,0 +1,128 @@
+/* Icon */
+.alc-icon {
+	display: inline-block;
+	color: $color-white;
+	background-color: $card-bg;
+	position: relative;
+
+	i,
+	svg {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+
+// Shapes
+.alc-icon--circle {
+	border-radius: 50%;
+}
+
+// Size
+.alc-icon--xl {
+	width: 80px;
+	height: 80px;
+
+	.df-icon {
+		transform: translate(-50%, -50%) scale(1.75);
+	}
+}
+.alc-icon--sm {
+	width: 40px;
+	height: 40px;
+}
+.alc-icon--xs {
+	width: 20px;
+	height: 20px;
+
+	i {
+		font-size: 8px;
+	}
+}
+
+// Border Style
+.alc-icon--outline {
+	background-color: transparent;
+	border: 1px solid $color-primary;
+}
+.alc-icon--outline-md {
+	border-width: 4px;
+
+	&.alc-icon--sm {
+		line-height: 32px;
+	}
+
+	&.alc-icon--xs {
+		border-width: 2px;
+	}
+}
+.alc-icon--outline-xl {
+	border-width: 8px;
+}
+
+// Colors
+.alc-icon--disabled {
+	border-color: #fff;
+	color: #fff;
+	opacity: .1;
+}
+
+// Chart
+.alc-icon--chart {
+	--icon-color: #{$body-font-color};
+	background-color: transparent;
+	color: $body-font-color;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		background-image:
+			linear-gradient(to right, var(--icon-color), var(--icon-color) 2px),
+			linear-gradient(to right, var(--icon-color) 4px, var(--icon-color) 6px),
+			linear-gradient(to right, var(--icon-color) 6px, var(--icon-color) 8px);
+		background-repeat: no-repeat, no-repeat, no-repeat;
+		background-size: 2px 6px, 2px 100%, 2px 50%;
+		background-position: 0 100%, 3px 100%, 6px 100%;
+	}
+}
+
+// Medal
+.alc-icon--medal {
+	--icon-size: 28px;
+	--icon-bg: #ffd71b;
+	--icon-center: #fcb614;
+	--icon-light: #fff060;
+
+	border-radius: 50%;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	background-color: var(--icon-bg);
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		border-radius: 50%;
+		inset: calc(var(--icon-size) * 0.10714);
+		border: calc(var(--icon-size) * 0.0715) solid var(--icon-center);
+		background-image: linear-gradient(to right, transparent 27%, var(--icon-light) 27% 54.5%, transparent 54.5% 63.6%, var(--icon-light) 63.6% 77.2%, transparent 77.2% 100%);
+		transform: rotate(45deg);
+	}
+}
+
+.alc-icon--medal-silver {
+	--icon-bg: #e1ebf4;
+	--icon-center: #c8d5e1;
+	--icon-light: #fafdff;
+}
+
+.alc-icon--medal-bronze {
+	--icon-bg: #f27640;
+	--icon-center: #cf5520;
+	--icon-light: #fdb291;
+}

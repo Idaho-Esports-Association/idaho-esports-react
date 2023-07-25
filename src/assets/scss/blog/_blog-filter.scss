@@ -1,0 +1,277 @@
+/* Post Filter
+/* ------------------------- */
+.post-filter {
+	background-color: $filter-bg;
+	border-bottom: 1px solid $filter-border;
+	position: relative;
+	z-index: 5;
+
+	.container {
+
+		@media (max-width: 767px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+	// Form
+	.post-filter__form {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media (min-width: 992px) {
+			flex-wrap: nowrap;
+		}
+	}
+		// Select
+		.post-filter__select {
+			position: relative;
+			width: 100%;
+
+			&:first-child .cs-select .cs-options {
+				width: 100%;
+				left: 0;
+			}
+
+			@media (min-width: 992px) {
+				width: 100%;
+				max-width: 100%;
+				flex-grow: 1;
+				flex-basis: 0;
+
+				& + & {
+
+					div.cs-skin-border > span {
+						margin-left: -1px;
+					}
+				}
+			}
+
+			.cs-select {
+
+			}
+
+			.post-filter__label {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				left: 24px;
+				top: $filter-label-position-top-sm;
+				line-height: 1.2em;
+				color: $filter-label-color;
+				@include font-accent($filter-label-font-size);
+				text-transform: $filter-label-text-transform;
+				font-weight: $filter-label-font-weight;
+				letter-spacing: $filter-label-letter-spacing;
+
+				@media (min-width: 992px) {
+					z-index: 102;
+					top: $filter-label-position-top;
+				}
+			}
+		}
+
+		// Submit
+		.post-filter__submit {
+			display: flex;
+			width: 100%;
+
+			@media (min-width: 992px) {
+				width: 100%;
+				max-width: 100%;
+				flex-grow: 1;
+				flex-basis: 0;
+			}
+
+			.btn {
+				border-radius: 0;
+				border: none;
+				width: 100%;
+				max-width: 100%;
+				flex-grow: 1;
+				flex-basis: 0;
+			}
+		}
+
+
+// Outline
+.post-filter--outline {
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	.post-filter__form {
+
+		@media (min-width: 992px) {
+			margin-left: -7px;
+			max-width: calc(100% + 7px);
+		}
+	}
+
+		.post-filter__select {
+			margin: 0 7px 7px 7px;
+
+			@media (min-width: 992px) {
+				margin-bottom: 0;
+			}
+		}
+		.post-filter__submit {
+			margin: 0 7px 7px 7px;
+
+			@media (min-width: 992px) {
+				margin-right: 0;
+				flex-basis: 13.7%;
+				flex-grow: 0;
+			}
+		}
+
+		.cs-select {
+
+			&.cs-active .cs-options {
+				box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+			}
+		}
+
+	// Boxed + Outline
+	&.post-filter--boxed {
+
+		@media (min-width: 992px) {
+			margin-bottom: -40px;
+		}
+
+		.post-filter__form {
+			padding: 20px 0;
+
+			@media (min-width: 992px) {
+				padding-left: 23px;
+				padding-right: 23px;
+				margin-left: 0;
+				max-width: 100%;
+			}
+
+			.post-filter__select:first-child {
+
+				div.cs-skin-border > span {
+					border-left: 1px solid $filter-border;
+				}
+			}
+		}
+
+		.cs-select {
+
+			.cs-options {
+				margin-top: -1px;
+
+				// top arrow with border
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+
+			&.cs-active .cs-options {
+				transition: all .2s ease;
+				transform: translateY(0);
+				box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+
+				@media (min-width: 992px) {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}
+
+
+// Boxed
+.post-filter--boxed {
+	background-color: transparent;
+	border-bottom: 0;
+	padding-top: $content-padding-vertical-sm;
+
+	@media (min-width: 992px) {
+		padding-top: $content-padding-vertical;
+		margin-bottom: -20px;
+	}
+
+	.post-filter__form {
+		background-color: $filter-bg;
+		border: 1px solid $filter-border;
+		border-radius: $filter-boxed-border-radius;
+
+		.post-filter__select:first-child {
+			border-top-left-radius: $filter-boxed-border-radius;
+			border-bottom-left-radius: $filter-boxed-border-radius;
+
+			div.cs-skin-border > span {
+				border-left: 0;
+			}
+		}
+	}
+
+	.cs-select {
+
+		.cs-options {
+			left: -1px;
+			width: calc(100% + 1px);
+			border-top: 1px solid $filter-border;
+			transition: all .2s ease;
+			overflow: visible;
+
+			// top arrow with border
+			&::before,
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				font-size: 0;
+				line-height: 0;
+			}
+
+			// top arrow border
+			&::before {
+				right: 18px;
+				top: -8px;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 8px solid $filter-border;
+			}
+
+			// top arrow bg
+			&::after {
+				right: 20px;
+				top: -7px;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-bottom: 7px solid $filter-bg;
+			}
+		}
+
+		&.cs-active .cs-options {
+			transition: all .2s ease;
+			transform: translateY(-2px);
+			box-shadow: 0 0 12px 0 rgba(0,0,0,0.3);
+
+			@media (min-width: 992px) {
+				transform: translateY(16px);
+			}
+		}
+	}
+
+	// Submit
+	.post-filter__submit {
+
+		.btn {
+			border-radius: 0;
+			border-bottom-left-radius: $filter-boxed-border-radius;
+			border-bottom-right-radius: $filter-boxed-border-radius;
+
+			@media (min-width: 992px) {
+				border-bottom-left-radius: 0;
+				border-top-right-radius: $filter-boxed-border-radius;
+			}
+		}
+	}
+}

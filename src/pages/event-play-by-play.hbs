@@ -1,0 +1,91 @@
+---
+page-title: Event - Play-by-Play
+event-header: true
+---
+
+{{> _event-nav}}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<!-- Content -->
+			<div className="content col-lg-8">
+
+				<!-- Play-by-Play Tabbed Content -->
+				<div className="alc-tabs card card--has-table">
+
+					<!-- Nav tabs -->
+					<ul className="nav nav-tabs nav-justified alc-nav-tabs" role="tablist">
+						{{#each basketball.sp.event.play-by-play.nav}}
+						<li className="nav-item">
+							<Link className="nav-link {{#ifequal active "true"}}active{{/ifequal}}" href="#tab-{{slug}}" role="tab" data-toggle="tab">
+								<small className="d-none d-sm-block">{{subtitle}}</small>
+								<span className="d-block d-sm-none">{{title-sm}}</span>
+								<span className="d-none d-sm-block">{{title}}</span>
+							</Link></li>
+						{{/each}}
+					</ul>
+
+					<!-- Tab panes -->
+					<div className="tab-content card__content">
+
+						{{#each basketball.sp.event.play-by-play.content}}
+						<!-- Tab: #{{@key}} -->
+						<div role="tabpanel" className="tab-pane fade {{#ifequal meta.active "true"}}show active{{/ifequal}}" id="tab-{{meta.slug}}">
+
+						<div className="table-responsive">
+							<table className="table table-hover alc-table-stats alc-table-stats__play-by-play">
+								<thead>
+									<tr>
+										{{#each meta.thead}}
+										<th className="{{class}}">{{label}}</th>
+										{{/each}}
+									</tr>
+								</thead>
+								<tbody>
+									{{#each logs}}
+									<tr>
+										<td className="alc-align-start alc-highlight-sm {{#if highlight}}alc-highlight{{/if}}">{{time}}</td>
+										<td className="alc-align-start {{#if highlight}}alc-highlight{{/if}}">
+											{{#if team}}
+											<img src="{{#ifequal team "team1"}}assets/images/samples/logos/alchemists_b_shield.png{{else}}assets/images/samples/logos/sharks_shield.png{{/ifequal}}" alt="" className="alc-team-img">
+											{{else}}
+											<span className="alc-team-img-spacer"></span>
+											{{/if}}
+											{{desc}}
+										</td>
+										<td className="alc-align-end {{#if highlight}}alc-highlight{{/if}}">{{score}}</td>
+									</tr>
+									{{/each}}
+								</tbody>
+							</table>
+						</div>
+
+						</div>
+						<!-- Tab: #{{@key}} / End -->
+						{{/each}}
+
+					</div>
+
+				</div>
+				<!-- Play-by-Play Tabbed Content / End -->
+
+			</div>
+			<!-- Content / End -->
+
+			<!-- Sidebar -->
+			<div className="sidebar col-lg-4">
+
+				{{> widget-event-results}}
+
+			</div>
+			<!-- Sidebar / End -->
+		</div>
+	</div>
+</div>
+
+<!-- Content / End -->

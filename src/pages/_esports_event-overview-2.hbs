@@ -1,0 +1,341 @@
+---
+layout: esports
+page-title: Match Overview V2
+page-heading: "Match <span className=\"highlight\">Overview</span> v2"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Match"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- ALC Event Result -->
+		<div className="alc-event-result-box card card--no-paddings">
+
+			<!-- Header -->
+			<header className="alc-event-result-box__header alc-event-result-box__header--center card__header card__header--no-highlight">
+				<div className="alc-event-result-box__header-date">Saturday, March 6th</div>
+				<div className="alc-event-result-box__header-heading">
+					<h5 className="alc-event-result-box__header-title">Pro League - Heroes Spring Split</h5>
+					<span className="alc-event-result-box__header-subtitle">Semi-Finals - Week 2</span>
+				</div>
+				<div className="alc-event-result-box__header-venue">9:00 PM EST, Shenlong Arena</div>
+			</header>
+			<!-- Header / End -->
+
+			<!-- Team & Result -->
+			<div className="alc-event-result-box__content card__content">
+
+				<!-- Event Result -->
+				<div className="alc-event-result-box__teams alc-event-result-box__teams--default">
+
+					<!-- Team #1 -->
+					<div className="alc-event-result-box__team alc-event-result-box__team--first">
+						<div className="alc-event-result-box__team-img alc-event-result-box__team-img--color-primary">
+							<img src="{{../root}}assets/images/esports/logos/alchemists-213x241.png" alt="">
+						</div>
+						<div className="alc-event-result-box__team-body">
+							<figure className="alc-event-result-box__team-logo">
+								<img src="{{../root}}assets/images/esports/logos/alchemists-60x69.png" alt="">
+							</figure>
+							<div className="alc-event-result-box__team-meta">
+								<h5 className="alc-event-result-box__team-name">The Idaho Esports</h5>
+								<span className="alc-event-result-box__team-subtitle">United States</span>
+							</div>
+						</div>
+					</div>
+					<!-- Team #1 / End -->
+
+					<!-- Score -->
+					<div className="alc-event-result-box__team-score">
+						<span className="win">8</span> - <span className="loss">5</span>
+					</div>
+					<!-- Score / End -->
+
+					<!-- Team #2 -->
+					<div className="alc-event-result-box__team alc-event-result-box__team--second">
+						<div className="alc-event-result-box__team-img alc-event-result-box__team-img--color-info">
+							<img src="{{../root}}assets/images/esports/logos/sharks-244x207.png" alt="">
+						</div>
+						<div className="alc-event-result-box__team-body">
+							<figure className="alc-event-result-box__team-logo">
+								<img src="{{../root}}assets/images/esports/logos/sharks-72x62.png" alt="">
+							</figure>
+							<div className="alc-event-result-box__team-meta">
+								<h5 className="alc-event-result-box__team-name">Sharks</h5>
+								<span className="alc-event-result-box__team-subtitle">South Korea</span>
+							</div>
+						</div>
+					</div>
+					<!-- Team #2 / End -->
+
+				</div>
+				<!-- Event Result / End -->
+
+				<!-- Event Statistics -->
+				<div className="alc-event-result-box__section">
+					<header className="alc-event-result-box__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+						<h5 className="alc-event-result-box__subtitle">Match Statistics</h5>
+					</header>
+					<div className="alc-event-result-box__section-inner">
+
+						<!-- Progress Stats Table -->
+						<table className="progress-table progress-table--sm-space progress-table--fullwidth">
+							<tbody>
+
+								{{#each esports.sp.event2.stats}}
+								<tr>
+									<td className="progress-table__progress-label {{#if team1.highlight}}progress-table__progress-label--highlight{{/if}}">{{team1.value}}</td>
+									<td className="progress-table__progress-bar progress-table__progress-bar--first">
+										<div className="progress progress--lines">
+											<div className="progress__bar" style="width: {{team1.pct}}%;" role="progressbar" aria-valuenow="{{team1.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td className="progress-table__title">{{label}}</td>
+									<td className="progress-table__progress-bar progress-table__progress-bar--second">
+										<div className="progress progress--lines">
+											<div className="progress__bar progress__bar--info" style="width: {{team2.pct}}%;" role="progressbar" aria-valuenow="{{team2.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td className="progress-table__progress-label {{#if team2.highlight}}progress-table__progress-label--highlight{{/if}}">{{team2.value}}</td>
+								</tr>
+								{{/each}}
+
+							</tbody>
+						</table>
+						<!-- Progress Stats Table / End -->
+
+					</div>
+				</div>
+				<!-- Event Statistics / End -->
+
+				<!-- Event Additional Stats -->
+				<div className="alc-event-result-box__section">
+					<header className="alc-event-result-box__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+						<h5 className="alc-event-result-box__subtitle">Additional Statistics</h5>
+					</header>
+					<div className="alc-event-result-box__section-inner">
+
+						<!-- Circular Bars -->
+						<ul className="alc-event-result-box__stats-circular-bars list-unstyled">
+
+							{{#each esports.sp.event2.additional-stats.primary}}
+							<li className="alc-event-result-box__stats-circular-item">
+								<div className="alc-event-result-box__stats-circular-bar">
+									<div className="circular circular--size-40">
+										<div className="circular__bar" data-percent="{{pct}}" data-track-color="#00ff5b" data-bar-color="#00deff">
+											<svg role="img" className="df-icon df-icon--{{icon}}" data-toggle="tooltip" data-placement="top" title="{{value}}">
+												<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{icon}}"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div className="alc-event-result-box__stats-meta">
+									<span className="alc-event-result-box__stats-value">{{label}}</span>
+									<span className="alc-event-result-box__stats-label">{{sublabel}}</span>
+								</div>
+							</li>
+							{{/each}}
+
+							<li className="alc-event-result-box__stats-circular-item alc-event-result-box__stats-circular-item--center">
+								<div className="alc-event-result-box__stats-meta">
+									<span className="alc-event-result-box__stats-value">{{esports.sp.event2.additional-stats.duration.value}}</span>
+									<span className="alc-event-result-box__stats-label">{{esports.sp.event2.additional-stats.duration.label}}</span>
+								</div>
+							</li>
+
+							{{#each esports.sp.event2.additional-stats.secondary}}
+							<li className="alc-event-result-box__stats-circular-item alc-event-result-box__stats-circular-item--reverse">
+								<div className="alc-event-result-box__stats-circular-bar">
+									<div className="circular circular--size-40">
+										<div className="circular__bar" data-percent="{{pct}}" data-track-color="#00ff5b" data-bar-color="#00deff">
+											<svg role="img" className="df-icon df-icon--{{icon}}" data-toggle="tooltip" data-placement="top" title="{{value}}">
+												<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{icon}}"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div className="alc-event-result-box__stats-meta">
+									<span className="alc-event-result-box__stats-value">{{label}}</span>
+									<span className="alc-event-result-box__stats-label">{{sublabel}}</span>
+								</div>
+							</li>
+							{{/each}}
+
+						</ul>
+						<!-- Circular Bars / End -->
+
+					</div>
+				</div>
+				<!-- Event Additional Stats / End -->
+
+			</div>
+			<!-- Team & Result / End -->
+
+			<!-- Tabs -->
+			<footer className="alc-event-result-box__footer card__footer">
+				<ul className="alc-event-result-box__tabs list-unstyled">
+					<li className="alc-event-result-box__tab active">
+						<Link href="#" className="alc-event-result-box__tab-link">
+							<span className="alc-event-result-box__tab-subtitle">Overview</span>
+							<span className="alc-event-result-box__tab-title">First Game</span>
+						</Link>
+					</li>
+					<li className="alc-event-result-box__tab">
+						<Link href="#" className="alc-event-result-box__tab-link">
+							<span className="alc-event-result-box__tab-subtitle">Overview</span>
+							<span className="alc-event-result-box__tab-title">Second Game</span>
+						</Link>
+					</li>
+					<li className="alc-event-result-box__tab">
+						<Link href="#" className="alc-event-result-box__tab-link">
+							<span className="alc-event-result-box__tab-subtitle">Overview</span>
+							<span className="alc-event-result-box__tab-title">Third Game</span>
+						</Link>
+					</li>
+				</ul>
+			</footer>
+			<!-- Tabs / End -->
+
+		</div>
+		<!-- ALC Event Result / End -->
+
+		{{> _esports_widget-video id="iH0wacpNuDQ" thumbnail="assets/images/esports/samples/event-video1-cover-lg.jpg"}}
+
+		<!-- Table: Event Results -->
+		<div className="card card--has-table">
+			<div className="card__header">
+				<h4>Individual Stats</h4>
+			</div>
+			<div className="card__content">
+				<div className="table-responsive">
+					<table className="table table-hover table-stats alc-event-results-table alc-event-results-table--fullwidth">
+						<thead>
+							<tr>
+								<th className="alc-event-results-cell__player text-left">Player</th>
+								<th className="alc-event-results-cell__character text-left">Character</th>
+								<th className="alc-event-results-cell__kills">Kills</th>
+								<th className="alc-event-results-cell__deaths">Deaths</th>
+								<th className="alc-event-results-cell__assists">Assists</th>
+								<th className="alc-event-results-cell__pkills">PentaKills</th>
+								<th className="alc-event-results-cell__kdar">KDA.R</th>
+								<th className="alc-event-results-cell__dmg-pct">DMG%</th>
+								<th className="alc-event-results-cell__dpm">DPM</th>
+								<th className="alc-event-results-cell__gold-pct">Gold%</th>
+								<th className="alc-event-results-cell__mvp">MVP</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<th colspan="11" className="table-stats__subheading table-stats__subheading--highlight">{{esports.sp.event2.individual-stats.team1.name}}</th>
+							</tr>
+							{{#each esports.sp.event2.individual-stats.team1.players}}
+							<tr>
+								<td className="alc-event-results-cell__player text-left">
+									<div className="alc-event-results-cell__player-info alc-img-object">
+										<div className="alc-event-results-cell__player-img alc-img-object__img alc-img-object__img--hexagon alc-img-object__img--hexagon-sm">
+											<img src="{{../root}}assets/images/esports/samples/{{player.avatar}}" alt="">
+										</div>
+										<div className="alc-event-results-cell__player-body alc-img-object__body">
+											<h5 className="alc-event-results-cell__player-nickname alc-img-object__title">{{player.nickname}}</h5>
+											<span className="alc-event-results-cell__player-name alc-img-object__desc">{{player.name}}</span>
+										</div>
+									</div>
+								</td>
+								<td className="alc-event-results-cell__character text-left">
+									<div className="alc-event-results-cell__character-info alc-img-object">
+										<div className="alc-event-results-cell__character-img alc-img-object__img alc-img-object__img--hexagon alc-img-object__img--hexagon-sm">
+											<img src="{{../root}}assets/images/esports/samples/{{character.avatar}}" alt="">
+										</div>
+										<div className="alc-event-results-cell__character-body alc-img-object__body">
+											<h5 className="alc-event-results-cell__character-name alc-img-object__title">{{character.name}}</h5>
+											<span className="alc-event-results-cell__character-type alc-img-object__desc">{{character.type}}</span>
+										</div>
+									</div>
+								</td>
+								<td className="alc-event-results-cell__kills highlight">{{performances.kills}}</td>
+								<td className="alc-event-results-cell__deaths highlight">{{performances.deaths}}</td>
+								<td className="alc-event-results-cell__assists highlight">{{performances.assists}}</td>
+								<td className="alc-event-results-cell__pkills">{{performances.pkills}}</td>
+								<td className="alc-event-results-cell__kdar">{{performances.kda-r}}</td>
+								<td className="alc-event-results-cell__dmg-pct">{{performances.dmg-pct}}</td>
+								<td className="alc-event-results-cell__dpm">{{performances.dpm}}</td>
+								<td className="alc-event-results-cell__gold-pct">{{performances.gold-pct}}</td>
+								<td className="alc-event-results-cell__mvp">
+									<div className="{{#unless featured}}alc-icon--disabled{{/unless}} alc-icon alc-icon--circle alc-icon--xs alc-icon--outline alc-icon--outline-md">
+										<i className="fas fa-star"></i>
+									</div>
+								</td>
+							</tr>
+							{{/each}}
+
+							<tr>
+								<th colspan="11" className="table-stats__subheading table-stats__subheading--highlight-info">{{esports.sp.event2.individual-stats.team2.name}}</th>
+							</tr>
+							{{#each esports.sp.event2.individual-stats.team2.players}}
+							<tr>
+								<td className="alc-event-results-cell__player text-left">
+									<div className="alc-event-results-cell__player-info alc-img-object">
+										<div className="alc-event-results-cell__player-img alc-img-object__img alc-img-object__img--hexagon alc-img-object__img--hexagon-sm">
+											<img src="{{../root}}assets/images/esports/samples/{{player.avatar}}" alt="">
+										</div>
+										<div className="alc-event-results-cell__player-body alc-img-object__body">
+											<h5 className="alc-event-results-cell__player-nickname alc-img-object__title">{{player.nickname}}</h5>
+											<span className="alc-event-results-cell__player-name alc-img-object__desc">{{player.name}}</span>
+										</div>
+									</div>
+								</td>
+								<td className="alc-event-results-cell__character text-left">
+									<div className="alc-event-results-cell__character-info alc-img-object">
+										<div className="alc-event-results-cell__character-img alc-img-object__img alc-img-object__img--hexagon alc-img-object__img--hexagon-sm">
+											<img src="{{../root}}assets/images/esports/samples/{{character.avatar}}" alt="">
+										</div>
+										<div className="alc-event-results-cell__character-body alc-img-object__body">
+											<h5 className="alc-event-results-cell__character-name alc-img-object__title">{{character.name}}</h5>
+											<span className="alc-event-results-cell__character-type alc-img-object__desc">{{character.type}}</span>
+										</div>
+									</div>
+								</td>
+								<td className="alc-event-results-cell__kills highlight">{{performances.kills}}</td>
+								<td className="alc-event-results-cell__deaths highlight">{{performances.deaths}}</td>
+								<td className="alc-event-results-cell__assists highlight">{{performances.assists}}</td>
+								<td className="alc-event-results-cell__pkills">{{performances.pkills}}</td>
+								<td className="alc-event-results-cell__kdar">{{performances.kda-r}}</td>
+								<td className="alc-event-results-cell__dmg-pct">{{performances.dmg-pct}}</td>
+								<td className="alc-event-results-cell__dpm">{{performances.dpm}}</td>
+								<td className="alc-event-results-cell__gold-pct">{{performances.gold-pct}}</td>
+								<td className="alc-event-results-cell__mvp">
+									<div className="{{#unless featured}}alc-icon--disabled{{/unless}} alc-icon alc-icon--circle alc-icon--xs alc-icon--outline alc-icon--outline-md">
+										<i className="fas fa-star"></i>
+									</div>
+								</td>
+							</tr>
+							{{/each}}
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- Table: Event Results / End -->
+
+	</div>
+</div>
+
+<!-- Content / End -->

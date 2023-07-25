@@ -1,0 +1,387 @@
+/*
+// #Gallery
+// --------------------------------------------------
+*/
+
+.gallery {
+
+}
+	.gallery__item {
+
+	}
+		.gallery__item-inner {
+			display: block;
+			overflow: hidden;
+			transition: background-color 0.3s ease;
+
+			&:hover {
+
+				.gallery__icon {
+					color: #fff;
+				}
+				.gallery__name {
+					color: #fff;
+				}
+				.gallery__date {
+					color: #fff;
+				}
+				.gallery__btn-fab {
+					opacity: 1;
+					transform: translate(-50%, -50%) scale(1);
+				}
+				.gallery__thumb {
+
+					img {
+						opacity: 0.2;
+					}
+				}
+
+				@if $template != 'football' {
+					background-color: $color-primary-darken;
+					color: #fff;
+				}
+
+				@if $template == 'esports' {
+					background-color: $card-bg;
+					color: $body-font-color;
+
+					.gallery__date {
+						color: $body-font-color;
+					}
+				}
+			}
+		}
+			.gallery__thumb {
+				position: relative;
+
+				@if $template == 'basketball' or $template == 'soccer' or $template == 'hockey' {
+					background-color: $color-dark;
+				} @else {
+					background-color: $color-dark-2;
+				}
+
+				img {
+					transition: opacity 0.3s ease;
+				}
+			}
+			.gallery__btn-fab {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) scale(0.1);
+				opacity: 0;
+				transition: all 0.3s ease;
+			}
+			.gallery__content {
+				overflow: hidden;
+
+				@media (max-width: 767px) {
+					padding: calc($card-vertical-padding / 2) calc($card-horizontal-padding / 2);
+				}
+			}
+				.gallery__icon {
+					float: left;
+					margin-right: 15px;
+					font-size: 30px;
+					line-height: 1em;
+					color: $color-primary;
+					transition: color 0.3s ease;
+
+					@media (max-width: 479px) {
+						font-size: 20px;
+						margin-right: 8px;
+					}
+				}
+				.gallery__icon--circle {
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					border: 4px solid $color-primary;
+					color: $color-white;
+					font-size: 16px;
+					text-align: center;
+					line-height: 32px;
+				}
+				.gallery__details {
+					overflow: hidden;
+				}
+					.gallery__name {
+						text-transform: uppercase;
+						line-height: 1.2em;
+						margin: 0;
+						font-size: 12px;
+						padding: .25em 0;
+						transition: color 0.2s ease;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						font-style: normal;
+
+						@media (min-width: 992px) {
+							font-size: 14px;
+						}
+						@media (min-width: 1200px) {
+							font-size: 16px;
+						}
+					}
+					.gallery__date {
+						display: block;
+						@include font-accent(8px);
+						color: $body-font-color;
+						line-height: 1.2em;
+						transition: color 0.3s ease;
+
+						@media (min-width: 992px) {
+							font-size: 10px;
+						}
+					}
+
+			// Header (before thumb)
+			.gallery__header {
+				display: flex;
+				align-items: center;
+				padding-top: 20px;
+				padding-bottom: 20px;
+
+				.gallery__details {
+					flex-grow: 1;
+				}
+
+					.gallery__name {
+
+						@if $template == football {
+							font-size: 14px;
+						}
+					}
+					.gallery__date {
+
+						@if $template == football {
+							font-style: italic;
+						}
+					}
+
+				.gallery__like {
+					font-size: 10px;
+					line-height: 1.2em;
+					color: $body-font-color;
+					padding-left: 10px;
+					white-space: nowrap;
+
+					i {
+						font-size: 12px;
+						line-height: 1em;
+						margin-left: 0.3em;
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+			}
+
+			.gallery__thumb-list {
+				margin: 0;
+				padding: 6px 0 0 0;
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid $card-border-color;
+			}
+				.gallery__thumb-item {
+					position: relative;
+
+					&:last-child {
+
+						&::before {
+							content: "";
+							display: block;
+							position: absolute;
+							left: 0;
+							top: 0;
+							bottom: 0;
+							right: 0;
+							background-color: $color-2;
+							opacity: .9;
+						}
+					}
+				}
+					.gallery__thumb-item-number {
+						display: block;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						font-size: 18px;
+						line-height: 1.2em;
+						font-family: $font-family-accent;
+						font-weight: 700;
+						color: $color-white;
+
+						@media (min-width: 992px) {
+							font-size: 36px;
+						}
+					}
+
+
+// Gallery Row
+.alc-gallery-row {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+	.alc-gallery-row__item {
+		position: relative;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		border: 1px solid $card-border-color;
+		margin-bottom: $card-margin-vertical;
+
+		&::before {
+			display: none;
+		}
+
+		&:last-child {
+
+		}
+	}
+		.alc-gallery-row__item-inner {
+
+			&:hover {
+
+				.alc-gallery-row__thumb-item {
+
+					&::after {
+						opacity: .8;
+					}
+				}
+			}
+		}
+
+	.alc-gallery-row__thumb-list {
+		overflow: hidden;
+		display: flex;
+		flex-wrap: nowrap;
+
+		@media (min-width: 768px) {
+			width: calc(100% + 75px);
+		}
+
+		@media (min-width: 992px) {
+			width: calc(100% + 93px);
+		}
+
+		@media (min-width: 1200px) {
+			width: calc(100% + 110px);
+		}
+	}
+		.alc-gallery-row__thumb-item {
+			position: relative;
+
+			@media (min-width: 992px) {
+
+			}
+
+			> img {
+				vertical-align: top;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				background-color: #000;
+				transition: opacity .3s ease;
+				opacity: 0;
+			}
+
+			&:last-child {
+
+				&::after {
+					opacity: .8;
+				}
+			}
+		}
+
+	.alc-gallery-row__heading {
+		display: flex;
+		position: absolute;
+		z-index: 2;
+		inset-inline-end: 0;
+		inset-block-end: 0;
+		background-color: $color-primary;
+		padding-block: $card-vertical-padding;
+		padding-inline: $card-horizontal-padding;
+		color: $color-white;
+
+		@media (max-width: 767px) {
+			position: static;
+		}
+
+		@media (min-width: 768px) {
+			justify-content: end;
+			text-align: end;
+			padding-inline-start: 60px;
+			clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+
+		@media (min-width: 992px) {
+			padding-inline-start: 86px;
+			clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+	}
+		.alc-gallery-row__icon {
+			margin-inline-end: 10px;
+			vertical-align: top;
+
+			@media (min-width: 768px) {
+				order: 2;
+				margin-inline-end: 0;
+				margin-inline-start: 10px;
+			}
+		}
+		.alc-gallery-row__details {
+			flex: 1;
+
+			@media (min-width: 768px) {
+				order: 1;
+			}
+		}
+			.alc-gallery-row__name {
+				color: $color-white;
+				font-size: $font-size-h4;
+				line-height: 1em;
+				margin-block-end: .25em;
+			}
+			.alc-gallery-row__date {
+				font-size: 10px;
+				line-height: 1.2em;
+			}
+
+	.alc-gallery-row__size {
+		position: absolute;
+		font-weight: bold;
+		inset-block-start: 25%;
+		inset-inline-end: 50px;
+		color: $color-white;
+		z-index: 2;
+
+		@media (min-width: 576px) {
+			inset-inline-end: 55px;
+		}
+
+		@media (min-width: 768px) {
+			inset-block-start: 33%;
+			inset-inline-end: 45px;
+			font-size: $font-size-h4;
+		}
+
+		@media (min-width: 992px) {
+			inset-inline-end: 62px;
+			font-size: $font-size-h3;
+		}
+
+		@media (min-width: 1200px) {
+			inset-inline-end: 75px;
+			font-size: $font-size-h2;
+			line-height: 1;
+		}
+	}

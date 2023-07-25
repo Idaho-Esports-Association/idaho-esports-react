@@ -1,0 +1,71 @@
+<!-- Last Matches Stats -->
+<div className="card card--has-table">
+	<div className="card__header">
+		<h4>Last Matches Stats</h4>
+	</div>
+	<div className="card__content">
+		<div className="table-responsive">
+			<table className="table table-hover team-result">
+				<thead>
+					<tr>
+						<th className="team-result__date">Date</th>
+						<th className="team-result__vs">Match Result</th>
+						<th className="team-result__kills">Kills</th>
+						<th className="team-result__deaths">Deaths</th>
+						<th className="team-result__assists">Assists</th>
+						<th className="team-result__replay"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each esports.sp.tournament.last-results}}
+					<tr>
+						<td className="team-result__date">{{date}}</td>
+						<td className="team-result__outcome">
+							<div className="team-result__teams-wrapper">
+								<!-- Team #1 -->
+								<div className="team-meta team-meta--first">
+									<figure className="team-meta__logo">
+										<img src="{{team1.logo}}" alt="">
+									</figure>
+									<div className="team-meta__info">
+										<h6 className="team-meta__name">{{team1.name}}</h6>
+										<span className="team-meta__place">{{team1.place}}</span>
+									</div>
+								</div>
+								<!-- Team #1 / End -->
+								<div className="team-result__teams-score">
+									<span className="team-result__score {{#ifequal team1.outcome 'win'}}team-result__score--win{{/ifequal}}">{{team1.score}}</span> - <span className="team-result__score {{#ifequal team2.outcome 'win'}}team-result__score--win{{/ifequal}}">{{team2.score}}</span>
+								</div>
+								<!-- Team #2 -->
+								<div className="team-meta team-meta--second">
+									<figure className="team-meta__logo">
+										<img src="{{team2.logo}}" alt="">
+									</figure>
+									<div className="team-meta__info">
+										<h6 className="team-meta__name">{{team2.name}}</h6>
+										<span className="team-meta__place">{{team2.place}}</span>
+									</div>
+								</div>
+								<!-- Team #2 / End -->
+							</div>
+						</td>
+						<td className="team-result__kills">
+							<span className="team-color--{{team1.color}}">{{team1.stats.kills}}</span> / <span className="team-color--{{team2.color}}">{{team2.stats.kills}}</span>
+						</td>
+						<td className="team-result__deaths">
+							<span className="team-color--{{team1.color}}">{{team1.stats.deaths}}</span> / <span className="team-color--{{team2.color}}">{{team2.stats.deaths}}</span>
+						</td>
+						<td className="team-result__assists">
+							<span className="team-color--{{team1.color}}">{{team1.stats.assists}}</span> / <span className="team-color--{{team2.color}}">{{team2.stats.assists}}</span>
+						</td>
+						<td className="team-result__replay">
+							<Link href="#" className="btn btn-xs btn-default-alt btn-single-icon btn-circle" data-toggle="tooltip" data-placement="top" title="Watch Replay"><i className="fas fa-play"></i></Link>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Last Matches Stats / End -->

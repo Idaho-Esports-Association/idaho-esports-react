@@ -1,0 +1,175 @@
+/* Widget: Event Info */
+.alc-event-img {
+	display: block;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.alc-event-gmap {
+
+}
+.alc-event-gmap-wrapper {
+	--spacer: 16px;
+	--map-min-height: 200px;
+
+	.alc-event-gmap {
+		margin: var(--spacer);
+		width: calc(100% - calc(var(--spacer) * 2));
+
+		@media (min-width: 992px) {
+			height: calc(100% - calc(var(--spacer) * 2));
+			min-height: var(--map-min-height);
+		}
+	}
+}
+
+.alc-event-gmap-wrapper--column {
+	--spacer: #{$card-horizontal-padding};
+	--map-min-height: 180px;
+
+	.alc-event-gmap {
+		margin-block-end: 0;
+	}
+}
+
+.alc-event-info {
+	margin: 0;
+}
+	.alc-event-info__item {
+		padding: $card-vertical-padding * 0.6 $card-horizontal-padding;
+		display: flex;
+		border-top: 1px solid $card-border-color;
+
+		@if $template == 'hockey' {
+			padding-block: $card-vertical-padding * 0.7;
+		}
+	}
+		.alc-event-info__icon {
+			width: 20px;
+			margin-right: 12px;
+
+			svg,
+			.icon-svg {
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		.alc-event-info__label,
+		.alc-event-info__value {
+			font-family: $font-family-accent;
+			font-size: 11px;
+			color: $headings-color;
+			font-weight: 700;
+		}
+		.alc-event-info__value {
+			flex: 1;
+		}
+
+	.alc-event-info__item--desc {
+		display: block;
+		padding-top: $card-vertical-padding;
+		padding-bottom: $card-vertical-padding;
+		font-size: $font-size-sm;
+		line-height: 1.54em;
+
+		.alc-event-info__label {
+			display: inline-block;
+			margin: 0;
+		}
+	}
+
+
+// Bordered
+.alc-event-info-wrapper {
+
+	> [class*="col-"] + [class*="col-"] {
+		border-left: 1px solid $card-border-color;
+	}
+
+	.alc-event-info {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+		.alc-event-info__item {
+			flex-basis: 100%;
+			min-width: 100%;
+			display: flex;
+			padding-top: 13px;
+			padding-bottom: 13px;
+			align-items: center;
+
+			.alc-event-info__title {
+				flex-basis: 100px;
+				max-width: 100px;
+				font-size: 11px;
+				line-height: 1.2em;
+			}
+			.alc-event-info__value {
+				flex: 1;
+			}
+		}
+
+		.alc-event-info__item:first-child {
+			border-top: none;
+		}
+}
+
+// Space Between
+.alc-event-info--space-between {
+
+	.alc-event-info__item {
+		justify-content: space-between;
+		font-size: 11px;
+		line-height: 1.2em;
+		font-weight: bold;
+	}
+	.alc-event-info__value {
+		flex: 0 1 auto;
+	}
+}
+
+// Fixed Label Width
+.alc-event-info--fixed-label-width {
+
+	.alc-event-info__item {
+		padding-inline: 0;
+		display: block;
+		font-size: 11px;
+		line-height: 1.2em;
+		font-weight: bold;
+	}
+	.alc-event-info__value {
+
+	}
+}
+
+// Venue
+.alc-event-venue {
+	padding-inline: $card-horizontal-padding;
+	padding-block: $card-vertical-padding;
+	text-align: center;
+
+	p {
+		margin: 0;
+
+		& + p {
+			margin-top: .2em;
+		}
+	}
+}
+	.alc-event-venue__title {
+		font-size: 14px;
+		line-height: 1.2em;
+		margin-bottom: 1em;
+	}
+	.alc-event-venue__address {
+		font-size: $font-size-sm;
+		line-height: 1.5em;
+	}

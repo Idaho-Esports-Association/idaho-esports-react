@@ -1,0 +1,53 @@
+---
+page-title: Event - Videos
+event-header: true
+---
+
+{{> _event-nav}}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+			<div className="col-lg-12">
+
+				<!-- Video Highlights -->
+				<div className="card card--no-paddings">
+					<div className="card__content">
+						{{> widget-event-video id="XE0fU9PCrWE" provider="youtube" thumbnail="assets/images/samples/post-img6-full.jpg" title="Check The Idaho Esports in action in this exclusive clip from last night" date="January 27th, 2020" className="alc-embeded-player--center alc-embeded-player--center-lg"}}
+					</div>
+				</div>
+				<!-- Video Highlights / End -->
+
+				<!-- Video Slideshow -->
+				<div className="posts posts--carousel row">
+
+					{{#each basketball.sp.event.videos.secondary}}
+					<div className="posts__item posts__item--{{category.class}} col-sm-4 mb-3">
+						<Link href="{{video}}" className="posts__link-wrapper mp_iframe">
+							<figure className="posts__thumb">
+								<img src="{{../root}}{{thumb}}" alt="{{title}}">
+							</figure>
+							<div className="posts__inner">
+								<div className="posts__cat">
+									<span className="label posts__cat-label">{{category.name}}</span>
+								</div>
+								<h3 className="posts__title">{{title}}</h3>
+								<time datetime="2017-08-28" className="posts__date">{{date}}</time>
+							</div>
+						</Link>
+					</div>
+					{{/each}}
+
+				</div>
+				<!-- Video Slideshow / End -->
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

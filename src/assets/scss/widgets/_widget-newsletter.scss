@@ -1,0 +1,58 @@
+/* Widget: Newsletter */
+.widget-newsletter {
+
+	.widget__content {
+
+	}
+
+	.widget-newsletter__img-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 12px;
+		align-items: center;
+		min-height: 180px;
+		padding: $card-vertical-padding $card-horizontal-padding;
+		// background-image: url("../../images/hockey/samples/newsletter-bg.jpg");
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		isolation: isolate;
+
+		.widget-newsletter__title,
+		.widget-newsletter__subtitle {
+			color: $color-white;
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 2;
+		}
+
+		.widget-newsletter__title {
+			font-size: 30px;
+			line-height: 1em;
+		}
+		.widget-newsletter__subtitle {
+			font-size: 10px;
+			line-height: 1em;
+		}
+	}
+
+	.widget-newsletter__subtitle {
+		font-size: 13px;
+		text-transform: uppercase;
+		margin-bottom: 1.4em;
+	}
+	.widget-newsletter__desc {
+		margin-bottom: 20px;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.inline-form {
+		padding: 8px 0;
+	}
+}

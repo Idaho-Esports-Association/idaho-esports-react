@@ -1,0 +1,79 @@
+<!-- Widget: Trending News -->
+<Linkside className="widget widget--sidebar card widget-tabbed">
+	<div className="widget__title card__header">
+		<h4>Top Trending News</h4>
+	</div>
+	<div className="widget__content card__content">
+		<div className="widget-tabbed__tabs">
+			<!-- Widget Tabs -->
+			<ul className="nav nav-tabs nav-justified widget-tabbed__nav" role="tablist">
+				<li className="nav-item"><Link href="#widget-tabbed-newest" className="nav-link active" aria-controls="widget-tabbed-newest" role="tab" data-toggle="tab">Newest</Link></li>
+				<li className="nav-item"><Link href="#widget-tabbed-commented" className="nav-link" aria-controls="widget-tabbed-commented" role="tab" data-toggle="tab">Most Commented</Link></li>
+				<li className="nav-item"><Link href="#widget-tabbed-popular" className="nav-link" aria-controls="widget-tabbed-popular" role="tab" data-toggle="tab">Popular</Link></li>
+			</ul>
+
+			<!-- Widget Tab panes -->
+			<div className="tab-content widget-tabbed__tab-content">
+				<!-- Newest -->
+				<div role="tabpanel" className="tab-pane fade show active" id="widget-tabbed-newest">
+					<ul className="posts posts--simple-list">
+						{{#each esports.posts.widget-tabbed.newest}}
+						<li className="posts__item {{#each category}}posts__item--{{class}} {{/each}}">
+							<figure className="posts__thumb posts__thumb--hover">
+								<Link href="_esports_blog-post-1.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							</figure>
+							<div className="posts__inner">
+								<div className="posts__cat">
+									{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+								</div>
+								<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+								<time datetime="2018-09-27" className="posts__date">{{date}}</time>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+				<!-- Commented -->
+				<div role="tabpanel" className="tab-pane fade" id="widget-tabbed-commented">
+					<ul className="posts posts--simple-list">
+						{{#each esports.posts.widget-tabbed.commented}}
+						<li className="posts__item {{#each category}}posts__item--{{class}} {{/each}}">
+							<figure className="posts__thumb posts__thumb--hover">
+								<Link href="_esports_blog-post-1.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							</figure>
+							<div className="posts__inner">
+								<div className="posts__cat">
+									{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+								</div>
+								<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+								<time datetime="2018-09-27" className="posts__date">{{date}}</time>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+				<!-- Popular -->
+				<div role="tabpanel" className="tab-pane fade" id="widget-tabbed-popular">
+					<ul className="posts posts--simple-list">
+						{{#each esports.posts.widget-tabbed.popular}}
+						<li className="posts__item {{#each category}}posts__item--{{class}} {{/each}}">
+							<figure className="posts__thumb posts__thumb--hover">
+								<Link href="_esports_blog-post-1.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							</figure>
+							<div className="posts__inner">
+								<div className="posts__cat">
+									{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+								</div>
+								<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+								<time datetime="2018-09-27" className="posts__date">{{date}}</time>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</Linkside>
+<!-- Widget: Trending News / End -->

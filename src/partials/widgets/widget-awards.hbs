@@ -1,0 +1,22 @@
+<!-- Widget: Awards -->
+<Linkside className="widget card widget--sidebar widget-awards">
+	<div className="widget__title card__header">
+		<h4>Our Awards</h4>
+	</div>
+	<div className="widget__content card__content">
+		<div className="awards awards--slider">
+			{{#each basketball.sp.team.widget-awards}}
+			<div className="awards__item">
+				<figure className="awards__figure">
+					<img src="assets/images/samples/{{img}}" alt="">
+				</figure>
+				<div className="awards__desc">
+					<h5 className="awards__name">{{title}}</h5>
+					<div className="awards__date">{{date}}</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</Linkside>
+<!-- Widget: Awards / End -->

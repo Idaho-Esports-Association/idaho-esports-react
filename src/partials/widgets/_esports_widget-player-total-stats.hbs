@@ -1,0 +1,43 @@
+<!-- Widget: Featured Player - Alternative without Image -->
+<Linkside className="widget card widget--sidebar widget-player widget-player--alt">
+	<div className="widget__title card__header">
+		<h4>Total Career Stats</h4>
+	</div>
+	<div className="widget__content-secondary">
+
+		<!-- Player Details -->
+		<div className="widget-player__details">
+
+			{{#each esports.sp.single-player.widget-total-stats}}
+			<div className="widget-player__details__item">
+				<div className="widget-player__details-desc-wrapper">
+					<span className="widget-player__details-holder">
+						<span className="widget-player__details-label">{{label}}</span>
+						<span className="widget-player__details-desc">{{sublabel}}</span>
+					</span>
+					<span className="widget-player__details-value">{{value}}</span>
+				</div>
+			</div>
+			{{/each}}
+
+		</div>
+		<!-- Player Details / End -->
+
+	</div>
+
+	<div className="widget__content-tertiary widget__content--bottom-decor">
+		<div className="widget__content-inner">
+			<div className="widget-player__stats widget-player__stats--center">
+				<div className="widget-player__stat-item widget-player__stat-item--number-side">
+					<div className="widget-player__stat--value widget-player__stat--value-primary">7960</div>
+					<div className="widget-player__stat-inner">
+						<div className="widget-player__stat--label">Total Minutes Played</div>
+						<div className="widget-player__stat--desc">in his career</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</Linkside>
+<!-- Widget: Featured Player - Alternative without Image / End -->

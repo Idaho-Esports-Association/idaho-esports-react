@@ -1,0 +1,52 @@
+---
+layout: esports
+page-title: Sponsors
+page-heading: "Team <span className=\"highlight\">Sponsors</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Sponsors"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="sponsors-grid row">
+
+			{{#each esports.sponsors}}
+			<div className="col-sm-6 col-lg-4">
+				<div className="card sponsor-card">
+					<header className="card__header sponsor-card__header">
+						<figure className="sponsor-card__logo">
+							<Link href="{{link}}"><img src="{{../root}}assets/images/esports/{{logo}}" alt="{{title}}"></Link>
+						</figure>
+					</header>
+					<div className="card__content sponsor-card__content">
+						<div className="sponsor-card__excerpt">
+							{{excerpt}}
+						</div>
+						<ul className="social-links sponsor-card__social">
+							{{#each social}}
+							<li className="social-links__item">
+								<Link href="{{link}}" className="social-links__link" title="{{name}}"><i className="{{icon}}"></i></Link>
+							</li>
+							{{/each}}
+						</ul>
+					</div>
+					<footer className="card__footer sponsor-card__footer">
+						<Link href="{{link}}" className="sponsor-card__link">{{address}}</Link>
+					</footer>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

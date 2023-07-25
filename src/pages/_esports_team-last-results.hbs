@@ -1,0 +1,130 @@
+---
+layout: esports
+page-title: Latest Results
+page-heading: "Latest <span className=\"highlight\">Results</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Latest Results"
+	}
+]
+---
+
+{{> _esports_team-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Team Latest Results -->
+		<div className="card card--has-table">
+			<div className="card__header card__header--has-btn">
+				<h4>Latest Results</h4>
+				<!-- Result Filter -->
+				<ul className="team-result-filter">
+					<li className="team-result-filter__item">
+						<select className="form-control input-xs">
+							<option>Playoffs 2016</option>
+							<option>Playoffs 2015</option>
+							<option>Playoffs 2014</option>
+						</select>
+					</li>
+					<li className="team-result-filter__item">
+						<select className="form-control input-xs">
+							<option>December 2016</option>
+							<option>November 2016</option>
+							<option>October 2016</option>
+							<option>September 2016</option>
+							<option>August 2016</option>
+							<option>July 2016</option>
+							<option>June 2016</option>
+							<option>May 2016</option>
+							<option>April 2016</option>
+							<option>March 2016</option>
+							<option>February 2016</option>
+							<option>January 2016</option>
+						</select>
+					</li>
+					<li className="team-result-filter__item">
+						<select className="form-control input-xs">
+							<option>Ascending</option>
+							<option>Descending</option>
+						</select>
+					</li>
+					<li className="team-result-filter__item">
+						<button type="submit" className="btn btn-default btn-xs card-header__button">Filter Latest Results</button>
+					</li>
+				</ul>
+				<!-- Result Filter / End -->
+			</div>
+			<div className="card__content">
+				<div className="table-responsive">
+					<table className="table table-hover team-result">
+						<thead>
+							<tr>
+								<th className="team-result__date">Date</th>
+								<th className="team-result__vs">Versus</th>
+								<th className="team-result__score">Result</th>
+								<th className="team-result__kills">Kills</th>
+								<th className="team-result__deaths">Deaths</th>
+								<th className="team-result__assists">Assists</th>
+								<th className="team-result__pentakills">Pentakills</th>
+								<th className="team-result__kdar">KDA.R</th>
+								<th className="team-result__dmg">DMG%</th>
+								<th className="team-result__dpm">DPM</th>
+								<th className="team-result__gold">Gold%</th>
+								<th className="team-result__match">Match</th>
+								<th className="team-result__replay">Replay</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each esports.sp.team.results}}
+							<tr>
+								<td className="team-result__date">{{date}}</td>
+								<td className="team-result__vs">
+									<div className="team-meta">
+										<figure className="team-meta__logo">
+											<img src="assets/images/samples/logos/{{team.logo}}" alt="">
+										</figure>
+										<div className="team-meta__info">
+											<h6 className="team-meta__name">{{team.name}}</h6>
+											<span className="team-meta__place">{{team.place}}</span>
+										</div>
+									</div>
+								</td>
+								<td className="team-result__score"><span className="team-result__game team-result__game--{{#ifequal result.outcome 'W'}}win{{else}}lose{{/ifequal}}">{{result.outcome}}</span> {{result.score}}</td>
+								<td className="team-result__kills">{{kills}}</td>
+								<td className="team-result__deaths">{{deaths}}</td>
+								<td className="team-result__assists">{{assists}}</td>
+								<td className="team-result__pentakills">{{pentakills}}</td>
+								<td className="team-result__kdar">{{kdar}}</td>
+								<td className="team-result__dmg">{{dmg}}</td>
+								<td className="team-result__dpm">{{dpm}}</td>
+								<td className="team-result__gold">{{gold}}</td>
+								<td className="team-result__match"><Link href="#" className="btn btn-xs btn-default-alt">See Full Stats</Link></td>
+								<td className="team-result__replay"><Link href="#" className="btn btn-xs btn-default-alt btn-icon"><i className="fas fa-play"></i> Watch Replay</Link></td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- Team Latest Results / End -->
+
+		{{> _esports_team-pagination custom-className="justify-content-center" }}
+
+	</div>
+</div>
+
+<!-- Content / End -->

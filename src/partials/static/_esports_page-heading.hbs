@@ -1,0 +1,24 @@
+<!-- Page Heading
+================================================== -->
+<div className="page-heading page-heading--horizontal effect-duotone effect-duotone--primary">
+	<div className="container">
+		<div className="row">
+			<div className="col align-self-start">
+				<h1 className="page-heading__title">{{{page-heading}}}</h1>
+			</div>
+			<div className="col align-self-end">
+				<ol className="page-heading__breadcrumb breadcrumb font-italic">
+					<li className="breadcrumb-item"><Link href="{{../root}}index.html">Home</Link></li>
+					{{#each breadcrumbs}}
+					{{#if @last}}
+					<li className="breadcrumb-item active" aria-current="page">{{label}}</li>
+					{{else}}
+					<li className="breadcrumb-item"><Link href="{{link}}">{{label}}</Link></li>
+					{{/if}}
+					{{/each}}
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Page Heading / End -->

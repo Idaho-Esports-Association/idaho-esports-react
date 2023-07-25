@@ -1,0 +1,117 @@
+// Video with a Poster
+.alc-thumb--video {
+	position: relative;
+
+	&::before {
+		content: "\f04b";
+		display: block;
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		top: 50%;
+		margin: -30px 0 0 -30px;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		border-radius: 50% !important;
+		color: #fff;
+		font-size: 28px;
+		text-indent: 4px;
+		background-color: rgba(0,0,0,.8);
+		text-rendering: auto;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		pointer-events: none;
+		transition: transform 0.3s ease;
+	}
+
+	&:hover {
+
+		&::before {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.alc-thumb--video-sm {
+
+	&::before {
+		width: 32px;
+		height: 32px;
+		margin: -16px 0 0 -16px;
+		line-height: 32px;
+		font-size: 14px;
+		text-indent: 2px;
+	}
+}
+
+.alc-thumb--video-md {
+
+	&::before {
+		width: 40px;
+		height: 40px;
+		margin: -20px 0 0 -20px;
+		line-height: 40px;
+		font-size: 14px;
+		text-indent: 3px;
+	}
+}
+
+// Post Thumb: Overlay
+.alc-thumb--video-has-overlay {
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,.6);
+		pointer-events: none;
+	}
+}
+
+.alc-thumb--video-colored-icon {
+
+	&::before {
+		background-color: $color-danger;
+	}
+}
+
+// Post Thumb: Full Height
+.alc-thumb.h-100 {
+
+	img {
+		object-fit: cover;
+	}
+}
+
+// Post Thumb: Aspect Ratio
+.alc-thumb--has-ratio {
+	float: none;
+	margin-right: 0;
+
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.alc-thumb--ratio-16-9 {
+
+	img {
+		aspect-ratio: 16 / 9;
+	}
+}
+
+.alc-thumb--ratio-20-9 {
+
+	img {
+		aspect-ratio: 20 / 9;
+	}
+}

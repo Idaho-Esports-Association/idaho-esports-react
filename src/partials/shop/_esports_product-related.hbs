@@ -1,0 +1,62 @@
+<!-- Related Products -->
+<div className="card card--clean">
+	<header className="card__header">
+		<h4>Related Products</h4>
+	</header>
+	<div className="card__content">
+
+		<!-- Products -->
+		<ul className="products products--grid products--grid-4 products--grid-simple">
+
+			{{#each esports.products.related}}
+			<!-- Product #{{@key}} -->
+			<li className="product__item">
+
+				<div className="product__img">
+					{{#if onsale}}
+					<span className="onsale">Sale!</span>
+					{{/if}}
+					<div className="product__thumb">
+						<img src="{{../root}}assets/images/esports/samples/{{img}}" alt="">
+					</div>
+					<div className="product__overlay">
+						<div className="product__btns">
+							<Link href="_esports_shop-cart.html" className="btn btn-primary-inverse btn-block btn-icon"><i className="icon-bag"></i> Add to your bag</Link>
+							<Link href="_esports_shop-wishlist.html" className="btn btn-primary btn-block btn-icon"><i className="icon-heart"></i> Add to wishlist</Link>
+						</div>
+					</div>
+				</div>
+
+				<div className="product__content card__content">
+					<div className="product__header">
+						<div className="product__header-inner">
+							<h2 className="product__title"><Link href="_esports_shop-product.html">{{title}}</Link></h2>
+							<div className="product__ratings">
+								{{#repeat rating.full}}
+								<i className="fas fa-star"></i>
+								{{/repeat}}
+								{{#repeat rating.empty}}
+								<i className="fas fa-star empty"></i>
+								{{/repeat}}
+							</div>
+							<div className="product__price">
+								{{#if onsale}}
+									<del>{{price.old}}</del>
+									<ins>{{price.new}}</ins>
+								{{else}}
+									{{price}}
+								{{/if}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- Product #{{@key}} / End -->
+			{{/each}}
+
+		</ul>
+		<!-- Products / End -->
+
+	</div>
+</div>
+<!-- Related Products / End -->

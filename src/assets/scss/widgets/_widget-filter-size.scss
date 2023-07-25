@@ -1,0 +1,19 @@
+/* Widget: Filter Size */
+.widget_filter-size {
+
+	.checkbox {
+		font-style: normal;
+
+		@if $template == 'hockey' {
+			font-size: 12px;
+		}
+	}
+
+	.form-group {
+		margin-block-end: 20px;
+
+		&:last-child {
+			margin-block-end: 0;
+		}
+	}
+}

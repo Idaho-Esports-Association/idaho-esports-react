@@ -1,0 +1,30 @@
+<!-- Widget: Matchup -->
+<div className="widget card card--has-table widget--sidebar widget-matchup">
+	<div className="widget__content card__content">
+		<div className="table-responsive">
+			<table className="table table table-hover alc-table-stats alc-table-stats--compact">
+				<thead className="table-card-header">
+					<tr>
+						<th className="table-card-header__title">{{basketball.sp.event.team-stats.matchup.thead.title}}</th>
+						<th>
+							<img src="{{basketball.sp.event.team-stats.matchup.thead.team1.logo}}" alt="{{basketball.sp.event.team-stats.matchup.thead.team1.name}}">
+						</th>
+						<th>
+							<img src="{{basketball.sp.event.team-stats.matchup.thead.team2.logo}}" alt="{{basketball.sp.event.team-stats.matchup.thead.team2.name}}">
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each basketball.sp.event.team-stats.matchup.tbody}}
+					<tr>
+						<td className="alc-align-start {{#if indent}}alc-indent{{else}}alc-highlight-sm{{/if}}">{{label}}</td>
+						<td className="{{#if indent}}{{else}}alc-highlight-sm{{/if}}">{{stat1}}</td>
+						<td className="{{#if indent}}{{else}}alc-highlight-sm{{/if}}">{{stat2}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Widget: Matchup / End -->

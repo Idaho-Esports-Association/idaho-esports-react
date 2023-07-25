@@ -1,0 +1,116 @@
+---
+layout: esports
+page-title: Your Account
+page-heading: "Your <span className=\"highlight\">Account</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Shop",
+		link: "_esports_shop-fullwidth.html"
+	},
+	{
+		label: "Your Account"
+	}
+]
+---
+
+{{> _esports_account-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<div className="col-lg-8">
+
+				<!-- Personal Information -->
+				<div className="card">
+					<div className="card__header">
+						<h4>Personal Information</h4>
+					</div>
+					<div className="card__content">
+						<form action="#" className="df-personal-info">
+
+							<div className="form-group form-group--upload">
+								<div className="form-group__avatar form-group__avatar--center">
+									<label className="form-group__avatar-wrapper">
+										<figure className="form-group__avatar-img">
+											<img src="{{../root}}assets/images/esports/avatar-placeholder-80x80.jpg" alt="">
+										</figure>
+										<div className="form-group__label">
+											<h6>Your Profile Photo</h6>
+											<span>Min size 80x80px</span>
+										</div>
+										<input type="file" style="display: none;">
+									</label>
+								</div>
+							</div>
+							<div className="row">
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-email">Email <Linkbbr className="required" title="required">*</Linkbbr></label>
+										<input type="email" className="form-control" value="" name="account-email" id="account-email" placeholder="lagerthadax@yourmail.com">
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-username">Username</label>
+										<input type="text" className="form-control" value="" name="account-username" id="account-username" placeholder="Lagertha Dax">
+									</div>
+								</div>
+							</div>
+
+							<div className="row">
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-password">Change Password</label>
+										<input type="password" className="form-control" value="" name="account-password" id="account-password" placeholder="**********">
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-password-repeat">Repeat Password</label>
+										<input type="password" className="form-control" value="" name="account-password-repeat" id="account-password-repeat" placeholder="**********">
+									</div>
+								</div>
+							</div>
+
+							<div className="row">
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-first-name">First Name</label>
+										<input type="text" className="form-control" value="" name="account-first-name" id="account-first-name" placeholder="Your first name...">
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="form-group">
+										<label for="account-last-name">Last Name</label>
+										<input type="text" className="form-control" value="" name="account-last-name" id="account-last-name" placeholder="Your last name...">
+									</div>
+								</div>
+							</div>
+
+							<div className="form-group--submit text-center">
+								<button type="submit" className="btn btn-primary-inverse">Save all changes</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<!-- Personal Information / End -->
+			</div>
+
+			<div className="col-lg-4">
+
+				{{> _esports_widget-latest-news }}
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Content / End -->

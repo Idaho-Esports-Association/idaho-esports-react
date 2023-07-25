@@ -1,0 +1,428 @@
+.swiper-button-prev,
+.swiper-button-next {
+	color: $color-dark;
+	opacity: 0.2;
+	transition: opacity .2s ease;
+	outline: none;
+
+	&.swiper-button--xs {
+		--swiper-navigation-size: 10px;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+// Navigation with Font Awesome icons
+.swiper-button--fa {
+
+	&.swiper-button--xs {
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		margin-top: -10px;
+	}
+
+	&::before {
+		font-family: "Font Awesome 5 Free";
+		font-size: 12px;
+		font-weight: 900;
+		line-height: 1;
+		color: currentColor;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&::after {
+		display: none;
+	}
+
+	&.swiper-button-prev {
+
+		&::before {
+			content:"\f053";
+		}
+	}
+
+	&.swiper-button-next {
+
+		&::before {
+			content:"\f054";
+		}
+	}
+}
+
+// Career Stats Slider
+.alc-stats-slider__header {
+	min-height: 40px;
+	background-color: $card-subheader-bg;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	border-bottom: 1px solid $card-border-color;
+}
+	.alc-stats-slider__arrows {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		background-color: $card-bg;
+		transform: skew(-20deg);
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: static;
+			width: 40px;
+			height: 40px;
+			margin: 0;
+			border-right: 1px solid $card-border-color;
+			opacity: 1;
+			background-color: $card-bg;
+			transition: background-color .3s ease, color .3s ease;
+
+			&::before {
+				transform: skew(20deg);
+			}
+
+			&:hover {
+				background-color: $color-primary;
+				color: $color-white;
+			}
+		}
+
+		.swiper-button-disabled,
+		.swiper-button-disabled:hover {
+			background-color: $card-bg;
+
+			&::before {
+				opacity: .3;
+				color: $headings-color;
+			}
+		}
+
+		[class*="swiper-button-"]:first-child {
+			padding-left: 16px;
+			margin-left: -16px;
+			width: 62px;
+		}
+	}
+	.alc-stats-slider-nav {
+		font-size: 10px;
+		line-height: 1.2em;
+		font-weight: bold;
+		flex: 1;
+		align-self: center;
+		margin-right: 10px;
+		color: $color-gray;
+
+		.swiper-slide {
+			cursor: pointer;
+			transition: color .3s ease;
+			text-align: center;
+		}
+
+		.swiper-slide:hover,
+		.swiper-slide-thumb-active {
+			color: $headings-color;
+		}
+	}
+
+.alc-stats-slider__content {
+
+}
+
+	.alc-stats-slider-main {
+
+	}
+
+
+// Team Stats Slider
+.alc-team-stats-slider__header {
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: $card-horizontal-padding;
+}
+	.alc-team-stats-slider__arrows {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		transform: skew(-20deg);
+		z-index: 2;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: static;
+			width: 60px;
+			height: 100%;
+			margin: 0;
+			border-inline-end: 1px solid $card-border-color;
+			opacity: 1;
+			background-color: $card-subheader-bg;
+			transition: background-color .3s ease, color .3s ease;
+
+			&::before {
+				transform: skew(20deg);
+			}
+
+			&:hover {
+				background-color: $color-primary;
+				color: $color-white;
+			}
+		}
+
+		.swiper-button-prev {
+			border-inline-start: 1px solid $card-border-color;
+		}
+
+		.swiper-button-disabled,
+		.swiper-button-disabled:hover {
+			background-color: $card-subheader-bg;
+
+			&::before {
+				opacity: .3;
+				color: $headings-color;
+			}
+		}
+	}
+
+	.alc-team-stats-slider-nav {
+		flex: 1;
+		flex-basis: 50%;
+
+		.swiper-slide {
+			cursor: pointer;
+			transition: color .3s ease;
+
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+
+		.swiper-slide:hover,
+		.swiper-slide-thumb-active {
+			color: $headings-color;
+		}
+	}
+
+.alc-team-stats-slider__content {
+
+}
+
+	.alc-team-stats-slider-main {
+
+	}
+
+
+// Player Card Slider
+.alc-player-cards-slider__arrows-wrapper {
+	display: flex;
+	margin-block-end: 40px;
+	margin-block-start: 16px;
+	justify-content: center;
+}
+.alc-player-cards-slider__arrows {
+	position: relative;
+	display: flex;
+	height: 44px;
+	flex-wrap: nowrap;
+	z-index: 2;
+	overflow: hidden;
+	border: 1px solid $card-border-color;
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: static;
+		width: 70px;
+		height: 100%;
+		margin: 0;
+		border-inline-end: 1px solid $card-border-color;
+		opacity: 1;
+		background-color: $card-bg;
+		transition: background-color .3s ease, color .3s ease;
+		transform: skew(-20deg);
+
+		&::before {
+			transform: skew(20deg);
+		}
+
+		&:hover {
+			background-color: $color-primary;
+			color: $color-white;
+		}
+	}
+
+	.swiper-button-prev {
+		border-inline-start: 1px solid $card-border-color;
+		margin-inline-start: -20px;
+		padding-inline-start: 20px;
+	}
+	.swiper-button-next {
+		margin-inline-end: -20px;
+		padding-inline-end: 20px;
+	}
+
+	.swiper-button-disabled,
+	.swiper-button-disabled:hover {
+		background-color: $card-subheader-bg;
+
+		&::before {
+			opacity: .3;
+			color: $headings-color;
+		}
+	}
+}
+
+// Event Scoreboard
+.alc-events-scoreboard__nav {
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: static;
+		margin: 0;
+		padding: 0;
+		background-color: $card-bg;
+		border: 1px solid $card-border-color;
+		opacity: 1 !important;
+		width: 37px;
+
+		&.swiper-button-disabled {
+
+			&::before {
+				opacity: .5;
+			}
+		}
+
+		&:hover {
+			background-color: $card-subheader-bg;
+			color: $headings-color;
+		}
+	}
+	.swiper-button-prev {
+		border-top-width: 0;
+		border-bottom-width: 0;
+	}
+
+	.swiper-button-next {
+		border-bottom-width: 0;
+	}
+
+	&.alc-events-scoreboard__nav--skewed {
+
+		.swiper-button-prev,
+		.swiper-button-next {
+
+			&::before {
+				transform: skew(20deg);
+			}
+		}
+	}
+}
+
+
+// Related Products - Nav Slider
+.alc-related-products-slider__header {
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: $card-horizontal-padding;
+}
+	.alc-related-products-slider__arrows {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		transform: skew(-20deg);
+		z-index: 2;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: static;
+			width: 60px;
+			height: 100%;
+			margin: 0;
+			border-inline-end: 1px solid $card-border-color;
+			opacity: 1;
+			background-color: $card-subheader-bg;
+			transition: background-color .3s ease, color .3s ease;
+
+			&::before {
+				transform: skew(20deg);
+			}
+
+			&:hover {
+				background-color: $color-primary;
+				color: $color-white;
+			}
+		}
+
+		.swiper-button-prev {
+			border-inline-start: 1px solid $card-border-color;
+		}
+
+		.swiper-button-disabled,
+		.swiper-button-disabled:hover {
+			background-color: $card-subheader-bg;
+
+			&::before {
+				opacity: .3;
+				color: $headings-color;
+			}
+		}
+	}
+
+// Post News - Nav Slider
+.alc-post-news-slider__header {
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: $card-horizontal-padding;
+}
+	.alc-post-news-slider__arrows {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		transform: skew(-20deg);
+		z-index: 2;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: static;
+			width: 60px;
+			height: 100%;
+			margin: 0;
+			border-inline-end: 1px solid $card-border-color;
+			opacity: 1;
+			background-color: $card-subheader-bg;
+			transition: background-color .3s ease, color .3s ease;
+
+			&::before {
+				transform: skew(20deg);
+			}
+
+			&:hover {
+				background-color: $color-primary;
+				color: $color-white;
+			}
+		}
+
+		.swiper-button-prev {
+			border-inline-start: 1px solid $card-border-color;
+		}
+
+		.swiper-button-disabled,
+		.swiper-button-disabled:hover {
+			background-color: $card-subheader-bg;
+
+			&::before {
+				opacity: .3;
+				color: $headings-color;
+			}
+		}
+	}

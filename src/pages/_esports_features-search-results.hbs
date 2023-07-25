@@ -1,0 +1,72 @@
+---
+layout: esports
+page-title: Search Results
+page-heading: "Search <span className=\"highlight\">Results</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "News",
+		link: "#"
+	},
+	{
+		label: "Search Results"
+	}
+]
+---
+
+{{> _esports_blog-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<!-- Content -->
+			<div className="content col-lg-8">
+
+				<div className="alert alert-success alert--rounded">
+					<strong>5 Articles were found for your "<span className="text-success">Idaho Esports Roster</span>" search</strong>
+				</div>
+
+				<!-- Search Results -->
+				<ul className="posts posts--simple-list posts--simple-list--search">
+
+					{{#each (limit esports.posts.news-1 5)}}
+					<li className="posts__item card {{#each category}}posts__item--{{class}} {{/each}}">
+						<div className="posts__inner card__content">
+							<div className="posts__cat">
+								{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+							</div>
+							<h6 className="posts__title"><Link href="#">{{title}}</Link></h6>
+							<time datetime="2017-08-23" className="posts__date">{{date}}</time>
+							<div className="posts__excerpt">
+								{{excerpt}}
+							</div>
+						</div>
+					</li>
+					{{/each}}
+
+				</ul>
+				<!-- Search Results / End -->
+
+				{{> _esports_blog-pagination custom-className="justify-content-center" }}
+
+			</div>
+			<!-- Content / End -->
+
+			<!-- Sidebar -->
+			<div id="sidebar" className="sidebar col-lg-4">
+
+				{{> _esports_widget-tabbed }}
+
+			</div>
+			<!-- Sidebar / End -->
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

@@ -1,0 +1,100 @@
+/* Player Card */
+.alc-player-card {
+
+}
+
+	.alc-player-card__primary {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-block-end: 1.25rem;
+	}
+		.alc-player-card__bg {
+			height: 140px;
+			width: 100%;
+			border-block-end: 1px solid $card-border-color;
+			isolation: isolate;
+
+			> img {
+				display: block;
+				position: absolute;
+				inset-inline-start: 0;
+				inset-block-start: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.alc-player-card__thumb {
+			border: 6px solid $card-bg;
+			width: 132px;
+			height: 132px;
+			border-radius: 50%;
+			position: relative;
+			overflow: hidden;
+			margin-block-start: -75px;
+			margin-block-end: 12px;
+		}
+		.alc-player-card__title {
+			margin-bottom: .5em;
+		}
+			.alc-player-card__number {
+				color: $color-gray;
+			}
+			.alc-player-card__last-name {
+				color: $color-primary;
+			}
+
+		.alc-player-card__meta-list {
+			font-size: 11px;
+			line-height: 1.2em;
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-bottom: .75em;
+		}
+			.alc-player-card__meta-item {
+				display: inline-flex;
+				gap: 0.3em;
+			}
+				.alc-player-card__meta-value {
+					font-weight: bold;
+					color: $headings-color;
+				}
+
+	.alc-player-card__secondary {
+
+		.alc-player-card__title {
+			border-block: 1px solid $card-border-color;
+			background-color: $card-subheader-bg;
+			text-align: center;
+			font-size: $font-size-h6;
+			line-height: 1em;
+			text-transform: uppercase;
+			padding-block: 1.5em;
+			margin-bottom: 0;
+		}
+
+		.alc-player-card__info {
+			margin: 0;
+			padding: 0;
+		}
+			.alc-player-card__info-item {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding-inline: $card-horizontal-padding;
+				padding-block: 1.55em;
+				font-size: 11px;
+				line-height: 1.2em;
+
+				&:not(:first-child) {
+					border-block-start: 1px solid $card-border-color;
+				}
+			}
+				.alc-player-card__info-value {
+					font-weight: bold;
+					font-family: $headings-font-family;
+					color: $headings-color;
+				}
+	}

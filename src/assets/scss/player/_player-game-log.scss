@@ -1,0 +1,127 @@
+/* Player Game Log */
+.game-player-result {
+
+	thead > tr > th,
+	tbody > tr > td {
+		vertical-align: middle;
+		text-align: center;
+
+		&.game-player-result__vs {
+			text-align: left;
+		}
+	}
+
+
+	.game-player-result__date {
+		text-align: left;
+		white-space: nowrap;
+
+		@media (min-width: 1200px) {
+			padding-left: $card-horizontal-padding;
+		}
+	}
+
+	thead > tr > th:last-child,
+	tbody > tr > td:last-child {
+
+		@media (min-width: 1200px) {
+			padding-right: $card-horizontal-padding;
+		}
+	}
+
+	.game-player-result__game {
+		color: $headings-color;
+	}
+	.game-player-result__game--win {
+		color: $color-success;
+	}
+	.game-player-result__game--lose {
+		color: $color-danger;
+	}
+
+	.game-player-result__score {
+		white-space: nowrap;
+
+		@if $template == 'football' {
+			color: $headings-color;
+		}
+
+		@if $template == 'hockey' {
+			text-align: left;
+		}
+	}
+
+	@if $template == 'football' {
+		.game-player-result__th {
+			text-align: center;
+		}
+		.game-player-result__th--game {
+			background-color: rgba($color-dark-lighten, 0.6);
+		}
+		.game-player-result__th--passing {
+			background-color: rgba($color-danger, 0.2);
+		}
+		.game-player-result__th--rushing {
+			background-color: rgba($color-4-darken, 0.2);
+		}
+	}
+}
+
+// Player Games Log Table
+.game-player-result--log {
+
+	> tbody > tr > td {
+
+		@if $template == 'hockey' {
+			&.game-player-result__rating,
+			&.game-player-result__percent,
+			&.game-player-result__ppg,
+			&.game-player-result__ppa,
+			&.game-player-result__shg,
+			&.game-player-result__sha,
+			&.game-player-result__gwg {
+				color: $body-font-color;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+// Player Stats Table
+.game-player-result--stats {
+
+	.game-player-result__season {
+		text-align: left;
+		white-space: nowrap;
+
+		@media (min-width: 1200px) {
+			padding-left: $card-horizontal-padding;
+		}
+	}
+
+	.game-player-result__team {
+		@media (min-width: 1200px) {
+			padding-left: $card-horizontal-padding;
+			padding-right: $card-horizontal-padding;
+		}
+	}
+
+	> tbody > tr > td {
+
+		@if $template == 'hockey' {
+			&.game-player-result__gw,
+			&.game-player-result__gl,
+			&.game-player-result__rating,
+			&.game-player-result__percent,
+			&.game-player-result__ppg,
+			&.game-player-result__ppa,
+			&.game-player-result__shg,
+			&.game-player-result__sha,
+			&.game-player-result__gwg,
+			&.game-player-result__gtg {
+				color: $body-font-color;
+				font-weight: normal;
+			}
+		}
+	}
+}

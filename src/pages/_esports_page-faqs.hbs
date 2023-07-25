@@ -1,0 +1,52 @@
+---
+layout: esports
+page-title: FAQs
+page-heading: "FAQs"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "FAQs"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row justify-content-center">
+			<div className="col-md-8">
+
+				<!-- FAQs -->
+				<div className="accordion accordion--space-between" id="accordionFaqs">
+
+					{{#each esports.faqs}}
+					<div className="card">
+						<div className="card__header" id="heading-{{@index}}">
+							<h5 className="mb-0">
+								<button className="btn btn-link accordion__header-link {{#unless active}}collapsed{{/unless}}" type="button" data-toggle="collapse" data-target="#collapse-{{@index}}" aria-expanded="{{#if active}}true{{else}}false{{/if}}" aria-controls="collapse-{{@index}}">
+									{{title}}
+									<span className="accordion__header-link-icon"></span>
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-{{@index}}" className="collapse {{#if active}}show{{/if}}" aria-labelledby="heading-{{@index}}" data-parent="#accordionFaqs">
+							<div className="card__content">
+								{{{content}}}
+							</div>
+						</div>
+					</div>
+					{{/each}}
+
+				</div>
+				<!-- FAQs / End -->
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

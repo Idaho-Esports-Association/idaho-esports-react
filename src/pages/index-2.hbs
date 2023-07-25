@@ -1,0 +1,206 @@
+---
+layout: esports
+page-title: Home 2
+hero-posts: true
+marquee_script: true
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		{{> _esports_marquee }}
+
+		<div className="row">
+			<!-- Content -->
+			<div className="content col-lg-8">
+
+				<!-- Posts Area #1 -->
+				<!-- Posts Grid -->
+				<div className="posts posts--tile posts--tile-alt post-grid row">
+
+					{{#each (limit esports.posts.news-1 7)}}
+					<div className="post-grid__item col-sm-6">
+						<div className="posts__item posts__item--tile {{#each category}}posts__item--{{class}} {{/each}} card">
+							<figure className="posts__thumb">
+								<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+								<Link href="_esports_blog-post-1.html" className="posts__item-link-overlay"></Link>
+								<div className="posts__inner posts__inner--noactive">
+									<div className="posts__cat">
+										{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+									</div>
+									<h6 className="posts__title">{{title}}</h6>
+									<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+									<div className="posts__excerpt">
+										{{excerpt-sm}}
+									</div>
+								</div>
+							</figure>
+							<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+							<footer className="posts__footer card__footer">
+								<div className="post-author">
+									<figure className="post-author__avatar">
+										<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="Post Author Avatar">
+									</figure>
+									<div className="post-author__info">
+										<h4 className="post-author__name">{{author.name}}</h4>
+									</div>
+								</div>
+								<ul className="post__meta meta">
+									<li className="meta__item meta__item--views">{{meta.views}}</li>
+									<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+									<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+								</ul>
+							</footer>
+						</div>
+					</div>
+					{{/each}}
+
+					<div className="post-grid__item col-sm-6">
+						{{#each (limit esports.posts.news-5 2)}}
+						<div className="post-grid__item">
+							<div className="posts__item posts__item--tile posts__item--tile-sm {{#each category}}posts__item--{{class}} {{/each}} card">
+								<figure className="posts__thumb">
+									<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+									<div className="posts__inner">
+										<div className="posts__cat">
+											{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+										</div>
+										<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+										<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+									</div>
+								</figure>
+								<footer className="posts__footer card__footer">
+									<div className="post-author">
+										<figure className="post-author__avatar">
+											<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="Post Author Avatar">
+										</figure>
+										<div className="post-author__info">
+											<h4 className="post-author__name">{{author.name}}</h4>
+										</div>
+									</div>
+									<ul className="post__meta meta">
+										<li className="meta__item meta__item--views">{{meta.views}}</li>
+										<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+										<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+									</ul>
+								</footer>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+
+				</div>
+				<!-- Post Grid / End -->
+				<!-- Posts Area #1 / End -->
+
+				<!-- Posts Area #2 -->
+				<!-- Posts Grid -->
+				<div className="posts posts--tile posts--tile-alt post-grid row">
+
+					{{#each (limit esports.posts.news-6 3)}}
+					<div className="post-grid__item {{#if featured }}col-sm-12{{else}}col-sm-6{{/if}}">
+						<div className="posts__item posts__item--tile {{#if featured }}posts__item--tile-lg{{/if}} {{#each category}}posts__item--{{class}} {{/each}} card">
+							<figure className="posts__thumb">
+								<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+								<div className="posts__inner">
+									<div className="posts__cat">
+										{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+									</div>
+									<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+									<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+								</div>
+							</figure>
+							<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+							<footer className="posts__footer card__footer">
+								<div className="post-author">
+									<figure className="post-author__avatar">
+										<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="Post Author Avatar">
+									</figure>
+									<div className="post-author__info">
+										<h4 className="post-author__name">{{author.name}}</h4>
+									</div>
+								</div>
+								<ul className="post__meta meta">
+									<li className="meta__item meta__item--views">{{meta.views}}</li>
+									<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+									<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+								</ul>
+							</footer>
+						</div>
+					</div>
+					{{/each}}
+
+				</div>
+				<!-- Post Grid / End -->
+				<!-- Posts Area #2 / End -->
+
+				<!-- Posts Area #3 -->
+				<!-- Latest Videos -->
+				<div className="card card--clean">
+					<header className="card__header card__header--has-btn">
+						<h4>Latest Videos</h4>
+						<Link href="_esports_team-videos.html" className="btn btn-default btn-xs card-header__button">See All Videos</Link>
+					</header>
+					<div className="card__content">
+						<!-- Posts - Videos -->
+						<div className="posts posts--card-compact row">
+
+							{{#each esports.posts.videos}}
+							<div className="post-grid__item {{#each tag}}post-{{class}} {{/each}} {{#if @first}}col-sm-12{{else}}col-sm-6 col-lg-6{{/if}}">
+								<div className="posts__item {{#each category}}posts__item--{{class}} {{/each}} {{#if @first}}posts__item--lg{{/if}} card">
+									<figure className="posts__thumb posts__thumb--video">
+										<Link href="{{video}}" className="mp_iframe"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+									</figure>
+									<div className="posts__inner card__content">
+										<div className="posts__cat">
+											{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+										</div>
+										<h6 className="posts__title posts__title--color-hover"><Link href="_esports_team-video-single.html">{{title}}</Link></h6>
+										<ul className="post__meta meta">
+											<li className="meta__item meta__item--date">{{date}}</li>
+											<li className="meta__item meta__item--views">{{meta.views}}</li>
+											<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+											<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							{{/each}}
+
+						</div>
+						<!-- Posts - Videos / End -->
+					</div>
+				</div>
+				<!-- Latest Videos / End -->
+				<!-- Posts Area #3 / End -->
+
+			</div>
+			<!-- Content / End -->
+
+			<!-- Sidebar -->
+			<div id="sidebar" className="sidebar col-lg-4">
+
+				{{> _esports_widget-social }}
+
+				{{> _esports_widget-results-2 }}
+
+				{{> _esports_widget-twitch-streams-sm }}
+
+				{{> _esports_widget-event-result-2 }}
+
+				{{> _esports_widget-tabbed }}
+
+				{{> _esports_widget-event-calendar-2 }}
+
+				{{> _esports_widget-event-preview }}
+
+			</div>
+			<!-- Sidebar / End -->
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

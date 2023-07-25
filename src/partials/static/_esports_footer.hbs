@@ -1,0 +1,96 @@
+<!-- Footer
+================================================== -->
+<footer id="footer" className="footer">
+
+	{{#ifpage 'index-2' }}
+	{{> widget-instagram-section }}
+	{{/ifpage}}
+
+	{{#unlesspage 'index-2'}}
+	<!-- Sponsors -->
+	<div className="sponsors-wrapper">
+		<div className="container">
+			<div className="sponsors">
+				<ul className="sponsors-logos">
+					{{#each esports.sponsors}}
+					<li className="sponsors__item">
+						<Link href="{{link}}" target="_blank"><img src="{{../root}}assets/images/esports/{{logo}}" alt="{{title}}"></Link>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	{{/unlesspage}}
+	<!-- Sponsors / End -->
+
+
+	<!-- Footer Widgets -->
+	<div className="footer-widgets effect-duotone effect-duotone--base">
+		<div className="footer-widgets__inner">
+			<div className="container">
+				<div className="row">
+					<div className="col-12 col-lg-6">
+						<div className="row">
+							<div className="col-12 col-sm-6 col-md-6">
+								<div className="footer-col-inner">
+									{{> _esports_footer-widget-links }}
+								</div>
+							</div>
+							<div className="col-6 col-sm-3 col-md-3">
+								<div className="footer-col-inner">
+									{{> _esports_footer-widget-links-2 }}
+								</div>
+							</div>
+							<div className="col-6 col-sm-3 col-md-3">
+								<div className="footer-col-inner">
+									{{> _esports_footer-widget-pages }}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="col-sm-6 col-lg-3">
+						<div className="footer-col-inner">
+
+							{{> _esports_footer-widget-popular-news }}
+
+						</div>
+					</div>
+					<div className="col-sm-6 col-lg-3">
+						<div className="footer-col-inner">
+
+							{{> _esports_footer-widget-featured-news }}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Footer Widgets / End -->
+
+	<!-- Footer Social Links -->
+	<div className="footer-social">
+		<div className="container">
+			<ul className="footer-social__list list-unstyled">
+				{{#each esports.contact-info.social}}
+				<li className="footer-social__item">
+					<Link href="{{link}}" className="footer-social__link">
+						<span className="footer-social__icon">
+							<i className="{{icon}}"></i>
+						</span>
+						<div className="footer-social__txt">
+							<span className="footer-social__name">{{name}}</span>
+							<span className="footer-social__user">{{user}}</span>
+						</div>
+					</Link>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<!-- Footer Social Links / End -->
+</footer>
+<!-- Footer / End -->

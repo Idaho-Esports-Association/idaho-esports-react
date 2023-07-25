@@ -1,0 +1,108 @@
+---
+layout: esports
+page-title: Login or Register
+page-heading: "Login or <span className=\"highlight\">Register</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Shop",
+		link: "_esports_shop-fullwidth.html"
+	},
+	{
+		label: "Login or Register"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<div className="col-lg-6">
+
+				<!-- Login -->
+				<div className="card">
+					<div className="card__header">
+						<h4>Login to your Account</h4>
+					</div>
+					<div className="card__content">
+
+						<!-- Login Form -->
+						<form action="#">
+							<div className="form-group">
+								<label for="login-name">Your Email</label>
+								<input type="email" name="login-name" id="login-name" className="form-control" placeholder="Enter your email address...">
+							</div>
+							<div className="form-group">
+								<label for="login-password">Your Password</label>
+								<input type="password" name="login-password" id="login-password" className="form-control" placeholder="Enter your password...">
+							</div>
+							<div className="form-group form-group--password-forgot">
+								<label className="checkbox checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox1" value="option1" checked> Remember Me
+									<span className="checkbox-indicator"></span>
+								</label>
+								<span className="password-reminder">Forgot your password? <Link href="#">Click Here</Link></span>
+							</div>
+							<div className="form-group form-group--sm">
+								<Link href="_esports_shop-account.html" className="btn btn-primary-inverse btn-lg btn-block">Sign in to your account</Link>
+							</div>
+							<div className="row">
+								<div className="col-md-6">
+									<button className="btn btn-facebook btn-icon btn-block"><i className="fab fa-facebook"></i> Sign In via Facebook</button>
+								</div>
+								<div className="col-md-6">
+									<button className="btn btn-twitter btn-icon btn-block"><i className="fab fa-twitter"></i> Sign in via Twitter</button>
+								</div>
+							</div>
+						</form>
+						<!-- Login Form / End -->
+
+					</div>
+				</div>
+				<!-- Login / End -->
+			</div>
+
+			<div className="col-lg-6">
+
+				<!-- Register -->
+				<div className="card">
+					<div className="card__header">
+						<h4>Register Now</h4>
+					</div>
+					<div className="card__content">
+
+						<!-- Register Form -->
+						<form action="#">
+							<div className="form-group">
+								<label for="register-name">Your Email</label>
+								<input type="email" name="register-name" id="register-name" className="form-control" placeholder="Enter your email address...">
+							</div>
+							<div className="form-group">
+								<label for="register-password">Your Password</label>
+								<input type="password" name="register-password" id="register-password" className="form-control" placeholder="Enter your password...">
+							</div>
+							<div className="form-group">
+								<label for="repeat-password">Repeat Password</label>
+								<input type="password" name="repeat-password" id="repeat-password" className="form-control" placeholder="Repeat your password...">
+							</div>
+							<div className="form-group">
+								<Link href="_esports_shop-account.html" className="btn btn-default btn-lg btn-block">Create Your Account</Link>
+							</div>
+						</form>
+						<!-- Register Form / End -->
+
+					</div>
+				</div>
+				<!-- Register / End -->
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Content / End -->

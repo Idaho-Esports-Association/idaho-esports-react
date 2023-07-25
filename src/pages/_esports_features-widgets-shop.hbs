@@ -1,0 +1,63 @@
+---
+layout: esports
+page-title: Widgets Shop
+page-heading: "Widgets <span className=\"highlight\">Shop</span>"
+
+breadcrumbs: [
+	{
+		label: "Features",
+		link: "_esports_features-shortcodes.html"
+	},
+	{
+		label: "Widgets - Shop"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+			<div className="col-md-4">
+
+				{{> _esports_widget-products }}
+
+			</div>
+			<div className="col-md-4">
+
+				{{> _esports_widget-shop-categories }}
+
+			</div>
+			<div className="col-md-4">
+
+				{{> _esports_widget-filter-color }}
+
+			</div>
+		</div>
+
+		<div className="spacer"></div>
+
+		<div className="row">
+			<div className="col-md-4">
+
+				{{> _esports_widget-filter-price }}
+
+			</div>
+			<div className="col-md-4">
+
+				{{> _esports_widget-filter-size }}
+
+			</div>
+			<div className="col-md-4">
+
+				{{> widget-filter-size-boxed}}
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

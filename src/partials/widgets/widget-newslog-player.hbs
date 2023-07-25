@@ -1,0 +1,19 @@
+<!-- Widget: Player Newslog -->
+<Linkside className="widget card widget--sidebar widget-newslog">
+	<div className="widget__title card__header">
+		<h4>Player Newslog</h4>
+	</div>
+	<div className="widget__content card__content">
+		<ul className="newslog">
+			{{#each basketball.sp.player.newslog}}
+			<li className="newslog__item newslog__item--{{type}}">
+				<div className="newslog__item-inner">
+					<div className="newslog__content">{{{content}}}</div>
+					<time className="newslog__date" datetime="2021-01-19">{{date}}</time>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</Linkside>
+<!-- Widget: Player Newslog / End -->

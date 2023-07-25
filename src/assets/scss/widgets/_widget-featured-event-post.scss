@@ -1,0 +1,117 @@
+/* Widget: Featured Event Post */
+// event post includes layout for a regular post and match/event results
+.widget-featured-event-post {
+
+	.posts__thumb {
+		margin-bottom: 20px;
+	}
+
+	.post__meta:first-child {
+		margin-bottom: 12px;
+	}
+
+	.posts__title {
+		font-size: $base-font-size;
+		line-height: 1.43em;
+		margin-bottom: .75em;
+	}
+
+	.posts__excerpt {
+		font-size: $font-size-sm;
+		line-height: 1.67em;
+		margin-bottom: 1.5em;
+	}
+
+	// Event
+	.post__event {
+
+	}
+
+	&.card .post__event {
+		margin-left: -$card-horizontal-padding;
+		margin-right: -$card-horizontal-padding;
+		margin-bottom: -$card-vertical-padding;
+	}
+	.posts__inner + .post__event {
+		padding-top: 1.5em;
+	}
+		.post__event-heading {
+			display: flex;
+			justify-content: space-between;
+			border-top: 1px solid $card-border-color;
+			padding: .9125em $card-horizontal-padding;
+		}
+			.post__event-heading-primary,
+			.post__event-heading-secondary {
+				margin-bottom: 0;
+				font-size: 9px;
+				line-height: 1em;
+				color: $body-font-color;
+			}
+
+		.post__event-content {
+			border-top: 1px solid $card-border-color;
+			padding: 1em $card-horizontal-padding;
+			display: grid;
+			grid-template-columns: auto 1fr auto;
+			grid-template-areas: "team1 results team2";
+			justify-items: center;
+			align-items: center;
+		}
+
+			// Team
+			.post__event-team {
+				grid-area: team1;
+				display: flex;
+				align-items: center;
+
+				& + .post__event-team {
+					grid-area: team2;
+					justify-self: end;
+					text-align: end;
+
+					.post__event-team-logo {
+						order: 2;
+						margin-right: 0;
+						margin-left: 12px;
+					}
+					.post__event-team-details {
+						order: 1;
+					}
+				}
+			}
+				.post__event-team-logo {
+					margin-right: 12px;
+				}
+
+				.post__event-team-details {
+					flex: 1;
+				}
+					.post__event-team-name {
+						font-size: $font-size-sm;
+						line-height: 1.2em;
+						margin-bottom: 0;
+					}
+					.post__event-team-results {
+						font-size: 9px;
+						line-height: 1.2em;
+					}
+
+		// Results
+		.post__event-results {
+			grid-area: results;
+			font-size: 11px;
+			line-height: 1.2em;
+			font-weight: bold;
+		}
+			.post__event-result + .post__event-result {
+				&::before {
+					content: "-";
+					display: inline-block;
+					margin-right: .25em;
+				}
+			}
+			.post__event-result--winner {
+				color: $headings-color;
+			}
+}

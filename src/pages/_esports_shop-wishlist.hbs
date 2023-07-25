@@ -1,0 +1,99 @@
+---
+layout: esports
+page-title: Wishlist
+page-heading: "Your <span className=\"highlight\">Wishlist</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Shop",
+		link: "_esports_shop-fullwidth.html"
+	},
+	{
+		label: "Wishlist"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Wishlist Card -->
+		<div className="card">
+			<div className="card__header card__header--has-btn">
+				<h4>Your Wishlist</h4>
+				<Link className="btn btn-default btn-xs card-header__button" href="#">Clear Wishlist Items</Link>
+			</div>
+			<div className="card__content pt-0">
+				<div className="card__subheader card__subheader--sm card__subheader--side">
+					<h5>Wishlist Items (6)</h5>
+				</div>
+				<!-- Wishlist -->
+				<ul className="alc-products-wishlist list-unstyled">
+
+					{{#each esports.products.wishlist}}
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb">
+							<Link href="_esports_shop-product.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							<Link href="#" className="alc-product-wishlist__close btn-circle btn-default btn-xs">
+								<i className="fas fa-times"></i>
+							</Link>
+						</figure>
+						<div className="alc-product-wishlist__body">
+							<h5 className="alc-product-wishlist__title"><Link href="_esports_shop-product.html">{{title}} - {{price}}</Link></h5>
+							<div className="alc-product-wishlist__ratings">
+								{{#repeat rating.full}}
+								<i className="fas fa-star"></i>
+								{{/repeat}}
+								{{#repeat rating.empty}}
+								<i className="fas fa-star empty"></i>
+								{{/repeat}}
+							</div>
+							<Link href="_esports_shop-cart.html" className="btn btn-primary-inverse btn-xs">Add to bag</Link>
+						</div>
+					</li>
+					{{/each}}
+
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+					<li className="alc-product-wishlist__item">
+						<figure className="alc-product-wishlist__thumb"></figure>
+					</li>
+				</ul>
+				<!-- Wishlist / End -->
+
+			</div>
+		</div>
+		<!-- Wishlist Card / End -->
+
+	</div>
+</div>
+
+<!-- Content / End -->

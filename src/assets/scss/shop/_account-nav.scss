@@ -1,0 +1,84 @@
+/* Account Navigation */
+.df-account-navigation {
+	border-radius: $card-border-radius;
+	overflow: hidden;
+
+	.card & {
+		margin-top: -$card-vertical-padding;
+		margin-right: -$card-horizontal-padding;
+		margin-bottom: -$card-vertical-padding;
+		margin-left: -$card-horizontal-padding;
+	}
+
+	.card .df-account-user + & {
+		margin-top: $card-vertical-padding;
+		border-block-start: 1px solid $card-border-color;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: block;
+	}
+
+	.card__header + .card__content & {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+	.df-account-navigation__link {
+
+		> a {
+			display: block;
+			padding: $card-vertical-padding $card-horizontal-padding;
+			@include font-accent($account-nav-font-size);
+			color: $account-nav-color;
+			line-height: 1.2em;
+			transition: background-color 0.3s ease, color 0.3s ease;
+			background-color: $account-nav-bg;
+
+			&:hover {
+				background-color: $account-nav-bg-hover;
+				color: $account-nav-color-hover;
+			}
+
+			> small {
+				font-size: 8px;
+				@include fix_small_chars();
+				line-height: 1.5em;
+				display: block;
+				color: $account-nav-subtitle-color;
+				font-weight: $account-nav-subtitle-font-weight;
+			}
+
+			> span {
+
+				@if $template == football {
+					color: $color-4;
+				} @else {
+					color: $color-primary;
+				}
+			}
+		}
+
+		& + li {
+			border-top: 1px solid $card-border-color;
+		}
+
+		&:last-child {
+
+			> a {
+				border-radius: 0 0 $card-border-radius $card-border-radius;
+			}
+		}
+	}
+
+	.df-account-navigation__link--active a,
+	.df-account-navigation .active {
+		border-left: $account-nav-border-width solid $color-primary;
+		padding-left: $card-horizontal-padding - $account-nav-border-width;
+		background-color: $account-nav-bg-hover;
+		color: $account-nav-color-active;
+	}

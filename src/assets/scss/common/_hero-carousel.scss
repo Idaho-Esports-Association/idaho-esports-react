@@ -1,0 +1,151 @@
+/*
+// #Hero Carousel
+// --------------------------------------------------
+*/
+.alc-hero-carousel {
+	--hero-carousel-height: 420px;
+
+	height: var(--hero-carousel-height);
+
+	@media (min-width: 576px) {
+		--hero-carousel-height: 480px;
+	}
+
+	@media (min-width: 768px) {
+		--hero-carousel-height: 560px;
+	}
+
+	@media (min-width: 992px) {
+		--hero-carousel-height: 640px;
+	}
+}
+	.alc-hero-carousel__slides {
+		height: var(--hero-carousel-height);
+
+		.swiper-pagination {
+
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			inset-block-start: 50%;
+			width: 40px;
+			height: 40px;
+			background-color: $color-dark;
+			z-index: 2;
+			opacity: 1;
+			color: $color-white;
+			transition: background-color .2s ease;
+
+			&:hover {
+				&,
+				&:after {
+					background-color: $color-primary;
+				}
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				inset-block: 0;
+				width: 15px;
+				background-color: $color-dark;
+				transition: background-color .2s ease;
+			}
+		}
+
+		.swiper-button-prev {
+			inset-inline-start: 0;
+
+			&::after {
+				inset-inline-end: -15px;
+				clip-path: polygon(0 0, 0% 100%, 100% 0);
+			}
+		}
+
+		.swiper-button-next {
+			inset-inline-end: 0;
+
+			&::after {
+				inset-inline-start: -15px;
+				clip-path: polygon(100% 0, 0 100%, 100% 100%);
+			}
+		}
+	}
+
+		.alc-hero-carousel__post {
+			height: var(--hero-carousel-height);
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+
+			&:hover {
+				.posts__excerpt {
+					// max-height: calc(var(--excerpt-line-height) * 4);
+				}
+			}
+		}
+			.alc-hero-carousel__post-wrapper {
+				grid-area: 1 / 1 / -1 / -1;
+				z-index: 2;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: var(--hero-carousel-height);
+
+				background-color: rgba(0,0,0,.8);
+				transition: background-color .3s ease;
+
+				.alc-hero-carousel__post:hover & {
+					background-color: rgba(0,0,0,.4);
+				}
+			}
+				.alc-hero-carousel__post-inner {
+					width: min(66%, 330px);
+					text-align: center;
+					will-change: transform;
+
+					.post__meta {
+						color: $color-gray;
+						justify-content: center;
+					}
+
+					.posts__title {
+						font-size: $font-size-h3;
+						line-height: 1.18em;
+						color: $color-white;
+					}
+					.posts__excerpt {
+						--excerpt-line-height: 1.86em;
+
+						line-height: var(--excerpt-line-height);
+						overflow: hidden;
+						max-height: 0;
+						transition: max-height .4s ease;
+						padding-block-start: 1.86em;
+						will-change: transform;
+
+						@if $template == 'hockey' {
+							color: $color-gray-2;
+						} @else {
+							color: $color-gray;
+						}
+					}
+					.posts__cat-label {
+						font-size: 10px;
+						padding-block: .7em .6em;
+					}
+				}
+					.alc-hero-carousel__post-stretched-link {
+
+					}
+
+
+			.alc-hero-carousel__slide-img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				grid-area: 1 / 1 / -1 / -1;
+				z-index: 1;
+			}

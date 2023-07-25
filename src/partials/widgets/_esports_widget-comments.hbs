@@ -1,0 +1,30 @@
+<!-- Widget: Latest Comments -->
+<Linkside className="widget widget--sidebar card widget-comments">
+	<div className="widget__title card__header">
+		<h4>Latest Comments</h4>
+	</div>
+	<div className="widget__content card__content">
+		<ul className="comments-list">
+
+			{{#each esports.posts.widget-comments}}
+			<li className="comments-list__item">
+				<header className="comments-list__header">
+					<figure className="comments-list__avatar">
+						<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="">
+					</figure>
+					<div className="comments-list__info">
+						<h5 className="comments-list__author-name">{{author.name}}</h5>
+						<time className="comments-list__date" datetime="2016-08-23">{{date}}</time>
+					</div>
+					<Link href="#" className="comments-list__link"><span className="icon-options"></span></Link>
+				</header>
+				<div className="comments-list__body">
+					{{comment}}
+				</div>
+			</li>
+			{{/each}}
+
+		</ul>
+	</div>
+</Linkside>
+<!-- Widget: Latest Comments / End -->

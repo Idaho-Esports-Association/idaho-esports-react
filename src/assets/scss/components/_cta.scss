@@ -1,0 +1,74 @@
+/* CTA
+/* ------------------------- */
+
+.alc-cta {
+	position: relative;
+	overflow: hidden;
+}
+
+.alc-cta--bg-dark {
+
+	.alc-cta__title,
+	.alc-cta__desc {
+		color: $color-white;
+	}
+}
+
+.alc-cta--bg-light {
+
+}
+	// Content
+	.alc-cta__content {
+		position: relative;
+		z-index: 1;
+	}
+
+	.alc-cta__title {
+		font-size: 24px;
+		line-height: 1em;
+		text-transform: uppercase;
+
+		.highlight {
+			display: block;
+			font-size: 56px;
+			line-height: 1em;
+		}
+	}
+	.alc-cta__desc {
+		line-height: 26px;
+	}
+
+	// Background Layer
+	.alc-cta__bg {
+		display: block;
+		position: absolute;
+		inset: 0;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		isolation: isolate;
+
+		@if $template == 'hockey' {
+			// background-image: url("../../images/hockey/samples/cta-bg.jpg");
+		}
+	}
+
+	// Hero Image
+	.alc-cta__hero-img {
+		position: absolute;
+		z-index: 1;
+		inset-inline-end: 0;
+		inset-block-end: 0;
+		transform: translate(23%, 23%);
+		pointer-events: none;
+	}
+
+.alc-cta--contacts {
+	display: flex;
+	height: 100%;
+	padding: $card-vertical-padding $card-horizontal-padding;
+
+	@media (min-width: 1200px) {
+		padding: 60px 50px;
+	}
+}

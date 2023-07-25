@@ -1,0 +1,266 @@
+<!-- Game Scoreboard -->
+<div className="card">
+	<header className="card__header card__header--has-btn">
+		<h4>Game Scoreboard</h4>
+		<Link href="#" className="btn btn-default btn-outline btn-xs card-header__button">Check previous Results</Link>
+	</header>
+	<div className="card__content">
+
+		<!-- Game Result -->
+		<div className="game-result">
+			<section className="game-result__section">
+				<header className="game-result__header">
+					<h3 className="game-result__title">Championship Quarter Finals</h3>
+					<time className="game-result__date" datetime="2017-03-17">Saturday, March 17th, 2017</time>
+				</header>
+				<div className="game-result__content">
+
+					<!-- 1st Team -->
+					<div className="game-result__team game-result__team--first">
+						<figure className="game-result__team-logo">
+							<img src="{{../root}}assets/images/samples/logo-alchemists--sm.png" alt="">
+						</figure>
+						<div className="game-result__team-info">
+							<h5 className="game-result__team-name">Idaho Esports</h5>
+							<div className="game-result__team-desc">Elric Bros School</div>
+						</div>
+					</div>
+					<!-- 1st Team / End -->
+
+					<div className="game-result__score-wrap">
+						<div className="game-result__score">
+							<span className="game-result__score-result game-result__score-result--winner">107</span> <span className="game-result__score-dash">-</span> <span className="game-result__score-result game-result__score-result--loser">102</span>
+						</div>
+						<div className="game-result__score-label">Final Score</div>
+					</div>
+
+					<!-- 2nd Team -->
+					<div className="game-result__team game-result__team--second">
+						<figure className="game-result__team-logo">
+							<img src="{{../root}}assets/images/samples/logo-sharks--sm.png" alt="">
+						</figure>
+						<div className="game-result__team-info">
+							<h5 className="game-result__team-name">Sharks</h5>
+							<div className="game-result__team-desc">Marine College</div>
+						</div>
+					</div>
+					<!-- 2nd Team / End -->
+				</div>
+
+				<div className="game-result__stats">
+					<div className="row">
+						<div className="col-12 col-md-6 order-md-2 game-result__stats-scoreboard">
+							<div className="game-result__table-stats">
+								<div className="table-responsive">
+									<table className="table table__cell-center table-wrap-bordered table-thead-color">
+										<thead>
+											<tr>
+												<th>Scoreboard</th>
+												<th>1</th>
+												<th>2</th>
+												<th>3</th>
+												<th>4</th>
+												<th>T</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>Idaho Esports</th>
+												<td>30</td>
+												<td>31</td>
+												<td>22</td>
+												<td>24</td>
+												<td>107</td>
+											</tr>
+											<tr>
+												<th>Sharks</th>
+												<td>22</td>
+												<td>34</td>
+												<td>20</td>
+												<td>26</td>
+												<td>102</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div className="col-6 col-md-3 order-md-1 game-result__stats-team-1">
+
+							<!-- Progress: Assists -->
+							<div className="progress-stats">
+								<div className="progress__label">ASS</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar-width-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">22</div>
+							</div>
+							<!-- Progress: Assists / End -->
+
+							<!-- Progress: Rebounds -->
+							<div className="progress-stats">
+								<div className="progress__label">Reb</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar-width-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">35</div>
+							</div>
+							<!-- Progress: Rebounds / End -->
+
+							<!-- Progress: Steals -->
+							<div className="progress-stats">
+								<div className="progress__label">STE</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar-width-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">14</div>
+							</div>
+							<!-- Progress: Steals / End -->
+
+							<!-- Progress: Blocks -->
+							<div className="progress-stats">
+								<div className="progress__label">BLK</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar-width-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">26</div>
+							</div>
+							<!-- Progress: Blocks / End -->
+
+							<!-- Progress: Fouls -->
+							<div className="progress-stats">
+								<div className="progress__label">FOU</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar-width-70" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">18</div>
+							</div>
+							<!-- Progress: Fouls / End -->
+
+						</div>
+						<div className="col-6 col-md-3 order-md-3 game-result__stats-team-2">
+							<!-- Progress: Assists -->
+							<div className="progress-stats">
+								<div className="progress__label">ASS</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar--info progress__bar-width-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">36</div>
+							</div>
+							<!-- Progress: Assists / End -->
+
+							<!-- Progress: Rebounds -->
+							<div className="progress-stats">
+								<div className="progress__label">Reb</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar--info progress__bar-width-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">18</div>
+							</div>
+							<!-- Progress: Rebounds / End -->
+
+							<!-- Progress: Steals -->
+							<div className="progress-stats">
+								<div className="progress__label">STE</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar--info progress__bar-width-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">24</div>
+							</div>
+							<!-- Progress: Steals / End -->
+
+							<!-- Progress: Blocks -->
+							<div className="progress-stats">
+								<div className="progress__label">BLK</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar--info progress__bar-width-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">23</div>
+							</div>
+							<!-- Progress: Blocks / End -->
+
+							<!-- Progress: Fouls -->
+							<div className="progress-stats">
+								<div className="progress__label">FOU</div>
+								<div className="progress">
+									<div className="progress__bar progress__bar--info progress__bar-width-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<div className="progress__number">14</div>
+							</div>
+							<!-- Progress: Fouls / End -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className="game-result__section">
+				<header className="game-result__subheader card__subheader">
+					<h5 className="game-result__subtitle">Game Statistics</h5>
+				</header>
+				<div className="game-result__content mb-0">
+					<div className="row">
+						<div className="col-12 col-md-6">
+							<div className="row">
+								<div className="col-4">
+									<div className="circular">
+										<div className="circular__bar" data-percent="88">
+											<span className="circular__percents">88<small>%</small></span>
+										</div>
+										<span className="circular__label">Shot<br> Accuracy</span>
+									</div>
+								</div>
+								<div className="col-4">
+									<div className="circular">
+										<div className="circular__bar" data-percent="63">
+											<span className="circular__percents">63<small>%</small></span>
+										</div>
+										<span className="circular__label">Pass<br> Accuracy</span>
+									</div>
+								</div>
+								<div className="col-4">
+									<div className="circular">
+										<div className="circular__bar" data-percent="75.5">
+											<span className="circular__percents">75.5<small>%</small></span>
+										</div>
+										<span className="circular__label">Total<br> Efficiency</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="col-12 col-md-6">
+							<div className="row">
+								<div className="col-4 col-push-8 col-md-push-0">
+									<div className="circular">
+										<div className="circular__bar" data-percent="72.5" data-bar-color="#0cb2e2">
+											<span className="circular__percents">72.5<small>%</small></span>
+										</div>
+										<span className="circular__label">Total<br> Efficiency</span>
+									</div>
+								</div>
+								<div className="col-4">
+									<div className="circular">
+										<div className="circular__bar" data-percent="53" data-bar-color="#0cb2e2">
+											<span className="circular__percents">53<small>%</small></span>
+										</div>
+										<span className="circular__label">Pass<br> Accuracy</span>
+									</div>
+								</div>
+								<div className="col-4 col-pull-8 col-md-pull-0">
+									<div className="circular">
+										<div className="circular__bar" data-percent="92" data-bar-color="#0cb2e2">
+											<span className="circular__percents">92<small>%</small></span>
+										</div>
+										<span className="circular__label">Shot<br> Accuracy</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Game Result / End -->
+
+	</div>
+</div>
+<!-- Game Scoreboard / End -->

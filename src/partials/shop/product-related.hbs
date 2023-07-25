@@ -1,0 +1,75 @@
+<!-- Related Products -->
+<div className="card card--clean">
+	<header className="card__header">
+		<h4>Related Products</h4>
+	</header>
+	<div className="card__content">
+
+		<!-- Products -->
+		<ul className="products products--grid products--grid-4">
+
+			{{#each basketball.products.related}}
+			<!-- Product #{{@key}} -->
+			<li className="product__item product__item--{{color}} card">
+
+				<div className="product__img">
+					<div className="product__img-holder">
+						{{#if onsale}}
+						<span className="onsale">Sale!</span>
+						{{/if}}
+						<div className="product__bg-letters">{{abbr}}</div>
+
+						<div className="product__slider">
+							{{#each img}}
+							<div className="product__slide">
+								<div className="product__slide-img">
+									<img src="{{../root}}assets/images/samples/{{thumb}}" alt="">
+								</div>
+							</div>
+							{{/each}}
+						</div>
+
+					</div>
+				</div>
+
+				<div className="product__content card__content">
+
+					<header className="product__header">
+						<div className="product__header-inner">
+							<span className="product__category">{{category}}</span>
+							<h2 className="product__title"><Link href="{{../root}}shop-product.html">{{title}}</Link></h2>
+							<div className="product__ratings">
+								{{#repeat rating.full}}
+								<i className="fas fa-star"></i>
+								{{/repeat}}
+								{{#repeat rating.empty}}
+								<i className="fas fa-star empty"></i>
+								{{/repeat}}
+							</div>
+						</div>
+						<div className="product__price">
+							{{#if onsale}}
+								<del>{{price.old}}</del>
+								<ins>{{price.new}}</ins>
+							{{else}}
+								{{price}}
+							{{/if}}
+						</div>
+					</header>
+
+					<footer className="product__footer">
+						<Link href="{{../root}}shop-cart.html" className="btn btn-primary btn-icon product__add-to-cart">Add to Cart</Link>
+						<Link href="#" className="btn btn-default btn-single-icon btn-outline btn-inverse product__wish"><i className="icon-heart"></i></Link>
+						<Link href="#" className="btn btn-default btn-single-icon btn-outline btn-inverse product__view"><i className="icon-eye"></i></Link>
+					</footer>
+				</div>
+			</li>
+			<!-- Product #{{@key}} / End -->
+			{{/each}}
+
+		</ul>
+		<!-- Products / End -->
+
+	</div>
+</div>
+<!-- Related Products / End -->

@@ -1,0 +1,84 @@
+<!-- Widget: Featured Player -->
+<Linkside className="widget card card--no-paddings widget--sidebar alc-widget-player-featured">
+	<div className="widget__title card__header">
+		<h4>Featured Player</h4>
+		<Link href="_hockey_player-overview.html" className="btn btn-xs btn-default btn-icon">View Full Profile</Link>
+	</div>
+	<div className="widget__content card__content">
+
+		<!-- Player -->
+		<div className="alc-player-featured">
+			{{#with hockey.sp.team.widget-player-featured.main}}
+			<div className="alc-player-featured__primary">
+				<div className="alc-player-featured__primary-body">
+					<div className="alc-player-featured__primary-player-img">
+						<img src="{{player.img}}" alt="{{player.firtname}} {{player.lastname}}">
+					</div>
+					<div className="alc-player-featured__primary-player-bg effect-duotone effect-duotone--primary"></div>
+
+					<!-- Player Aside -->
+					<div className="alc-player-featured__primary-player-aside">
+						<div className="alc-circle-progress alc-circle-progress--xs js-alc-circle-progress" data-value="{{winpercent.percent}}" data-label="{{winpercent.slug}}"></div>
+						<!-- Player Awards -->
+						<div className="alc-player-awards-slider-container">
+							<div className="swiper alc-player-awards-slider js-alc-player-awards-slider">
+								<div className="swiper-wrapper">
+									{{#each awards}}
+									<div className="swiper-slide">
+										<img src="{{root}}assets/images/hockey/icon-award-{{type}}.svg" className="alc-player-awards-slider__award-icon" alt="">
+										<div className="alc-player-awards-slider__label">{{label}}</div>
+										<div className="alc-player-awards-slider__title">{{title}}</div>
+									</div>
+									{{/each}}
+								</div>
+							</div>
+							<!-- Slider navigation -->
+							<div className="js-alc-player-awards-slider__button-prev alc-player-awards-slider__button-prev swiper-button-prev swiper-button--xs swiper-button--fa"></div>
+							<div className="js-alc-player-awards-slider__button-next alc-player-awards-slider__button-next swiper-button-next swiper-button--xs swiper-button--fa"></div>
+							<!-- Slider navigation / End -->
+						</div>
+						<!-- Player Awards / End -->
+					</div>
+					<!-- Player Aside / End -->
+
+				</div>
+				<div className="alc-player-featured__primary-meta">
+					<h3 className="alc-player-featured__primary-meta-header">
+						<span className="alc-player-featured__primary-meta__number">{{player.number}}</span>
+						<span className="alc-player-featured__primary-meta__fname">{{player.firstname}}</span>
+						<span className="alc-player-featured__primary-meta__lname">{{player.lastname}}</span>
+					</h3>
+					<dl className="alc-player-featured__primary-meta-list">
+						{{#each player.info}}
+						<dt className="alc-player-featured__primary-meta-label">{{label}}:</dt>
+						<dd className="alc-player-featured__primary-meta-value">{{value}}</dd>
+						{{/each}}
+					</dl>
+					<div className="alc-player-featured__primary-meta-icon">
+						<div className="alc-icon alc-icon--medal"></div>
+					</div>
+				</div>
+			</div>
+			{{/with}}
+			<div className="alc-player-featured__secondary">
+				<div className="alc-player-featured__stats">
+					{{#each hockey.sp.team.widget-player-featured.stats}}
+					<ul className="alc-player-featured__stats-list">
+						{{#each this}}
+							<li className="alc-player-featured__stats-item">
+								<div className="alc-player-featured__stats-item-meta">
+									<h6 className="alc-player-featured__stats-item-title">{{title}}</h6>
+									<div className="alc-player-featured__stats-item-desc">{{desc}}</div>
+								</div>
+								<div className="alc-player-featured__stats-item-value">{{value}}</div>
+							</li>
+						{{/each}}
+					</ul>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		<!-- Player / End -->
+	</div>
+</Linkside>
+<!-- Widget: Featured Player / End -->

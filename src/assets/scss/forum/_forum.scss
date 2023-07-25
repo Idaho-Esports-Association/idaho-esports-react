@@ -1,0 +1,324 @@
+/* Forum */
+.alc-forums-table {
+
+	> thead {
+		> tr {
+			> th {
+				font-size: 10px;
+
+				&:first-child {
+					padding-inline-start: $card-horizontal-padding;
+				}
+
+				&:last-child {
+					padding-inline-end: $card-horizontal-padding;
+				}
+
+				&.alc-forums-table__th-author {
+					width: 190px;
+				}
+				.alc-forums-table__th-posts {
+
+				}
+			}
+
+			&.alc-forums-table--td-bg-primary {
+				> th {
+					background-color: $color-primary;
+				}
+			}
+		}
+	}
+
+	> tbody {
+		> tr {
+			> td {
+				padding-block: 20px;
+				vertical-align: middle;
+				font-size: 12px;
+
+				&:first-child {
+					padding-inline-start: $card-horizontal-padding;
+				}
+
+				&:last-child {
+					padding-inline-end: $card-horizontal-padding;
+				}
+			}
+		}
+	}
+}
+
+// Category
+.alc-forum-category {
+	display: flex;
+	align-items: center;
+	text-align: start;
+	color: $body-font-color;
+
+	@media (max-width: 767px) {
+		min-width: 200px;
+	}
+}
+	.alc-forum-category__icon {
+		padding-inline-end: $card-horizontal-padding;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+	.alc-forum-category__body {
+		flex: 1;
+	}
+		.alc-forum-category__title {
+			font-size: 14px;
+			line-height: 1.2em;
+			font-weight: bold;
+			margin-bottom: 0.25em;
+
+			> a {
+				color: $headings-color;
+
+				&:hover {
+					color: $link-color-hover;
+				}
+			}
+		}
+		.alc-forum-category__desc {
+			font-weight: normal;
+		}
+
+// Topic
+.alc-forum-topic {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	color: $body-font-color;
+	gap: 5px;
+	padding-block: 10px;
+
+	@media (max-width: 767px) {
+		min-width: 200px;
+	}
+}
+	.alc-forum-topic__body {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+		.alc-forum-topic__header {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 8px;
+		}
+			.alc-forum-topic__badge-pinned {
+				font-size: 8px;
+				line-height: 1.2em;
+				padding: 0.5em 1.2em;
+				text-transform: uppercase;
+				font-weight: bold;
+				clip-path: polygon(6px 0, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+				color: $color-white;
+				background-color: $color-primary;
+			}
+			.alc-forum-topic__title {
+				font-size: 14px;
+				line-height: 1.2em;
+				font-weight: bold;
+				margin-bottom: 0.25em;
+
+				> a {
+					color: $headings-color;
+
+					&:hover {
+						color: $link-color-hover;
+					}
+				}
+			}
+
+// Started
+.alc-forum-topic__started {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 6px;
+}
+	.alc-forum-topic__started-label {
+		font-size: 10px;
+		line-height: 1.2em;
+		font-weight: normal;
+	}
+	.alc-forum-topic__started-author {
+
+	}
+		.alc-forum-topic__started-avatar {
+
+		}
+			.alc-forum-topic__started-avatar-img {
+				width: 19px;
+				height: 12px;
+				object-fit: cover;
+				clip-path: polygon(4px 0, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+			}
+		.alc-forum-topic__started-name {
+			display: inline-block;
+			text-transform: none;
+			margin: 0;
+			font-size: $font-size-h6;
+			line-height: 1em;
+		}
+
+// Topic Nav
+.alc-forum-topic__pagination-nav {
+
+}
+	.alc-forum-topic__pagination {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: inline-flex;
+	}
+	.alc-forum-topic__pagination--skewed {
+		padding-inline-start: 5px;
+
+		.alc-forum-topic__pagination-item {
+			transform: skew(-20deg);
+			display: inline-flex;
+			margin-inline-start: -1px;
+		}
+			.alc-forum-topic__pagination-link {
+				transform: skew(20deg);
+			}
+	}
+		.alc-forum-topic__pagination-item {
+			border: 1px solid $card-border-color;
+		}
+			.alc-forum-topic__pagination-link {
+				font-size: 9px;
+				line-height: 1.2em;
+				color: $headings-color;
+				padding: .4em .75em;
+
+				&:hover {
+					color: $link-color-hover;
+				}
+			}
+
+// Update
+.alc-forum-update {
+	display: flex;
+	justify-content: flex-start;
+	text-align: start;
+	align-items: center;
+}
+	.alc-forum-update__avatar {
+		margin-inline-end: 8px;
+		flex-shrink: 0;
+	}
+		.alc-forum-update__avatar-img {
+			width: 23px;
+			height: 18px;
+			object-fit: cover;
+			clip-path: polygon(8px 0, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+		}
+	.alc-forum-update__body {
+		flex: 1;
+	}
+		.alc-forum-update__name {
+			font-size: 12px;
+			line-height: 1.2em;
+			margin-bottom: 0;
+			text-transform: none;
+		}
+		.alc-forum-update__time {
+			font-size: 10px;
+			line-height: 1.2em;
+			color: $body-font-color;
+			font-weight: normal;
+		}
+
+
+// Comment
+.alc-forum-comment {
+
+}
+	.alc-forum-comment__header {
+		display: flex;
+		justify-content: space-between;
+		background-color: $card-subheader-bg;
+		border-block-end: 1px solid $card-border-color;
+		font-size: 10px;
+		line-height: 1em;
+		text-transform: uppercase;
+		padding: 13px $card-horizontal-padding;
+	}
+		.alc-forum-comment__time {
+			color: $headings-color;
+		}
+		.alc-forum-comment__reply-link {
+			padding: 0;
+			font-size: 10px;
+			line-height: 1em;
+			text-transform: uppercase;
+			color: $color-dark-lighten;
+
+			&:hover {
+				color: $link-color-hover;
+			}
+		}
+
+	.alc-forum-comment__body {
+		padding: $card-vertical-padding $card-horizontal-padding;
+		display: flex;
+		font-weight: normal;
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+		}
+	}
+		.alc-forum-comment__user {
+			flex-basis: 120px;
+			flex-shrink: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-block-end: 15px;
+
+			@media (min-width: 768px) {
+				margin-inline-end: 24px;
+			}
+
+			@media (min-width: 992px) {
+				margin-inline-end: 36px;
+			}
+
+			@media (min-width: 1200px) {
+				margin-inline-end: 56px;
+			}
+		}
+			.alc-forum-comment__user-avatar {
+				width: 60px;
+				height: 60px;
+				object-fit: cover;
+				margin-block-end: 14px;
+			}
+				.alc-forum-comment__user-name {
+					font-size: $font-size-h5;
+					line-height: 1.2em;
+					margin-block-end: .25em;
+				}
+				.alc-forum-comment__user-info {
+					font-size: 10px;
+					line-height: 1.2em;
+					color: $body-font-color;
+				}
+
+		.alc-forum-comment__content {
+			flex-grow: 1;
+			color: $body-font-color;
+			font-size: $base-font-size;
+			line-height: $base-line-height;
+			padding-block-end: 15px;
+		}

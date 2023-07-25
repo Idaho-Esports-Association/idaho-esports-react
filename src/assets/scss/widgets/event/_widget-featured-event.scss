@@ -1,0 +1,139 @@
+/* Widget: Featured Event */
+.alc-widget-featured-event {
+	--height: 90px;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	background-color: $card-bg;
+	border: 1px solid $card-border-color;
+	margin-block-end: $card-margin-vertical;
+	min-height: var(--height);
+}
+	// Player
+	.alc-widget-featured-event__player {
+		display: flex;
+		height: var(--height);
+	}
+		.alc-widget-featured-event__player-img {
+			height: var(--height);
+			position: relative;
+			isolation: isolate;
+			width: 140px;
+			flex-shrink: 0;
+
+			@media (max-width: 991px) {
+				width: 80px;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				inset: 0;
+				background-color: $color-primary-darken;
+				clip-path: polygon(0 0, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+				z-index: -1;
+			}
+
+			img {
+				position: absolute;
+				inset-block-end: 0;
+				inset-inline-start: 12px;
+				max-width: 100%;
+
+				@media (max-width: 991px) {
+					inset-inline-start: 0;
+				}
+			}
+		}
+
+	// Event
+	.alc-widget-featured-event__event {
+		display: flex;
+		height: var(--height);
+	}
+		.alc-widget-featured-event__team-img {
+			height: var(--height);
+			position: relative;
+			isolation: isolate;
+			width: 140px;
+			flex-shrink: 0;
+			clip-path: polygon(0 -20px, 100% -20px, 100% 100%, 0% 100%);
+
+			@media (max-width: 991px) {
+				width: 80px;
+				overflow: hidden;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				inset: 0;
+				background-color: #474451;
+				clip-path: polygon(30px 0, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+				z-index: -1;
+
+				@media (max-width: 767px) {
+					clip-path: polygon(0 0, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+				}
+			}
+
+			img {
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 0;
+				transform: translateY(-50%);
+				max-width: 100%;
+			}
+		}
+
+		// List
+		.alc-widget-featured-event__info-list {
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			margin: 0;
+			align-self: center;
+			justify-content: space-evenly;
+			flex: 1;
+		}
+			.alc-widget-featured-event__info-item {
+				text-align: center;
+			}
+			.alc-widget-featured-event__info-item--primary {
+				text-align: start;
+				display: flex;
+				justify-self: flex-start;
+			}
+				.alc-widget-featured-event__info-icon {
+					flex-shrink: 0;
+					margin-inline-end: 12px;
+
+					@media (max-width: 991px) {
+						display: none;
+					}
+
+					.alc-icon--medal {
+						--icon-size: 26px;
+					}
+				}
+				.alc-widget-featured-event__info-wrapper {
+					flex: 1;
+				}
+				.alc-widget-featured-event__info-title {
+					font-size: $base-font-size;
+					line-height: 1.2em;
+					text-transform: none;
+					margin-block-end: .2em;
+
+					@media (max-width: 991px) {
+						font-size: $font-size-sm;
+					}
+				}
+				.alc-widget-featured-event__info-desc {
+					display: block;
+					font-size: 10px;
+					line-height: 1.2em;
+				}

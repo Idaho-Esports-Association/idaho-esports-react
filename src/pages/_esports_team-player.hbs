@@ -1,0 +1,289 @@
+---
+layout: esports
+page-title: Player Page
+page-heading: "Player <span className=\"highlight\">Page</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Player"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Single Player -->
+		<div className="team-roster team-roster--card mb-0 pb-0">
+
+			{{#each esports.sp.single-player.player}}
+			<!-- Player -->
+			<div className="team-roster__item card card--no-paddings">
+				<div className="card__content">
+					<div className="team-roster__content-wrapper">
+
+						<!-- Player Photo -->
+						<figure className="team-roster__player-img">
+							<div className="team-roster__player-shape effect-duotone effect-duotone--{{bg.filter}} team-roster__player-shape--{{bg.img}}"></div>
+							<img src="{{../root}}assets/images/esports/samples/{{img.lg}}" alt="">
+						</figure>
+						<!-- Player Photo / End-->
+
+						<!-- Player Content -->
+						<div className="team-roster__content">
+
+							<!-- Player Details -->
+							<div className="team-roster__player-details">
+								<div className="team-roster__player-info">
+									<h5 className="team-roster__player-realname">{{firstname}} {{lastname}}</h5>
+									<h3 className="team-roster__player-nickname">{{{nickname}}}</h3>
+								</div>
+							</div>
+							<!-- Player Details / End -->
+
+							<!-- Player Excerpt -->
+							<div className="team-roster__player-excerpt">
+								{{excerpt}}
+							</div>
+							<!-- Player Excerpt / End -->
+
+							<!-- Player Details - Common -->
+							<div className="team-roster__player-details-common">
+								<div className="team-roster__player-metrics">
+									{{#each metrics}}
+									<div className="team-roster__player-metrics-item">
+										<h6 className="team-roster__player-metrics-item-label">{{label}}:</h6>
+										<div className="team-roster__player-metrics-item-value">{{value}}</div>
+									</div>
+									{{/each}}
+								</div>
+								<ul className="team-roster__player-social social-links social-links--circle-filled">
+									{{#each social}}
+									<li className="social-links__item">
+										<Link href="{{link}}" className="social-links__link social-links__link--{{name}}"><i className="{{icon}}"></i></Link>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+							<!-- Player Details - Common / End -->
+
+							<!-- Player Stats -->
+							<div className="team-roster__player-stats">
+
+								<div className="team-roster__player-stats-circular-bars">
+
+									{{#each stats.circular-bars}}
+									<div className="team-roster__player-stats-circular-bar">
+										<div className="circular circular--size-80">
+											<div className="circular__bar" data-percent="{{pct}}">
+												<span className="circular__percents">
+													{{value}}{{#if ispct}}<small>%</small>{{/if}}
+													<span className="circular__label">{{label}}</span>
+												</span>
+											</div>
+										</div>
+									</div>
+									{{/each}}
+
+								</div>
+
+								<div className="team-roster__player-stats-progress-bars">
+
+									<!-- Progress Stats Table -->
+									<table className="progress-table progress-table--simple">
+										<tbody>
+
+											{{#each stats.progress-bars}}
+											<tr>
+												<td className="progress-table__title">{{label}}</td>
+												<td className="progress-table__progress-bar">
+													<div className="progress progress--lines">
+														<div className="progress__bar" style="width: {{pct}}%;" role="progressbar" aria-valuenow="{{pct}}" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</td>
+												<td className="progress-table__progress-label progress-table__progress-label--highlight">{{value}}</td>
+											</tr>
+											{{/each}}
+
+										</tbody>
+									</table>
+									<!-- Progress Stats Table / End -->
+
+								</div>
+
+							</div>
+							<!-- Player Stats / End -->
+
+						</div>
+						<!-- Player Content / End -->
+
+						<!-- Player Meta Info -->
+						<Linkside className="team-roster__meta">
+
+							<div className="team-roster__meta-item">
+								<div className="team-roster__meta-icon">
+									<svg role="img" className="df-icon df-icon--{{role.icon}}">
+										<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{role.icon}}"/>
+									</svg>
+								</div>
+								<div className="team-roster__meta-label">{{role.type}}</div>
+							</div>
+
+							<div className="team-roster__meta-item">
+								<Link href="_esports_team-roster.html">
+									<div className="team-roster__meta-icon team-roster__meta-icon--more">
+										<i className="fas fa-long-arrow-left"></i>
+									</div>
+									<div className="team-roster__meta-label">Go Back</div>
+								</Link>
+							</div>
+
+						</Linkside>
+						<!-- Player Meta Info / End -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Player / End -->
+
+			<!-- Single Player - General Stats -->
+			<div className="player-general-stats row">
+
+				{{#each stats.avg}}
+				<div className="player-general-stats__item col-sm-6 col-lg-3">
+					<div className="player-general-stats__card card">
+						<div className="player-general-stats__card-content card__content">
+							<div className="player-general-stats__icon alc-icon alc-icon--circle alc-icon--sm alc-icon--outline alc-icon--outline-md">
+								<svg role="img" className="df-icon df-icon--{{icon}}">
+									<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{icon}}"/>
+								</svg>
+							</div>
+							<div className="player-general-stats__body">
+								<h5 className="player-general-stats__value">{{value}}</h5>
+								<div className="player-general-stats__meta">
+									<h6 className="player-general-stats__label">{{label}}</h6>
+									<div className="player-general-stats__sublabel">{{sublabel}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+
+			</div>
+			<!-- Single Player - General Stats / End -->
+
+			{{/each}}
+
+		</div>
+		<!-- Single Player / End -->
+
+		<div className="row">
+			<div className="col-lg-8">
+
+				{{> _esports_widget-last-games }}
+
+				<div className="row">
+					<div className="col-lg-6">
+
+						{{> _esports_widget-pie-chart }}
+
+					</div>
+					<div className="col-lg-6">
+
+						{{> _esports_widget-player-total-stats }}
+
+					</div>
+				</div>
+
+				<!-- Player Related News -->
+				<div className="card card--clean">
+					<header className="card__header card__header--has-arrows js-posts-carousel-header">
+						<h4>Player Related News</h4>
+					</header>
+					<div className="card__content">
+
+						<!-- Posts Carousel -->
+						<div className="slick-carousel-wrapper">
+
+							<!-- Posts Grid -->
+							<div className="posts posts--tile posts--tile-alt post-grid row posts-carousel js-posts-carousel">
+
+								{{#each esports.sp.single-player.related-posts }}
+								<div className="post-grid__item col-sm-6">
+									<div className="posts__item posts__item--tile {{#each category}}posts__item--{{class}} {{/each}} card mb-0">
+										<figure className="posts__thumb">
+											<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+											<div className="posts__inner">
+												<div className="posts__cat">
+													{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+												</div>
+												<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+												<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+											</div>
+										</figure>
+										<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+										<footer className="posts__footer card__footer">
+											<div className="post-author">
+												<figure className="post-author__avatar">
+													<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="Post Author Avatar">
+												</figure>
+												<div className="post-author__info">
+													<h4 className="post-author__name">{{author.name}}</h4>
+												</div>
+											</div>
+											<ul className="post__meta meta">
+												<li className="meta__item meta__item--views">{{meta.views}}</li>
+												<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+												<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+											</ul>
+										</footer>
+									</div>
+								</div>
+								{{/each}}
+
+							</div>
+							<!-- Post Grid / End -->
+
+						</div>
+						<!-- Posts Carousel / End -->
+
+					</div>
+				</div>
+				<!-- Player Related News / End -->
+
+				{{> _esports_widget-stats-linegraph }}
+
+			</div>
+
+			<div className="col-lg-4">
+
+				{{> _esports_widget-twitch-stream-single }}
+
+				{{> _esports_widget-player-stats }}
+
+				{{> _esports_widget-character-stats }}
+
+				{{> _esports_widget-achievements }}
+
+				{{> _esports_widget-horizontal-bars }}
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

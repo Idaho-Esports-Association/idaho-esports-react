@@ -1,0 +1,120 @@
+---
+layout: esports
+page-title: Tournament Page
+page-heading: "Tournament <span className=\"highlight\">Page</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Tournament Page"
+	}
+]
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<div className="col-lg-8">
+
+				{{> _esports_widget-video title="Tournament Live Matches" padding="true" btn="true" id="iH0wacpNuDQ" thumbnail="assets/images/esports/samples/event-video2-cover-md.jpg"}}
+
+				{{> _esports_widget-schedule-tournaments }}
+
+				{{> _esports_widget-last-matches-tournaments }}
+
+			</div>
+
+			<div className="col-lg-4">
+
+				{{> _esports_widget-tournament }}
+
+				{{> _esports_widget-standings-full title="Tournament Standings" }}
+
+			</div>
+
+		</div>
+
+		<div className="spacer-lg"></div>
+
+		<!-- Tournament Brackets -->
+		<div className="card card--clean">
+			<header className="card__header">
+				<h4>Tournament Bracket</h4>
+			</header>
+			<div className="card__content">
+
+				<!-- Brackets -->
+				<div className="tournament-bracket">
+
+					{{#each esports.sp.tournament.bracket-1}}
+					<div className="tournament-bracket__round">
+						<h6 className="tournament-bracket__round-title d-block d-lg-none d-xl-none">{{title}}</h6>
+						<ul className="tournament-bracket__list">
+							{{#each list}}
+							<li className="tournament-bracket__item">
+								<div className="tournament-bracket__match" tabindex="0">
+									<table className="tournament-bracket__table">
+										<tbody className="tournament-bracket__content">
+											{{#each this}}
+											<tr className="tournament-bracket__team {{#if winner}}tournament-bracket__team--winner{{/if}} {{#if champ}}tournament-bracket__team--champ{{/if}}">
+												<td className="tournament-bracket__inner">
+													<figure className="tournament-bracket__team-thumb">
+														{{#if thumb}}
+														<img src="{{../root}}assets/images/{{thumb}}" alt="">
+														{{/if}}
+													</figure>
+													<div className="tournament-bracket__team-info text-truncate">
+														{{#if team}}
+														<h6 className="tournament-bracket__team-name text-truncate">{{team}}</h6>
+														{{/if}}
+														{{#if desc}}
+														<span className="tournament-bracket__team-desc text-truncate">{{desc}}</span>
+														{{/if}}
+													</div>
+												</td>
+												<td className="tournament-bracket__score">
+													{{#if champ}}
+													<div className="tournament-bracket__number tournament-bracket__champ-icon">
+														<svg role="img" className="df-icon df-icon--trophy">
+															<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#trophy"/>
+														</svg>
+													</div>
+													{{else}}
+													<span className="tournament-bracket__number">{{score}}</span>
+													{{/if}}
+												</td>
+											</tr>
+											{{/each}}
+										</tbody>
+									</table>
+								</div>
+							</li>
+							{{/each}}
+						</ul>
+					</div>
+					{{/each}}
+
+				</div>
+				<!-- Brackets -->
+
+			</div>
+		</div>
+		<!-- Tournament Brackets / End -->
+
+
+	</div>
+</div>
+
+<!-- Content / End -->

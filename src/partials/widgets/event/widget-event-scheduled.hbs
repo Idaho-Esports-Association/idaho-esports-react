@@ -1,0 +1,43 @@
+<!-- Widget: Event Scheduled -->
+<div className="widget card card--no-paddings widget--sidebar widget-event-scheduled">
+	<div className="widget__title card__header">
+		<h4>Next Rivals</h4>
+	</div>
+	<div className="widget__content card__content">
+		<ul className="alc-event-scheduled">
+
+			{{#each basketball.sp.event.scheduled}}
+			<!-- Game #{{@key}} -->
+			<li className="alc-event-scheduled__item">
+				<div className="alc-event-scheduled__header justify-content-center">
+					<div className="alc-event-scheduled__title">{{date}}</div>
+				</div>
+				<div className="alc-event-scheduled__content">
+					<div className="alc-event-scheduled__team">
+						<figure className="alc-event-scheduled__img">
+							<img src="{{team1.logo}}" alt="{{team1.name}}">
+						</figure>
+						<div className="alc-event-scheduled__details">
+							<h4 className="alc-event-scheduled__team-name">{{team1.abbr}}</h4>
+							<div className="alc-event-scheduled__team-info">{{team1.name}}</div>
+						</div>
+					</div>
+					<div className="alc-event-scheduled__team">
+						<figure className="alc-event-scheduled__img">
+							<img src="{{team2.logo}}" alt="{{team2.name}}">
+						</figure>
+						<div className="alc-event-scheduled__details">
+							<h4 className="alc-event-scheduled__team-name">{{team2.abbr}}</h4>
+							<div className="alc-event-scheduled__team-info">{{team2.name}}</div>
+						</div>
+					</div>
+					<div className="alc-event-scheduled__divider">vs</div>
+				</div>
+			</li>
+			<!-- Game #{{@key}} / End -->
+			{{/each}}
+
+		</ul>
+	</div>
+</div>
+<!-- Widget: Event Scheduled / End -->

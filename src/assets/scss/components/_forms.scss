@@ -1,0 +1,742 @@
+/* Forms
+/* ------------------------- */
+
+label {
+	font-size: 11px;
+	text-transform: $input-label-text-transform;
+	font-family: $font-family-accent;
+	color: $input-label-color;
+	margin-bottom: 9px;
+	font-weight: bold;
+
+	.required {
+		color: $color-primary;
+
+		@if $template == football {
+			color: $color-4;
+		}
+	}
+}
+
+// Form Control
+.form-control {
+	appearance: none;
+	padding: $padding-base-vertical $padding-base-horizontal;
+	line-height: $line-height-base;
+	font-size: $input-font-size;
+	color: $input-color;
+	background-color: $input-bg;
+	border: 1px solid $input-border;
+	border-radius: $input-border-radius;
+	box-shadow: none;
+	transition: border-color ease-in-out 0.15s;
+	height: $input-height-base;
+
+	// Focus
+	@include form-control-focus;
+
+	// Placeholder
+	@include placeholder;
+
+	&[disabled],
+	&[readonly],
+	fieldset[disabled] & {
+		background-color: $input-bg-disabled;
+		border-color: $input-border-disabled;
+
+		@include placeholder(rgba(154, 157, 162, 0.4));
+	}
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+// Feedback states
+.has-success {
+	@include form-control-validation(
+		$state-success-text,
+		$state-success-text,
+		$state-success-bg
+	);
+
+	.form-control {
+		background-position: $input-success-bg-pos;
+		background-size: $input-success-bg-size;
+		background-image: $input-success-bg-img;
+	}
+}
+.has-warning {
+	@include form-control-validation(
+		$state-warning-text,
+		$state-warning-text,
+		$state-warning-bg
+	);
+
+	.form-control {
+		background-position: $input-warning-bg-pos;
+		background-size: $input-warning-bg-size;
+		background-image: $input-warning-bg-img;
+	}
+}
+.has-error {
+	@include form-control-validation(
+		$state-danger-text,
+		$state-danger-text,
+		$state-danger-bg
+	);
+
+	.form-control {
+		background-position: $input-danger-bg-pos;
+		background-size: $input-danger-bg-size;
+		background-image: $input-danger-bg-img;
+	}
+}
+
+// Select
+select.form-control {
+	border-radius: $input-border-radius;
+	background-color: $input-bg;
+	background-image: $select-caret;
+	background-position: right 1em center;
+	background-repeat: no-repeat;
+	padding-right: 2.2em;
+	background-size: 6px 4px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	color: rgba(154, 157, 162, 0.4);
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	option {
+		background-color: $card-bg;
+		color: $headings-color;
+	}
+
+	&.input-sm,
+	&.form-control-sm {
+		height: 45px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+
+		@if $template == "esports" {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+
+	&:not([size]):not([multiple]) {
+		height: $input-height-base;
+	}
+}
+
+select.form-control--clean {
+	font-size: 15px;
+	height: 28px !important;
+	line-height: 1.2em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 0;
+	color: $headings-color;
+	font-family: $font-family-accent;
+	border: none;
+	background-color: transparent;
+}
+
+// Sizes
+.input-sm,
+.form-control-sm {
+	padding: 10px 14px;
+	font-size: $input-font-size-sm;
+
+	&:not([size]):not([multiple]):not(textarea) {
+		height: $input-height-base-sm;
+	}
+}
+
+// Form groups
+.form-group {
+	background: none;
+	margin-bottom: 22px;
+}
+.form-group--sm {
+	margin-bottom: 15px;
+}
+.form-group--xs {
+	margin-bottom: 10px;
+}
+.form-group--lg {
+	margin-bottom: 34px;
+}
+.form-group--submit {
+	margin-bottom: 0;
+	padding-top: 12px;
+}
+.form-group--password-forgot {
+	display: flex;
+	padding: 6px 0;
+
+	label {
+		flex-grow: 1;
+	}
+
+	.password-reminder {
+		font-size: 11px;
+		text-transform: uppercase;
+		@include font-accent(11px);
+		color: $headings-color;
+	}
+}
+
+.form-group--upload {
+	overflow: hidden;
+}
+.form-group__avatar {
+	@media (min-width: 768px) {
+		float: left;
+		width: 240px;
+
+		@if $template == football {
+			width: 160px;
+		} @else {
+			width: 240px;
+		}
+	}
+
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 13px;
+
+		@if $template == football {
+			border-radius: $thumb-border-radius;
+		} @else {
+			border-radius: 50%;
+		}
+	}
+}
+
+.form-group__avatar-wrapper {
+	font-style: normal;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.form-group__avatar-img {
+		position: relative;
+		display: inline-block;
+
+		&::before {
+			content: "\f067";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 24px;
+			height: 24px;
+			border-radius: 12px;
+			background-color: $color-2;
+			color: $headings-color;
+			font-family: "Font Awesome 5 Free";
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-align: center;
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+}
+
+.form-group__avatar--center {
+	text-align: center;
+
+	@media (min-width: 768px) {
+		float: none;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	img {
+		margin: 0 0 13px 0;
+		border: 1px solid $card-border-color;
+	}
+
+	.form-group__label {
+		display: block;
+		text-align: center;
+
+		h6 {
+			text-transform: uppercase;
+			font-size: 12px;
+			line-height: 1.2em;
+			margin-bottom: 0.35em;
+		}
+
+		span {
+			display: block;
+			font-size: 10px;
+			line-height: 1.2em;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-family: $font-family-accent;
+			color: $body-font-color;
+		}
+	}
+}
+
+.form-group__label {
+	display: inline-block;
+	vertical-align: middle;
+
+	h6 {
+		font-size: 11px;
+		line-height: 1.2em;
+		margin-bottom: 0.2em;
+	}
+	span {
+		display: block;
+		font-size: 11px;
+		line-height: 1.2em;
+		color: #c2c4c7;
+	}
+}
+
+.form-group__upload {
+	@if $template == "football" {
+		padding-top: 10px;
+
+		@media (min-width: 768px) {
+			padding-top: 6px;
+		}
+	} @else {
+		padding-top: 20px;
+
+		@media (min-width: 768px) {
+			padding-top: 15px;
+		}
+	}
+}
+
+// Upload Avatar
+.form-group--upload-photo {
+	display: flex;
+	align-items: center;
+}
+	.form-group__photo {
+		flex-shrink: 0;
+		flex-basis: 100px;
+
+		> img {
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+		}
+	}
+	.form-group__upload-btn {
+		flex: 1;
+		padding-inline-start: 20px;
+
+		@media (min-width: 1200px) {
+			padding-inline-start: 40px;
+		}
+	}
+
+// Checkbox
+.checkbox {
+	position: relative;
+	margin: 0;
+	font-weight: bold;
+
+	.widget--sidebar & {
+		font-size: 10px;
+	}
+
+	input[type="checkbox"] {
+		display: none;
+
+		&:checked + .checkbox-indicator {
+			background-color: $checkbox-bg-active;
+			border-color: $checkbox-border-active;
+			background-image: $checkbox-symbol;
+		}
+	}
+
+	.checkbox-indicator {
+		content: "";
+		width: 16px;
+		height: 16px;
+		background-color: $checkbox-bg;
+		border: 1px solid $checkbox-border;
+		border-radius: $checkbox-border-radius;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -8px;
+		transition: all 0.2s ease;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: $checkbox-symbol-bg-size;
+	}
+
+	&.checkbox-inline {
+		padding-left: 24px;
+	}
+
+	// Disabled
+	input[type="checkbox"]:disabled {
+		+ .checkbox-indicator {
+			background-color: $checkbox-bg-disabled;
+			border-color: $checkbox-border-disabled;
+		}
+
+		&:checked {
+			+ .checkbox-indicator {
+				background-color: $checkbox-bg-disabled;
+				border-color: $checkbox-border-disabled;
+				background-image: $checkbox-symbol-disabled;
+			}
+		}
+	}
+}
+
+// Checkbox Cell
+.checkbox-table {
+	display: flex;
+	flex-wrap: wrap;
+
+	.checkbox--cell {
+		margin: 0 0 -1px -1px;
+	}
+}
+
+.checkbox--cell {
+	width: 44px;
+	height: 44px;
+	position: relative;
+
+	input[type="checkbox"] {
+		&:checked + .checkbox-indicator {
+			background-image: none !important;
+			background-color: $color-primary-darken;
+			background-image: none;
+			border-color: $checkbox-border;
+			color: #fff;
+		}
+	}
+
+	.checkbox-indicator {
+		content: "";
+		width: 44px;
+		height: 44px;
+		background-color: $input-bg;
+		border: 1px solid $checkbox-border;
+		border-radius: 0;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin-top: 0;
+		transition: all 0.2s ease;
+		text-align: center;
+		line-height: 42px;
+	}
+}
+
+// Radio
+.radio {
+	position: relative;
+	margin: 0;
+
+	input[type="radio"] {
+		display: none;
+
+		&:checked + .radio-indicator {
+			background-image: $radio-symbol;
+		}
+	}
+
+	.radio-indicator {
+		content: "";
+		width: 16px;
+		height: 16px;
+		background-color: $radio-bg;
+		border: 1px solid $radio-border;
+		border-radius: 50%;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 5px;
+		transition: all 0.2s ease;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 8px 8px;
+	}
+
+	&.radio-inline {
+		padding-left: 24px;
+	}
+
+	// Disabled
+	input[type="radio"]:disabled + .radio-indicator {
+		background-color: $radio-bg-disabled;
+		border-color: $radio-border-disabled;
+
+		@if $template == football {
+			background-image: none;
+		} @else {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%239a9da2'/%3E%3C/svg%3E");
+		}
+	}
+}
+
+// Radio Only Word
+.radio--word {
+	position: relative;
+	padding: 0 !important;
+
+	& + & {
+		margin-left: 20px;
+	}
+
+	input[type="radio"] {
+		&:checked + .radio-label {
+			color: $headings-color;
+		}
+	}
+
+	.radio-label {
+		color: #bfc2c4;
+		font-weight: 700;
+	}
+}
+.radio--word-lg {
+	font-size: 15px;
+	line-height: 1.2em;
+}
+
+// Inline Form
+.inline-form {
+	.input-group-prepend,
+	.input-group-append {
+		.btn {
+			padding-left: 28px;
+			padding-right: 28px;
+		}
+	}
+}
+
+// Reguired Form Control Mark
+abbr.required {
+	border-bottom: none;
+	color: $color-primary-darken;
+	margin-left: 0.2em;
+	text-decoration: none;
+
+	@if $template == "football" {
+		color: $color-4;
+	}
+}
+
+// Quantity
+.quantity-control {
+	overflow: hidden;
+
+	.btn {
+		display: inline-block;
+		height: 30px;
+		padding: 0 8px;
+		background: none;
+		border: none;
+		color: #adb3b7;
+		vertical-align: middle;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $headings-color;
+		}
+	}
+	.form-control {
+		display: inline-block;
+		width: 34px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0;
+		appearance: textfield;
+		border: none;
+		text-align: center;
+		font-size: 13px;
+		font-family: $font-family-accent;
+		vertical-align: middle;
+		background-color: transparent;
+		color: $headings-color;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+}
+
+// Quantity Control (native)
+.product-quantity-control {
+	width: 80px;
+	margin: 0 auto;
+}
+
+// Form Description
+.form-desc {
+}
+.form-desc--sm {
+
+	@if $template == 'hockey' {
+		font-size: $font-size-sm;
+		line-height: 1.66em;
+	} @else {
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+// Switch Toggle
+.switch {
+	white-space: nowrap;
+}
+.switch__label-txt {
+	display: inline-block;
+	@include font-accent(9px);
+	line-height: 1.2em;
+	vertical-align: middle;
+	margin-right: 0.35em;
+	color: $headings-color;
+
+	@media (max-width: 479px) {
+		display: none;
+	}
+}
+.switch-toggle {
+	position: absolute;
+	margin-left: -9999px;
+	visibility: hidden;
+	margin: 0;
+
+	& + label {
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+		outline: none;
+		user-select: none;
+		vertical-align: middle;
+		padding: 2px;
+		width: 48px;
+		height: 24px;
+		margin: 0;
+		background-color: $input-bg-disabled;
+		border-radius: 22px;
+		transition: background 0.4s;
+		border: 1px solid $card-border-color;
+
+		&::before,
+		&::after {
+			display: block;
+			position: absolute;
+			content: "";
+		}
+
+		&::after {
+			top: 2px;
+			left: 2px;
+			bottom: 2px;
+			width: 18px;
+			background-color: #fff;
+			background-image: linear-gradient(
+					to right,
+					#e9e9ed,
+					#e9e9ed 2px,
+					transparent 2px
+				),
+				linear-gradient(to right, #e9e9ed, #e9e9ed 2px, transparent 2px);
+			background-size: 2px 8px, 2px 8px;
+			background-position: 6px 5px, 10px 5px;
+			background-repeat: no-repeat, no-repeat;
+			border-radius: 50%;
+			transition: margin 0.4s, background 0.4s;
+		}
+	}
+
+	&:checked + label {
+		background-color: $color-success;
+
+		&::after {
+			margin-left: 26px;
+		}
+	}
+}
+
+// Floating Label
+.form-group--floating-label {
+	position: relative;
+	--translateY: -0.6em;
+	--translateX: 0.15rem;
+
+	label {
+		position: absolute;
+		font-size: $input-font-size; // must have the same size as input control
+		font-weight: normal;
+		color: $input-color-placeholder;
+		top: 0;
+		left: 0;
+		height: 100%;
+		padding: $padding-base-vertical $padding-base-horizontal;
+		pointer-events: none;
+		border: 1px solid transparent;
+		transform-origin: 0 0;
+		transition: transform 0.2s ease;
+	}
+
+	> .form-control {
+		padding-top: $padding-base-vertical + 6px;
+		padding-bottom: $padding-base-vertical - 6px;
+		padding-right: $padding-base-vertical * 3;
+
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	> .form-control:focus ~ label,
+	> .form-control:not(:placeholder-shown) ~ label,
+	> .form-select ~ label,
+	&.has-success > .form-control ~ label,
+	&.has-warning > .form-control ~ label,
+	&.has-error > .form-control ~ label {
+		color: $input-color-placeholder;
+		transform: scale(0.75) translateY(var(--translateY))
+			translateX(var(--translateX));
+	}
+
+	// Small
+	&.form-group--floating-label-sm {
+		--translateY: -1em;
+		--translateX: 0.2rem;
+	}
+
+	> .form-control-sm,
+	> select.form-control-sm {
+		&:not([size]):not([multiple]) {
+			height: 38px;
+		}
+
+		padding-top: calc($padding-base-vertical / 2) + 7px;
+		padding-bottom: calc($padding-base-vertical / 2) - 5px;
+		font-size: 10px;
+		font-weight: 700;
+	}
+}

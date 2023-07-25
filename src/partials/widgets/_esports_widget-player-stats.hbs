@@ -1,0 +1,31 @@
+<!-- Widget: Player Stats -->
+<Linkside className="widget widget--sidebar card card--has-table widget-team-stats">
+	<div className="widget__title card__header">
+		<h4>Additional Statistics</h4>
+	</div>
+	<div className="widget__content card__content">
+		<ul className="team-stats-box">
+
+			{{#each esports.sp.single-player.widget-player-stats }}
+			<li className="team-stats__item team-stats__item--clean">
+				<div className="team-stats__icon team-stats__icon--circle-outline team-stats__icon--size-sm team-stats__icon--centered">
+
+					{{#ifequal icon.type 'svg' }}
+					<svg role="img" className="df-icon df-icon--{{icon.class}}">
+						<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{icon.class}}"/>
+					</svg>
+					{{else}}
+					<i className="{{icon.class}}"></i>
+					{{/ifequal}}
+
+				</div>
+				<div className="team-stats__value">{{value}}</div>
+				<div className="team-stats__label">{{label}}</div>
+				<div className="team-stats__sublabel">{{sublabel}}</div>
+			</li>
+			{{/each}}
+
+		</ul>
+	</div>
+</Linkside>
+<!-- Widget: Player Stats / End -->

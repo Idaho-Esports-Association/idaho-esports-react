@@ -1,0 +1,26 @@
+<!-- Widget: Team Info -->
+<Linkside className="widget widget--sidebar card card--no-paddings widget-team-info">
+	<div className="widget__title card__header">
+		<h4>Team Information</h4>
+	</div>
+	<div className="widget__content card__content">
+		<ul className="team-info-list list-unstyled">
+
+			{{#each esports.sp.team.widget-team-info.list}}
+			<li className="team-info__item">
+				<span className="team-info__label">{{label}}</span>
+				<span className="team-info__value {{#if highlight}}team-info__value--active{{/if}}">{{value}}</span>
+			</li>
+			{{/each}}
+
+			{{#each esports.sp.team.widget-team-info.desc}}
+			<li className="team-info__item team-info__item--desc">
+				<span className="team-info__label">{{label}}</span>
+				<span className="team-info__desc">{{value}}</span>
+			</li>
+			{{/each}}
+
+		</ul>
+	</div>
+</Linkside>
+<!-- Widget: Team Info / End -->

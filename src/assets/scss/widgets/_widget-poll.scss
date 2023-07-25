@@ -1,0 +1,119 @@
+/* Widget: Poll */
+.poll-form {
+
+}
+
+	.poll-form__question {
+		margin-bottom: 1.5em;
+	}
+
+		.poll-form__question-title {
+			color: $headings-color;
+			font-weight: bold;
+			font-size: $base-font-size;
+			line-height: 1.43em;
+			text-align: center;
+			margin-bottom: 1.75em;
+		}
+		.poll-form__question-subtitle {
+			font-size: 10px;
+			line-height: 1.2em;
+			text-align: center;
+			margin-block-end: .5em;
+		}
+
+	.poll-form__options {
+		line-height: $base-line-height;
+
+		.radio-inline {
+			margin-bottom: 9px;
+			font-weight: 700;
+			font-style: $progress-label-style;
+		}
+
+		.radio-wrapper {
+			overflow: hidden;
+		}
+		.radio-progress-value {
+			float: right;
+			@include font-accent(11px);
+			color: $headings-color;
+		}
+	}
+
+	// Rows (Hockey)
+	.poll-form__options--rows {
+		border-block-start: 1px solid $card-border-color;
+		margin-inline: -$card-horizontal-padding;
+
+		> .form-group {
+			border-block-end: 1px solid $card-border-color;
+			margin-block-end: 0;
+		}
+			.radio-inline {
+				display: block;
+				position: relative;
+				margin-block-end: 0;
+				padding-inline-start: 74px;
+				padding-block: 1.4em;
+				position: relative;
+				font-size: $font-size-sm;
+				line-height: 1.2em;
+				cursor: pointer;
+
+				.radio-indicator {
+					// inset-inline-start: $card-horizontal-padding;
+					// inset-block-start: 50%;
+					// transform: translateY(-50%);
+
+					width: 70px;
+					height: 100%;
+					inset-block: 0;
+					inset-inline-start: 0;
+					border: 0;
+					border-radius: 0;
+					background-color: $card-subheader-bg;
+					clip-path: polygon(0 0, 100% 0%, 72% 100%, 0% 100%);
+
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						inset-block-start: 50%;
+						inset-inline-start: $card-horizontal-padding;
+						transform: translateY(-50%);
+						width: 12px;
+						height: 12px;
+						background-color: $radio-bg;
+						border: 1px solid $radio-border;
+						border-radius: 50%;
+						transition: all 0.2s ease;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: 8px 8px;
+					}
+				}
+
+				input[type="radio"]:checked + .radio-indicator {
+					background-image: none;
+					background-color: $color-primary;
+
+					&::before {
+						background-image: $radio-symbol;
+					}
+				}
+			}
+	}
+
+	// CTA Buttons
+	.poll-form__cta-btns {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		padding-block-start: $card-vertical-padding;
+
+		.btn {
+			flex: 1;
+			padding-inline: 0;
+		}
+	}

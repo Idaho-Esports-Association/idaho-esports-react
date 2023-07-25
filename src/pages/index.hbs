@@ -1,0 +1,183 @@
+---
+layout: esports
+page-title: Home 1
+hero-unit-slider: true
+instagram-section: true
+---
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+			<!-- Content -->
+			<div className="content col-lg-8">
+
+				<!-- Posts Area #1 -->
+				<!-- Posts Grid -->
+				<div className="posts posts--cards post-grid post-grid--2cols row">
+
+					{{#each (limit esports.posts.news-2 5)}}
+					<div className="post-grid__item col-sm-6">
+						<div className="posts__item posts__item--card {{#each category}}posts__item--{{class}} {{/each}} card">
+							<figure className="posts__thumb">
+								<div className="posts__cat">
+									{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+								</div>
+								<Link href="_esports_blog-post-1.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							</figure>
+							<div className="posts__inner card__content">
+								<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+								<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+								<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+								<div className="posts__excerpt">
+									{{excerpt}}
+								</div>
+							</div>
+							<footer className="posts__footer card__footer">
+								<div className="post-author">
+									<figure className="post-author__avatar">
+										<img src="{{../root}}assets/images/samples/{{author.avatar}}" alt="Post Author Avatar">
+									</figure>
+									<div className="post-author__info">
+										<h4 className="post-author__name">{{author.name}}</h4>
+									</div>
+								</div>
+								<ul className="post__meta meta">
+									<li className="meta__item meta__item--views">{{meta.views}}</li>
+									<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+									<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+								</ul>
+							</footer>
+						</div>
+					</div>
+					{{/each}}
+
+					<div className="post-grid__item col-sm-6">
+						<div className="posts posts--tile posts--tile-alt posts--tile-meta-position posts--tile-thumb-bordered">
+
+							{{#each esports.posts.news-7}}
+							<div className="post-grid__item">
+								<div className="posts__item posts__item--tile {{#each category}}posts__item--{{class}} {{/each}} card">
+									{{#if thumb}}
+									<figure className="posts__thumb">
+										<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+										<div className="posts__inner">
+											<div className="posts__cat">
+												{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+											</div>
+											<h6 className="posts__title {{#if @first}}posts__title--lg{{/if}} posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+											<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+											<ul className="post__meta meta">
+												<li className="meta__item meta__item--views">{{meta.views}}</li>
+												<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+												<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+											</ul>
+										</div>
+									</figure>
+									<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+									{{/if}}
+								</div>
+							</div>
+							{{/each}}
+
+						</div>
+					</div>
+
+				</div>
+				<!-- Post Grid / End -->
+				<!-- Posts Area #1 / End -->
+
+				<!-- Main News Banner -->
+				<div className="main-news-banner main-news-banner--bg main-news-banner--img-left">
+					<figure className="main-news-banner__img">
+						<img src="{{../root}}assets/images/esports/samples/character-news-banner__img.png" alt="">
+					</figure>
+					<div className="main-news-banner__inner">
+						<div className="posts posts--simple-list posts--simple-list--xlg">
+							<div className="posts__item posts__item--category-1">
+								<div className="posts__inner">
+									<div className="posts__cat">
+										<span className="label posts__cat-label posts__cat-label--category-2">L.O. Heroes</span>
+									</div>
+									<h6 className="posts__title"><Link href="_esports_blog-post-2.html">League of Heroes "Jaxxy" character is gonna get a really big update</Link></h6>
+									<time datetime="2017-08-23" className="posts__date">August 27th, 2018</time>
+									<div className="posts__excerpt">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.
+									</div>
+									<div className="posts__more">
+										<Link href="_esports_blog-post-2.html" className="btn btn-primary-inverse btn-icon-right">Read Full Story <i className="fas fa-angle-right"></i></Link>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- Main News Banner / End -->
+
+				<!-- Posts Area #2 -->
+				<!-- Posts Grid -->
+				<div className="posts posts--cards post-grid post-grid--2cols row">
+
+					{{#each esports.posts.news-8}}
+					<div className="post-grid__item col-sm-6">
+						<div className="posts__item posts__item--card {{#each category}}posts__item--{{class}} {{/each}} card">
+							<figure className="posts__thumb">
+								<div className="posts__cat">
+									{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+								</div>
+								<Link href="_esports_blog-post-1.html"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+							</figure>
+							<div className="posts__inner card__content">
+								<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+								<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+								<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+							</div>
+							<footer className="posts__footer card__footer">
+								<div className="post-author">
+									<figure className="post-author__avatar">
+										<img src="{{../root}}assets/images/samples/{{author.avatar}}" alt="Post Author Avatar">
+									</figure>
+									<div className="post-author__info">
+										<h4 className="post-author__name">{{author.name}}</h4>
+									</div>
+								</div>
+								<ul className="post__meta meta">
+									<li className="meta__item meta__item--views">{{meta.views}}</li>
+									<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+									<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+								</ul>
+							</footer>
+						</div>
+					</div>
+					{{/each}}
+
+				</div>
+				<!-- Post Grid / End -->
+				<!-- Posts Area #2 / End -->
+			</div>
+			<!-- Content / End -->
+
+			<!-- Sidebar -->
+			<div id="sidebar" className="sidebar col-lg-4">
+
+				{{> _esports_widget-standings title="L.O. Heroes Standings" }}
+
+				{{> _esports_widget-twitch-streams-sm }}
+
+				{{> _esports_widget-event-result-2 }}
+
+				{{> _esports_widget-tabbed }}
+
+				{{> _esports_widget-event-calendar-2 }}
+
+			</div>
+			<!-- Sidebar / End -->
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

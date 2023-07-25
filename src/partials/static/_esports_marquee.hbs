@@ -1,0 +1,24 @@
+<!-- Breaking News -->
+<div className="marquee-wrapper marquee-wrapper--boxed">
+	<div className="container">
+
+		<div className="marquee-label">
+			<i className="fas fa-star"></i> Breaking News
+		</div>
+		<div className="marquee" data-startvisible="true" data-duration="18000" data-gap="10" data-duplicated="true">
+			<ul className="posts posts--inline">
+				{{#each esports.posts.marquee}}
+				<li className="posts__item {{#each category}}posts__item--{{class}} {{/each}}">
+					<div className="posts__cat">
+						{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+					</div>
+					<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+					<div className="posts__excerpt">{{excerpt}}</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+	</div>
+</div>
+<!-- Breaking News / End -->

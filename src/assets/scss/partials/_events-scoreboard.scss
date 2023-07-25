@@ -1,0 +1,235 @@
+/*
+// #Events Scoreboard
+// --------------------------------------------------
+*/
+
+.alc-events-scoreboard {
+	--scoreboard-filter-width: 265px;
+	--scoreboard-nav-width: 37px;
+
+	background-color: $card-bg;
+	display: grid;
+	overflow: hidden;
+
+	@media (max-width: 991px) {
+		grid-template-rows: auto;
+		grid-template-columns: 100%;
+
+		.alc-events-scoreboard__filter,
+		.alc-events-scoreboard__nav {
+			display: none;
+		}
+
+		.alc-events-scoreboard__body {
+			width: 100%;
+		}
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns:
+			var(--scoreboard-filter-width)
+			var(--scoreboard-nav-width)
+			calc(100% - var(--scoreboard-filter-width) - var(--scoreboard-nav-width));
+	}
+
+	.highlight {
+		color: $headings-color;
+	}
+}
+	.alc-events-scoreboard__filter {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-inline: 40px;
+
+		.form-group {
+			flex-basis: 100%;
+		}
+	}
+	.alc-events-scoreboard__nav {
+		position: relative;
+		z-index: 2;
+	}
+	.alc-events-scoreboard__nav--skewed {
+		transform: skew(-20deg);
+	}
+	.alc-events-scoreboard__body {
+
+	}
+
+	.alc-events-scoreboard__item {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		font-size: $font-size-h6;
+		line-height: 1.2em;
+		font-weight: 700;
+		gap: 30px;
+		padding-inline-start: 16px;
+		padding-inline-end: 16px;
+
+		@media (min-width: 992px) {
+			padding-inline-start: 34px;
+			padding-inline-end: 0;
+		}
+	}
+		// Teams
+		.alc-events-scoreboard__teams {
+			display: flex;
+			flex-direction: column;
+			padding-block: 12px;
+			gap: 12px;
+		}
+			.alc-events-scoreboard__team {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: c;
+			}
+				.alc-events-scoreboard__team-logo {
+					height: 26px;
+
+					img {
+						max-height: 100%;
+					}
+				}
+				.alc-events-scoreboard__team-info {
+					flex: 1;
+					padding-inline-start: 8px;
+				}
+					.alc-events-scoreboard__team-name {
+						margin-bottom: 0;
+						line-height: 1em;
+						color: $body-font-color;
+					}
+					.alc-events-scoreboard__team-name--highlight {
+						color: $headings-color;
+					}
+					.alc-events-scoreboard__team-details {
+						font-size: $font-size-h6 * 0.9;
+						font-weight: 400;
+					}
+
+		// Score
+		.alc-events-scoreboard__score {
+			display: flex;
+			flex-direction: column;
+		}
+			.alc-events-scoreboard__score-item {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-height: 100%;
+				display: flex;
+				align-items: center;
+			}
+			.alc-events-scoreboard__score-item--highlight {
+				color: $headings-color;
+			}
+
+		// Info
+		.alc-events-scoreboard__info {
+			display: flex;
+			flex-direction: column;
+		}
+			.alc-events-scoreboard__info-date,
+			.alc-events-scoreboard__info-status {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-height: 100%;
+				display: flex;
+				align-items: center;
+			}
+			.alc-events-scoreboard__info-date {
+
+			}
+				.alc-events-scoreboard__info-live {
+					color: $headings-color;
+					text-transform: uppercase;
+
+					&::before {
+						content: "";
+						display: inline-block;
+						vertical-align: middle;
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+						background-color: #ff0048;
+						font-size: 0;
+						line-height: 0;
+						margin-inline-end: 6px;
+					}
+				}
+			.alc-events-scoreboard__info-status {
+
+			}
+				.alc-events-scoreboard__info-status-final {
+					text-transform: uppercase;
+					color: $headings-color;
+				}
+				.alc-events-scoreboard__info-status-period {
+
+				}
+				.alc-events-scoreboard__info-status-time {
+					color: $headings-color;
+					margin-inline-start: 1em;
+				}
+
+		// Links
+		.alc-events-scoreboard__links {
+			display: flex;
+			flex-direction: column;
+		}
+		.alc-events-scoreboard__links--skewed {
+			transform: skew(-20deg);
+
+			.alc-events-scoreboard__link-txt {
+				transform: skew(20deg);
+			}
+			.alc-events-scoreboard__link-icon {
+				transform: skew(20deg) translateX(-2px);
+			}
+		}
+		.alc-events-scoreboard__link {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+			border: 1px solid $card-border-color;
+			background-color: $card-subheader-bg;
+			padding-inline: .75em;
+			color: $color-gray;
+			text-transform: uppercase;
+			font-size: $font-size-h6 * 0.8;
+			line-height: 1.2em;
+			transition: .25s ease all;
+
+			&:hover {
+				background-color: $card-bg;
+				color: $headings-color;
+
+				i {
+					color: $color-primary;
+				}
+			}
+
+			i {
+				color: $color-gray;
+			}
+
+			.alc-icon--chart {
+				--icon-color: #{$color-gray};
+			}
+
+			&:hover {
+				.alc-icon--chart {
+					--icon-color: #{$color-primary};
+				}
+			}
+		}
+		.alc-events-scoreboard__link + .alc-events-scoreboard__link {
+			border-top: none;
+		}

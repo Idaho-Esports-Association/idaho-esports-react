@@ -1,0 +1,107 @@
+/* Circle Progress
+/* ------------------------- */
+.alc-circle-progress {
+	--bar-size-multiplier: 1;
+	width: calc(100 * var(--bar-size-multiplier) * 1px);
+	position: relative;
+
+	.circle-progress {
+		width: calc(100 * var(--bar-size-multiplier) * 1px);
+		height: auto;
+	}
+
+	.circle-progress-value {
+		stroke: $color-primary;
+	}
+	.circle-progress-circle {
+		stroke: $progress-bg;
+	}
+	.circle-progress-text {
+		font-weight: bold;
+		fill: $headings-color;
+	}
+
+	&[data-label] .circle-progress-text {
+		transform: translateY(-5px);
+	}
+
+	&[data-label]::before {
+		content: attr(data-label);
+		position: absolute;
+		inset-inline-start: 50%;
+		inset-block-start: 50%;
+		transform: translate(-50%, -50%);
+		margin-block-start: calc(1.5em * var(--bar-size-multiplier));
+		font-size: calc(7.5 * var(--bar-size-multiplier) * 1px);
+	}
+	&[data-hide-value="true"]::before {
+		margin-block-start: 0.2em !important;
+	}
+}
+
+.alc-circle-progress--xl {
+	--bar-size-multiplier: 1.6; // based circle size is 100px
+
+	.circle-progress {
+
+	}
+		.circle-progress-value {
+			stroke-width: 5px;
+			stroke-dasharray: 10 3;
+		}
+		.circle-progress-circle {
+			stroke-width: 5px;
+			stroke-dasharray: 10 3;
+			stroke-dashoffset: 10;
+		}
+		.circle-progress-text {
+			font-weight: bold;
+			font-size: calc(#{$base-font-size} * var(--bar-size-multiplier));
+			line-height: 1;
+		}
+}
+
+.alc-circle-progress--xs {
+	--bar-size-multiplier: 0.55; // based circle size is 100px
+
+	.circle-progress {
+
+	}
+		.circle-progress-value {
+			stroke-width: 8px;
+			stroke-dasharray: 10 3;
+		}
+		.circle-progress-circle {
+			stroke-width: 8px;
+			stroke-dasharray: 10 3;
+			stroke-dashoffset: 6;
+		}
+		.circle-progress-text {
+			font-weight: bold;
+			font-size: 30px;
+			line-height: 1;
+		}
+
+	&[data-label]::before {
+		margin-block-start: 1.25em;
+		font-size: 8px;
+		text-transform: uppercase;
+		color: $headings-color;
+		font-weight: bold;
+	}
+}
+
+// Colors
+.alc-circle-progress--bar-primary {
+
+	.circle-progress-circle {
+		stroke: $color-primary;
+	}
+}
+
+.alc-circle-progress--circle-blue {
+
+	.circle-progress-value {
+		stroke: #1b96ff;
+	}
+}

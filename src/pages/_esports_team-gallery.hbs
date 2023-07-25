@@ -1,0 +1,74 @@
+---
+layout: esports
+page-title: Team Gallery
+page-heading: "Team <span className=\"highlight\">Gallery</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Team Gallery"
+	}
+]
+---
+
+{{> _esports_team-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Gallery -->
+		<div className="gallery row">
+			{{#each esports.sp.team.gallery}}
+			<div className="gallery__item col-6 col-sm-4">
+				<Link href="_esports_team-gallery-album.html" className="gallery__item-inner card">
+					<figure className="gallery__thumb">
+						<img src="{{../root}}assets/images/esports/samples/{{featured}}" alt="">
+						<span className="btn-fab gallery__btn-fab"></span>
+					</figure>
+					<ul className="gallery__thumb-list list-unstyled">
+						<li className="gallery__thumb-item">
+							<img src="{{../root}}assets/images/esports/samples/{{thumbs.thumb1}}" alt="">
+						</li>
+						<li className="gallery__thumb-item">
+							<img src="{{../root}}assets/images/esports/samples/{{thumbs.thumb2}}" alt="">
+						</li>
+						<li className="gallery__thumb-item">
+							<img src="{{../root}}assets/images/esports/samples/{{thumbs.thumb3}}" alt="">
+							<span className="gallery__thumb-item-number">+{{size}}</span>
+						</li>
+					</ul>
+					<div className="gallery__content card__content card__content--header-bg">
+						<span className="gallery__icon gallery__icon--circle">
+							<span className="icon-picture"></span>
+						</span>
+						<div className="gallery__details">
+							<h4 className="gallery__name">{{title}}</h4>
+							<div className="gallery__date">Updated: {{date}}</div>
+						</div>
+					</div>
+				</Link>
+			</div>
+			{{/each}}
+		</div>
+		<!-- Gallery / End -->
+
+		<div className="spacer-lg"></div>
+
+		<div className="text-center">
+			<Link href="#" className="btn btn-primary-inverse btn-lg">Load More Albums...</Link>
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

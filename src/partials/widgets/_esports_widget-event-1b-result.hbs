@@ -1,0 +1,159 @@
+<!-- Widget: Event Result -->
+<Linkside className="widget card widget--sidebar widget-game-result">
+	<div className="widget__title card__header">
+		<h4>Game Overview</h4>
+	</div>
+	<div className="widget__content card__content">
+
+		<!-- Game Score -->
+		<div className="widget-game-result__section">
+
+			<div className="widget-game-result__stack">
+				<div className="widget-game-result__stack-item widget-game-result__stack-item--teams">
+					<!-- Team 1 -->
+					<div className="widget-game-result__stack-team widget-game-result__stack-team--first">
+						<figure className="widget-game-result__stack-team-logo">
+							<img src="{{esports.sp.event1.b.widget-event-overview.general.team1.logo}}" alt="{{esports.sp.event1.b.widget-event-overview.general.team1.logo}}">
+						</figure>
+						<div className="widget-game-result__stack-team-meta">
+							<h6 className="widget-game-result__stack-team-name">{{esports.sp.event1.b.widget-event-overview.general.team1.name}}</h6>
+							<span className="widget-game-result__stack-team-place">{{esports.sp.event1.b.widget-event-overview.general.team1.place}}</span>
+						</div>
+					</div>
+					<!-- Team 1 / End -->
+
+					<div className="widget-game-result__stack-result widget-game-result__stack-result--divider-slash">
+						<span className="widget-game-result__stack-result-team win"><span className="text-info">12</span> : <span className="text-warning">4</span> - 16</span>
+						<span className="widget-game-result__stack-result-team">12 - <span className="text-info">5</span> : <span className="text-warning">7</span></span>
+					</div>
+
+					<!-- Team 2 -->
+					<div className="widget-game-result__stack-team widget-game-result__stack-team--second">
+						<figure className="widget-game-result__stack-team-logo">
+							<img src="{{esports.sp.event1.b.widget-event-overview.general.team2.logo}}" alt="{{esports.sp.event1.b.widget-event-overview.general.team2.logo}}">
+						</figure>
+						<div className="widget-game-result__stack-team-meta">
+							<h6 className="widget-game-result__stack-team-name">{{esports.sp.event1.b.widget-event-overview.general.team2.name}}</h6>
+							<span className="widget-game-result__stack-team-place">{{esports.sp.event1.b.widget-event-overview.general.team2.place}}</span>
+						</div>
+					</div>
+					<!-- Team 2 / End -->
+				</div>
+
+				{{#each esports.sp.event1.b.widget-event-overview.general.info}}
+				<div className="widget-game-result__stack-item">
+					<div className="widget-game-result__stack-label">{{label}}:</div>
+					<div className="widget-game-result__stack-value">{{value}}</div>
+				</div>
+				{{/each}}
+			</div>
+
+		</div>
+		<!-- Game Score / End -->
+
+		<!-- Round by Round -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Round by Round</h5>
+			</header>
+			<div className="widget-game-result__section-inner-alt">
+
+				<div className="table-responsive">
+					<table className="table widget-game-result__rounds-table">
+						<thead>
+							<tr>
+								<th className="widget-game-result__rounds-team">Teams</th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+								<th>4</th>
+								<th>5</th>
+								<th>6</th>
+								<th>7</th>
+								<th>8</th>
+								<th>9</th>
+								<th>10</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<!-- Team #1 -->
+							<tr>
+								<td className="widget-game-result__rounds-team">
+									<img src="{{esports.sp.event1.b.widget-event-overview.general.team1.logo}}" alt="{{esports.sp.event1.b.widget-event-overview.general.team1.logo}}">
+								</td>
+								{{#each esports.sp.event1.b.widget-event-overview.round-by-round}}
+								<td>
+									<svg role="img" className="df-icon df-icon--{{team1}} df-icon--fill-info">
+										<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{team1}}"/>
+									</svg>
+								</td>
+								{{/each}}
+							</tr>
+							<!-- Team #1 / End -->
+
+							<!-- Team #2 -->
+							<tr>
+								<td className="widget-game-result__rounds-team">
+									<img src="{{esports.sp.event1.b.widget-event-overview.general.team2.logo}}" alt="{{esports.sp.event1.b.widget-event-overview.general.team2.logo}}">
+								</td>
+								{{#each esports.sp.event1.b.widget-event-overview.round-by-round}}
+								<td>
+									<svg role="img" className="df-icon df-icon--{{team2}} df-icon--fill-warning">
+										<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{team2}}"/>
+									</svg>
+								</td>
+								{{/each}}
+							</tr>
+							<!-- Team #2 -->
+
+						</tbody>
+					</table>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- Round by Round / End -->
+
+		<!-- Game Statistics -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Game Statistics</h5>
+			</header>
+			<div className="widget-game-result__section-inner">
+
+				<!-- Progress Stats Table -->
+				<table className="progress-table progress-table--sm-space">
+					<tbody>
+
+						{{#each esports.sp.event1.b.widget-event-overview.stats}}
+						<tr>
+							<td className="progress-table__progress-label {{#if team1.highlight}}progress-table__progress-label--highlight{{/if}}">{{team1.value}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--first">
+								<div className="progress progress--lines">
+									<div className="progress__bar" style="width: {{team1.pct}}%;" role="progressbar" aria-valuenow="{{team1.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__title">{{label}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--second">
+								<div className="progress progress--lines">
+									<div className="progress__bar progress__bar--info" style="width: {{team2.pct}}%;" role="progressbar" aria-valuenow="{{team2.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__progress-label {{#if team2.highlight}}progress-table__progress-label--highlight{{/if}}">{{team2.value}}</td>
+						</tr>
+						{{/each}}
+
+					</tbody>
+				</table>
+				<!-- Progress Stats Table / End -->
+
+			</div>
+		</div>
+		<!-- Game Statistics / End -->
+
+
+	</div>
+</Linkside>
+<!-- Widget: Event Result / End -->

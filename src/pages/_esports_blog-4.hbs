@@ -1,0 +1,163 @@
+---
+layout: esports
+page-title: News V4
+page-heading: "News <span className=\"highlight\">V4</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "News",
+		link: "#"
+	},
+	{
+		label: "News V4"
+	}
+]
+---
+
+{{> _esports_blog-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<div className="row">
+
+			<!-- Content -->
+			<div className="content col-lg-12">
+
+				<!-- Posts Grid -->
+				<div className="posts posts--tile posts--tile-alt post-grid post-grid--masonry row">
+
+					{{#each esports.posts.news-4}}
+
+						{{#ifequal format 'event'}}
+
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<div className="posts__item posts__item--tile posts__item--tile-event {{#each category}}posts__item--{{class}} {{/each}} card">
+								<figure className="posts__thumb effect-duotone effect-duotone--base">
+									<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+									<div className="posts__inner">
+										<div className="posts__cat">
+											{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+										</div>
+										<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+										<div className="posts__excerpt">
+											{{excerpt}}
+										</div>
+										<div className="posts__countdown countdown-counter" data-date="{{date}}"></div>
+										<footer className="posts__logo">
+											<Link href="#"><img src="{{../root}}assets/images/social-logo-twitch-sm.png" alt=""></Link>
+										</footer>
+									</div>
+								</figure>
+							</div>
+						</div>
+
+						{{else}}
+
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<div className="posts__item posts__item--tile {{#each category}}posts__item--{{class}} {{/each}} card">
+								{{#if thumb}}
+								<figure className="posts__thumb">
+									<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
+									<div className="posts__inner">
+										<div className="posts__cat">
+											{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+										</div>
+										<h6 className="posts__title posts__title--color-hover"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+										<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+									</div>
+								</figure>
+								<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+								{{/if}}
+								<footer className="posts__footer card__footer">
+									<div className="post-author">
+										<figure className="post-author__avatar">
+											<img src="{{../root}}assets/images/esports/samples/{{author.avatar}}" alt="Post Author Avatar">
+										</figure>
+										<div className="post-author__info">
+											<h4 className="post-author__name">{{author.name}}</h4>
+										</div>
+									</div>
+									<ul className="post__meta meta">
+										<li className="meta__item meta__item--views">{{meta.views}}</li>
+										<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+										<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+									</ul>
+								</footer>
+							</div>
+						</div>
+
+						{{/ifequal}}
+
+
+						{{#ifequal @index 4}}
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<Link href="#" className="btn-social-counter btn-social-counter--card btn-social-counter--facebook">
+								<div className="btn-social-counter__logo"><img src="assets/images/social-logo-facebook.png" alt="Facebook"></div>
+								<footer className="btn-social-counter__footer">
+									<h6 className="btn-social-counter__title">Like Our Facebook Page</h6>
+									<span className="btn-social-counter__count">83600 Likes</span>
+									<span className="btn-social-counter__add-icon"></span>
+								</footer>
+							</Link>
+						</div>
+						{{/ifequal}}
+
+						{{#ifequal @index 5}}
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<Link href="#" className="btn-social-counter btn-social-counter--card btn-social-counter--twitter">
+								<div className="btn-social-counter__logo"><img src="assets/images/social-logo-twitter.png" alt="Twitter"></div>
+								<footer className="btn-social-counter__footer">
+									<h6 className="btn-social-counter__title">Follow Us on Twitter</h6>
+									<span className="btn-social-counter__count">580 Followers</span>
+									<span className="btn-social-counter__add-icon"></span>
+								</footer>
+							</Link>
+						</div>
+						{{/ifequal}}
+
+						{{#ifequal @index 7}}
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<Link href="#" className="btn-social-counter btn-social-counter--card btn-social-counter--youtube">
+								<div className="btn-social-counter__logo"><img src="assets/images/social-logo-youtube.png" alt="YouTube"></div>
+								<footer className="btn-social-counter__footer">
+									<h6 className="btn-social-counter__title">Subscribe to our YouTube channel</h6>
+									<span className="btn-social-counter__count">200637 Subscribers</span>
+									<span className="btn-social-counter__add-icon"></span>
+								</footer>
+							</Link>
+						</div>
+						{{/ifequal}}
+
+						{{#ifequal @index 9}}
+						<div className="post-grid__item col-md-6 col-lg-4">
+							<Link href="#" className="btn-social-counter btn-social-counter--card btn-social-counter--twitch">
+								<div className="btn-social-counter__logo"><img src="assets/images/social-logo-twitch.png" alt="Twitch"></div>
+								<footer className="btn-social-counter__footer">
+									<h6 className="btn-social-counter__title">Subscribe to our Twitch channel</h6>
+									<span className="btn-social-counter__count">830617 Likes</span>
+									<span className="btn-social-counter__add-icon"></span>
+								</footer>
+							</Link>
+						</div>
+						{{/ifequal}}
+
+					{{/each}}
+
+				</div>
+				<!-- Post Grid / End -->
+
+				{{> _esports_blog-load-more className="text-center" }}
+
+			</div>
+			<!-- Content / End -->
+
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

@@ -1,0 +1,78 @@
+<!-- Widget: Tournament Single -->
+<div className="card card--no-paddings">
+	<header className="card__header">
+		<h4>Tournament Information</h4>
+	</header>
+	<div className="card__content">
+
+		<!-- Tournament -->
+		<div className="posts posts--cards row">
+
+			{{#each esports.sp.tournament.widget-tournament}}
+			<div className="post-grid__item col-sm-12">
+				<div className="posts__item posts__item--card {{#each category}}posts__item--{{class}} {{/each}} card alc-tourn-card">
+					<figure className="posts__thumb">
+						<div className="posts__cat">
+							{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+						</div>
+						<Link href="#"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+					</figure>
+					<div className="alc-tourn-card__header">
+						<div className="alc-tourn-card__icon">
+							<svg role="img" className="df-icon df-icon--trophy">
+								<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#trophy"/>
+							</svg>
+						</div>
+						<div className="alc-tourn-card__heading">
+							<h4 className="posts__title alc-tourn-card__title"><Link href="#">{{title}}</Link></h4>
+							<time datetime="2018-08-23" className="posts__date alc-tourn-card__date">{{date.short}}</time>
+						</div>
+						<div className="alc-tourn-card__rank">
+							<div className="alc-tourn-card__rank-value">{{rank}}</div>
+							<div className="alc-tourn-card__rank-label">Rank</div>
+						</div>
+					</div>
+					<div className="posts__inner card__content alc-tourn-card__content">
+						<div className="progress-stats progress-stats--top-labels alc-tourn-card__progress">
+							<div className="progress__label">Reached:</div>
+							<div className="progress progress--dashed">
+								<div className="progress__bar" role="progressbar" style="width: {{results.value}}%;" aria-valuenow="{{results.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<div className="progress__number">{{results.label}}</div>
+						</div>
+					</div>
+					<div className="alc-tourn-card__meta">
+						{{#each meta}}
+						<div className="alc-tourn-card__meta-item {{#if this.highlight}}alc-tourn-card__meta-item--highlight{{/if}}">
+							<div className="alc-tourn-card__meta-item-value">{{this.value}}</div>
+							<div className="alc-tourn-card__meta-item-label">{{this.label}}</div>
+						</div>
+						{{/each}}
+					</div>
+					<footer className="posts__footer card__footer alc-tourn-card__footer alc-tourn-card__footer--desc">
+						<ul className="alc-tourn-card__footer-info list-unstyled">
+							<li className="alc-tourn-card__footer-info-item">
+								<span className="alc-tourn-card__footer-info-label">Tournament Date:</span>
+								<span className="alc-tourn-card__footer-info-value">{{date.full}}</span>
+							</li>
+							<li className="alc-tourn-card__footer-info-item">
+								<span className="alc-tourn-card__footer-info-label">Matches Venue:</span>
+								<span className="alc-tourn-card__footer-info-value">{{venue}}</span>
+							</li>
+							<li className="alc-tourn-card__footer-info-item alc-tourn-card__footer-info-item--excerpt">
+								<span className="alc-tourn-card__footer-info-label">About the Tournament:</span>
+								<span className="alc-tourn-card__footer-info-value">{{excerpt}}</span>
+							</li>
+						</ul>
+					</footer>
+
+				</div>
+			</div>
+			{{/each}}
+
+		</div>
+		<!-- Tournament / End -->
+
+	</div>
+</div>
+<!-- Widget: Tournament Single / End -->

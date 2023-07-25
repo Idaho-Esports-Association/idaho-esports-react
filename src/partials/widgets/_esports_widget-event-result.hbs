@@ -1,0 +1,151 @@
+<!-- Widget: Event Result -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<Linkside className="widget card widget--sidebar widget-game-result">
+	<div className="widget__title card__header">
+		<h4>Match Overview</h4>
+	</div>
+	<div className="widget__content card__content">
+		<!-- Game Score -->
+		<div className="widget-game-result__section">
+			<div className="widget-game-result__section-inner">
+
+				<header className="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
+					<h3 className="widget-game-result__title">Madison Cube Garden</h3>
+					<time className="widget-game-result__date" datetime="2018-04-26">Friday, April 26th</time>
+				</header>
+
+				<header className="widget-game-result__header">
+					<h3 className="widget-game-result__title">Pro League - World Championship</h3>
+					<div className="widget-game-result__subtitle">Quater-Finals</div>
+				</header>
+
+				<div className="widget-game-result__main">
+					<!-- 1st Team -->
+					<div className="widget-game-result__team widget-game-result__team--first" id="first_team">
+						
+					</div>
+					
+					<!-- 1st Team / End -->
+					<div className="widget-game-result__score-wrap">
+						<div className="widget-game-result__score">
+							<span className="widget-game-result__score-result widget-game-result__score-result--winner">8</span> <span className="widget-game-result__score-dash">-</span> <span className="widget-game-result__score-result widget-game-result__score-result--loser">5</span>
+						</div>
+						<div className="widget-game-result__score-label">
+							32:29
+							<span className="widget-game-result__score-sublabel">Game Duration</span>
+						</div>
+					</div>
+
+					<!-- 2nd Team -->
+					<div className="widget-game-result__team widget-game-result__team--second">
+						<figure className="widget-game-result__team-logo">
+							<Link href="#"><img src="{{../root}}assets/images/samples/logo-sharks--sm.png" alt=""></Link>
+						</figure>
+						<div className="widget-game-result__team-info">
+							<h5 className="widget-game-result__team-name">Sharks</h5>
+							<div className="widget-game-result__team-desc">South Korea</div>
+						</div>
+					</div>
+					<!-- 2nd Team / End -->
+				</div>
+			</div>
+		</div>
+		<!-- Game Score / End -->
+
+		<!-- Game Statistics -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Match Statistics</h5>
+			</header>
+			<div className="widget-game-result__section-inner">
+
+				<!-- Progress Stats Table -->
+				<table className="progress-table progress-table--sm-space">
+					<tbody>
+
+						{{#each esports.sp.event.widget-event-overview.stats}}
+						<tr>
+							<td className="progress-table__progress-label {{#if team1.highlight}}progress-table__progress-label--highlight{{/if}}">{{team1.value}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--first">
+								<div className="progress progress--lines">
+									<div className="progress__bar" style="width: {{team1.pct}}%;" role="progressbar" aria-valuenow="{{team1.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__title">{{label}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--second">
+								<div className="progress progress--lines">
+									<div className="progress__bar progress__bar--info" style="width: {{team2.pct}}%;" role="progressbar" aria-valuenow="{{team2.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__progress-label {{#if team2.highlight}}progress-table__progress-label--highlight{{/if}}">{{team2.value}}</td>
+						</tr>
+						{{/each}}
+
+					</tbody>
+				</table>
+				<!-- Progress Stats Table / End -->
+
+			</div>
+		</div>
+		<!-- Game Statistics / End -->
+
+		<!-- Additional Stats -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Additional Stats</h5>
+			</header>
+			<div className="widget-game-result__section-inner">
+
+				<!-- Circular Bars -->
+				<ul className="widget-game-result__stats-circular-bars list-unstyled">
+
+					{{#each esports.sp.event.widget-event-overview.additional-stats}}
+					<li className="widget-game-result__stats-circular-item">
+						<div className="widget-game-result__stats-circular-bar">
+							<div className="circular circular--size-40">
+								<div className="circular__bar" data-percent="{{pct}}" data-track-color="#00ff5b" data-bar-color="#00deff">
+									<svg role="img" className="df-icon df-icon--{{icon}}" data-toggle="tooltip" data-placement="top" title="{{value}}">
+										<use xlink:href="{{../root}}assets/images/esports/icons-esports.svg#{{icon}}"/>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div className="widget-game-result__stats-meta">
+							<span className="widget-game-result__stats-value">{{label}}</span>
+							<span className="widget-game-result__stats-label">{{sublabel}}</span>
+						</div>
+					</li>
+					{{/each}}
+
+				</ul>
+				<!-- Circular Bars / End -->
+
+			</div>
+		</div>
+		<!-- Additional Stats / End -->
+
+	</div>
+<script type="module">
+	import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+    const supabaseUrl = 'https://yahbaexcxmiledtaucdx.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhaGJhZXhjeG1pbGVkdGF1Y2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3NzQ1OTcsImV4cCI6MTk5NDM1MDU5N30.ZZpxxZcxPT8AZIaxJqDLwAd4aHK2BDfbPyTKoAx8K10';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+	const { data, error } = await supabase
+	.from('game_result')
+	.select(`game_result_id, 
+	game(name),
+	team_1_score,
+	team_2_score,
+	roster!game_result_team_1_id_fkey(name),
+	player!game_result_team_1_id_fkey(name)`)
+	.eq('game_result_id', '11111111-2222-3333-4444-555555555555')
+
+	if (error) console.error(error)
+	else console.log(data)
+
+    </script>
+</Linkside>
+
+
+
+<!-- Widget: Event Result / End -->

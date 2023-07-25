@@ -1,0 +1,50 @@
+<!-- Schedule & Tickets -->
+<div className="card card--has-table">
+	<div className="card__header card__header--has-btn">
+		<h4>Next Matches Schedule</h4>
+		<Link href="_esports_team-schedule.html" className="btn btn-default btn-xs card-header__button">See Complete Schedule</Link>
+	</div>
+	<div className="card__content">
+		<div className="table-responsive">
+			<table className="table table-hover team-schedule">
+				<thead>
+					<tr>
+						<th className="team-schedule__date">Date</th>
+						<th className="team-schedule__versus">Versus</th>
+						<th className="team-schedule__league">Competition</th>
+						<th className="team-schedule__instance">Instance</th>
+						<th className="team-schedule__time">Time</th>
+						<th className="team-schedule__tickets">Tickets</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each (limit esports.sp.team.schedule 6)}}
+					<tr>
+						<td className="team-schedule__date">{{date}}</td>
+						<td className="team-schedule__versus">
+							<div className="team-meta">
+								<figure className="team-meta__logo">
+									<img src="{{../root}}assets/images/samples/logos/{{team.logo}}" alt="">
+								</figure>
+								<div className="team-meta__info">
+									<h6 className="team-meta__name">{{team.name}}</h6>
+									<span className="team-meta__place">{{team.place}}</span>
+								</div>
+							</div>
+						</td>
+						<td className="team-schedule__league">{{league}}</td>
+						<td className="team-schedule__instance">{{instance}}</td>
+						<td className="team-schedule__time">{{time}}</td>
+						<td className="team-schedule__tickets">
+							<Link href="#" className="btn btn-xs btn-default-alt btn-block {{#unless availability}}disabled{{/unless}}">
+								{{#if availability}}Buy Match Tickets{{else}}Sold Out{{/if}}
+							</Link>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Schedule & Tickets / End -->

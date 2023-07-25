@@ -1,0 +1,868 @@
+/* Tickets
+/* ------------------------- */
+
+.alc-ticket {
+
+}
+
+// Design 1
+.alc-ticket--1 {
+	position: relative;
+
+	// Shape
+	.alc-ticket__shape {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		z-index: 0;
+		filter:
+			drop-shadow(1px 0 0 $card-border-color)
+			drop-shadow(0 1px 0 $card-border-color)
+			drop-shadow(-1px 0 0 $card-border-color)
+			drop-shadow(0 -1px 0 $card-border-color);
+	}
+		.alc-ticket__shape-top,
+		.alc-ticket__shape-bottom {
+			flex: 1;
+			width: calc(100% - 7px);
+			background-color: $card-bg;
+		}
+		.alc-ticket__shape-rip {
+			position: relative;
+			height: 30px;
+			margin-inline-start: 15px;
+			margin-inline-end: 7px;
+			background-color: $card-bg;
+
+			&::before {
+				content: "";
+				box-sizing: content-box;
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-start: -15px;
+				width: 30px;
+				height: 30px;
+				border: 6px solid transparent;
+				border-block-start-color: $card-bg;
+				border-inline-end-color: $card-bg;
+				transform: translate(-50%, -50%) rotate(45deg);
+				border-radius: 50%;
+			}
+		}
+		.alc-ticket__shape-rips-end {
+			position: absolute;
+			inset-block: 0;
+			inset-inline-end: 0;
+			width: 7px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			span {
+				display: block;
+				position: relative;
+
+				&:nth-child(odd) {
+					flex: 1;
+					width: 100%;
+					background-color: $card-bg;
+				}
+
+				&:nth-child(even) {
+					height: 12px;
+					margin-inline-end: 7px;
+
+					&::before {
+						content: "";
+						box-sizing: content-box;
+						display: block;
+						position: absolute;
+						margin-inline-start: 7px;
+						width: 12px;
+						height: 12px;
+						border: 3px solid transparent;
+						border-block-end-color: $card-bg;
+						border-inline-start-color: $card-bg;
+						transform: translate(-50%, -50%) rotate(45deg);
+						border-radius: 50%;
+						inset-block-start: 50%;
+					}
+				}
+			}
+		}
+			.alc-ticket__shape-rips-end-top,
+			.alc-ticket__shape-rips-end-bottom {
+				flex: 1;
+				width: 7px;
+				background-color: $card-bg;
+			}
+
+	// Content
+	.alc-ticket__content {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: 1fr 58px;
+		grid-template-rows: auto auto;
+		row-gap: 20px;
+		padding-block: 15px;
+		padding-inline-start: $card-horizontal-padding;
+	}
+
+	// Teams
+	.alc-ticket__teams {
+		grid-row: 1 / 2;
+		display: flex;
+		align-items: center;
+	}
+		.alc-ticket__team {
+			display: flex;
+			align-items: center;
+			order: 0;
+		}
+		.alc-ticket__team + .alc-ticket__team {
+			order: 2;
+		}
+		.alc-ticket__team-divider {
+			order: 1;
+			font-size: 10px;
+			line-height: 1em;
+			text-transform: uppercase;
+			padding-inline: 1em;
+			color: $headings-color;
+			font-weight: bold;
+			font-family: $font-family-accent;
+
+			@media (min-width: 992px) {
+				padding-inline: 1.7em
+			}
+		}
+			.alc-ticket__team-logo {
+				width: 40px;
+
+				img {
+
+				}
+			}
+
+			.alc-ticket__team-body {
+
+			}
+				.alc-ticket__team-info {
+					font-size: 9px;
+					line-height: 1.2em;
+				}
+				.alc-ticket__team-name {
+					font-size: $font-size-h5;
+					line-height: 1.2em;
+					margin-block-end: 0;
+				}
+					.alc-ticket__team-name-full {
+						display: inline-block;
+
+						@media (min-width: 992px) and (max-width: 1199px) {
+							display: none;
+						}
+					}
+					.alc-ticket__team-name-abbr {
+						display: none;
+
+						@media (min-width: 992px) and (max-width: 1199px) {
+							display: inline-block;
+						}
+					}
+
+	// Details
+	.alc-ticket__details {
+		grid-row: 2 / 3;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		list-style: none;
+		padding-block-end: 0;
+		padding-inline-start: 40px;
+		margin: 0;
+
+		@media (min-width: 992px) {
+			gap: 24px;
+		}
+	}
+		.alc-ticket__details-item {
+			font-size: 9px;
+			line-height: 1.2em;
+		}
+			.alc-ticket__details-item-label {
+				display: block;
+			}
+			.alc-ticket__details-item-value {
+				font-size: $font-size-h6;
+				font-weight: bold;
+				line-height: 1.2em;
+				color: $headings-color;
+				font-family: $font-family-accent;
+			}
+
+	// CTA (buy tickets)
+	.alc-ticket__cta {
+		grid-row: 1 / -1;
+		margin-block: -15px;
+		border-inline-start: 1px dashed $card-border-color;
+		font-size: 11px;
+		line-height: 1.2em;
+		font-weight: bold;
+		font-family: $font-family-accent;
+		display: flex;
+	}
+		.alc-ticket__cta-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: 1;
+			color: $color-warning;
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			transform: rotate(-180deg);
+
+			&:hover {
+				color: $headings-color;
+			}
+		}
+			.alc-ticket__cta-link-txt {
+
+			}
+}
+
+// Design 2
+.alc-ticket--2 {
+	position: relative;
+	--ticket-shape-radius: 50%;
+	--ticket-shape-size: 30px;
+
+	.alc-ticket__primary-content {
+		border-block-end: none;
+		background-color: $card-bg;
+		position: relative;
+		z-index: 1;
+		filter:
+			drop-shadow(1px 0 0 $card-border-color)
+			drop-shadow(-1px 0 0 $card-border-color)
+			drop-shadow(0 -1px 0 $card-border-color);
+	}
+		// Header
+		.alc-ticket__header {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			padding-block-end: 16px;
+		}
+			// League Logo
+			.alc-ticket__header-logo {
+				position: relative;
+				text-align: center;
+				padding-block-start: $card-vertical-padding;
+			}
+				.alc-ticket__header-bg {
+					position: absolute;
+					inset-inline: 0;
+					inset-block-start: 0;
+					height: 75%;
+					// // background-image: url("../../images/hockey/samples/ticket-bg-1.jpg");
+					background-repeat: no-repeat;
+					background-position: 50% 0;
+					background-size: cover;
+					isolation: isolate;
+				}
+				.alc-ticket__header-logo-img {
+					position: relative;
+					z-index: 2;
+				}
+
+			.alc-ticket__header-hgroup {
+				padding-block-start: 16px;
+			}
+				.alc-ticket__header-title {
+					font-size: 26px;
+					line-height: 1.2em;
+					margin-block-end: 0.4em;
+				}
+				.alc-ticket__header-subtitle {
+					font-size: $font-size-h6;
+					line-height: 1.2em;
+					text-transform: uppercase;
+					margin-block-end: 0;
+				}
+
+		// Teams
+		.alc-ticket__teams {
+			--logo-max-height: 60px;
+			--logo-margin-block-end: 15px;
+
+			display: flex;
+			justify-content: space-between;
+			padding-block-start: calc($card-vertical-padding / 2);
+			padding-block-end: $card-vertical-padding;
+			padding-inline: $card-horizontal-padding;
+		}
+			.alc-ticket__team {
+				order: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				@media (min-width: 1199px) {
+					min-width: 92px;
+				}
+			}
+			.alc-ticket__team + .alc-ticket__team {
+				order: 2;
+			}
+				.alc-ticket__team-logo {
+					height: var(--logo-max-height);
+					margin-block-end: var(--logo-margin-block-end);
+					display: flex;
+					align-items: center;
+
+					img {
+						max-height: 100%;
+					}
+				}
+				.alc-ticket__team-body {
+					text-align: center;
+				}
+					.alc-ticket__team-name {
+						margin-block-end: .4em;
+						line-height: 1em;
+					}
+					.alc-ticket__team-info {
+						font-size: 9px;
+						line-height: 1.2em;
+					}
+			.alc-ticket__team-meta {
+				order: 1;
+				text-align: center;
+			}
+				.alc-ticket__team-divider {
+					height: var(--logo-max-height);
+					margin-block-end: var(--logo-margin-block-end);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: $font-size-h2;
+					font-weight: bold;
+					line-height: 1em;
+					font-family: $font-family-accent;
+					color: $headings-color;
+				}
+				.alc-ticket__team-meta-primary {
+					font-size: $font-size-h6;
+					line-height: 1.45em;
+					font-weight: bold;
+					text-transform: uppercase;
+					color: $headings-color;
+					margin-block-end: .2em;
+				}
+				.alc-ticket__team-meta-secondary {
+					font-size: $font-size-h6;
+					text-transform: uppercase;
+					font-weight: bold;
+					line-height: 1em;
+					color: $color-gray;
+				}
+
+		// CTA (Buy Tickets button)
+		.alc-ticket__cta {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-block: 12px 10px;
+		}
+
+	.alc-ticket__secondary-content {
+		position: relative;
+	}
+		// Shape
+		.alc-ticket__shape {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			z-index: 0;
+			filter:
+				drop-shadow(1px 0 0 $card-border-color)
+				drop-shadow(0 1px 0 $card-border-color)
+				drop-shadow(-1px 0 0 $card-border-color);
+		}
+			.alc-ticket__shape-bottom {
+				flex: 1;
+				width: 100%;
+				background-color: $card-bg;
+			}
+			.alc-ticket__shape-rip {
+				position: relative;
+				height: 45px;
+				width: calc(100% - 48px);
+				margin-inline: 24px;
+				background-color: $card-bg;
+
+				&::before,
+				&::after {
+					content: "";
+					box-sizing: content-box;
+					position: absolute;
+					inset-block-start: 50%;
+					width: var(--ticket-shape-size);
+					height: var(--ticket-shape-size);
+					border: 18px solid transparent;
+					transform: translate(-50%, -50%) rotate(45deg);
+					border-radius: var(--ticket-shape-radius);
+				}
+
+				&::before {
+					inset-inline-start: -24px;
+					border-block-start-color: $card-bg;
+					border-inline-end-color: $card-bg;
+				}
+
+				&::after {
+					inset-inline-end: calc(var(--ticket-shape-size) * -3);
+					border-block-end-color: $card-bg;
+					border-inline-start-color: $card-bg;
+				}
+			}
+
+		.alc-ticket__shape-divider {
+			height: 1px;
+			position: absolute;
+			z-index: 1;
+			inset-inline: 11px;
+			inset-block-start: 50%;
+			background-image: repeating-linear-gradient(to right, #d6d5d9, #d6d5d9 6px, transparent 6px, transparent 10px);
+		}
+
+		.alc-ticket__details {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			justify-content: space-around;
+			list-style: none;
+			padding-block: 58px 32px;
+			padding-inline: $card-horizontal-padding;
+			margin: 0;
+		}
+			.alc-ticket__details-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+				.alc-ticket__details-item-label {
+					font-size: 10px;
+					line-height: 1.2em;
+					margin-block-end: .35em;
+					font-weight: bold;
+					font-family: $font-family-accent;
+					text-transform: uppercase;
+					color: $headings-color;
+				}
+				.alc-ticket__details-item-value {
+					font-size: 20px;
+					line-height: 1.2em;
+					color: $headings-color;
+					font-weight: bold;
+					font-family: $font-family-accent;
+				}
+}
+
+// Design 2 (Variant 2)
+.alc-ticket--header-alt {
+
+	.alc-ticket__header {
+
+	}
+		.alc-ticket__header-logo {
+			padding-block-end: 34px;
+		}
+		.alc-ticket__header-hgroup {
+			margin-inline: 40px;
+			margin-block-start: -50px;
+			padding-block-start: 32px;
+			background-color: $card-bg;
+			z-index: 1;
+		}
+		.alc-ticket__header-bg {
+			height: 100%;
+		}
+}
+
+// Design 2 (Variant 3)
+.alc-ticket--header-with-teams {
+
+	.alc-ticket__header {
+
+	}
+		.alc-ticket__header-logo {
+			display: flex;
+			flex-wrap: nowrap;
+			height: 140px;
+			padding: 0;
+		}
+			.alc-ticket__header-bg {
+				height: 100%;
+				flex: 1;
+				position: relative;
+				background-position: 50% 50%;
+				background-size: auto;
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					inset-inline: 0;
+					inset-block-end: 0;
+					height: 50%;
+					background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.1));
+					z-index: 3;
+				}
+			}
+		.alc-ticket__header-logo-rip {
+			position: absolute;
+			inset-inline: 0;
+			inset-block-end: 0;
+			height: 20px;
+			z-index: 3;
+		}
+			.alc-ticket__header-logo-rip-start,
+			.alc-ticket__header-logo-rip-end {
+				position: absolute;
+				height: 20px;
+				inset-block-end: 0;
+				background-color: $card-bg;
+				width: calc(50% - 20px);
+			}
+			.alc-ticket__header-logo-rip-start {
+				inset-inline-start: 0;
+
+				&::before {
+					content: "";
+					box-sizing: content-box;
+					display: block;
+					position: absolute;
+					z-index: 1;
+					inset-inline-start: 100%;
+
+					width: 40px;
+					height: 40px;
+					border: 13px solid transparent;
+					border-block-start-color: $card-bg;
+					border-inline-end-color: $card-bg;
+					transform: translate(-13px, -50%) rotate(135deg);
+					border-radius: 50%;
+				}
+			}
+			.alc-ticket__header-logo-rip-end {
+				inset-inline-end: 0;
+			}
+		.alc-ticket__header-hgroup {
+			padding-block-start: 30px;
+		}
+
+}
+
+// Rip shape variants
+// can be applied to Design 2
+.alc-ticket--shape-round {
+	--ticket-shape-radius: 50%;
+	--ticket-shape-size: 42px;
+
+	.alc-ticket__shape-rip {
+
+		&::after {
+			inset-inline-end: calc(var(--ticket-shape-size) * -2.42);
+		}
+	}
+}
+
+.alc-ticket--shape-square {
+	--ticket-shape-radius: 0;
+}
+
+
+// Design 3
+.alc-ticket--3 {
+	position: relative;
+
+	// Shape
+	.alc-ticket__shape {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		z-index: 0;
+		filter:
+			drop-shadow(1px 0 0 $card-border-color)
+			drop-shadow(0 1px 0 $card-border-color)
+			drop-shadow(-1px 0 0 $card-border-color)
+			drop-shadow(0 -1px 0 $card-border-color);
+	}
+		.alc-ticket__shape-top,
+		.alc-ticket__shape-bottom {
+			flex: 1;
+			width: calc(100% - 15px);
+			background-color: $card-bg;
+		}
+		.alc-ticket__shape-rip {
+			position: relative;
+			height: 30px;
+			margin-inline-start: 15px;
+			margin-inline-end: 15px;
+			background-color: $card-bg;
+
+			&::before {
+				content: "";
+				box-sizing: content-box;
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-start: -15px;
+				width: 30px;
+				height: 30px;
+				border: 6px solid transparent;
+				border-block-start-color: $card-bg;
+				border-inline-end-color: $card-bg;
+				transform: translate(-50%, -50%) rotate(45deg);
+				border-radius: 50%;
+			}
+		}
+		.alc-ticket__shape-rips-end {
+			position: absolute;
+			inset-block: 0;
+			inset-inline-end: 0;
+			width: 15px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			span {
+				display: block;
+				position: relative;
+
+				&:first-child,
+				&:last-child {
+					height: 15px;
+					margin-inline-end: 15px;
+
+					&::before {
+						content: "";
+						box-sizing: content-box;
+						position: absolute;
+						z-index: 1;
+						inset-block-start: 0;
+						inset-inline-start: -6px;
+						width: 30px;
+						height: 30px;
+						border: 6px solid transparent;
+						transform: translate(0, -50%) rotate(45deg);
+						border-radius: 50%;
+					}
+				}
+
+				&:first-child {
+
+					&::before {
+						border-block-end-color: $card-bg;
+					}
+				}
+
+				&:last-child {
+
+					&::before {
+						inset-block-start: 15px;
+						border-inline-start-color: $card-bg;
+					}
+				}
+
+				&:nth-child(2) {
+					flex: 1;
+					width: 100%;
+					background-color: $card-bg;
+				}
+			}
+		}
+
+	// Content
+	.alc-ticket__content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-wrap: wrap;
+		padding-inline: $card-horizontal-padding;
+
+		> * {
+			padding-block: 16px;
+			flex: 1;
+
+			& + * {
+				border-inline-start: 1px dashed $card-border-color;
+			}
+		}
+	}
+
+	// Teams
+	.alc-ticket__teams {
+		display: flex;
+		align-items: center;
+		padding-inline-end: $card-horizontal-padding;
+		justify-content: space-between;
+
+		@media (max-width: 991px) {
+			padding-inline-end: 0;
+		}
+
+		@media (min-width: 992px) {
+			flex-grow: 1.6;
+		}
+	}
+		.alc-ticket__team {
+			display: flex;
+			align-items: center;
+			order: 0;
+		}
+		.alc-ticket__team + .alc-ticket__team {
+			order: 2;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+
+			.alc-ticket__team-logo {
+				justify-content: flex-end;
+			}
+			.alc-ticket__team-body {
+				text-align: end;
+			}
+		}
+		.alc-ticket__team-divider {
+			order: 1;
+			font-size: $font-size-h4;
+			line-height: 1em;
+			text-transform: uppercase;
+			padding-inline: .5em;
+			color: $headings-color;
+			font-weight: bold;
+			font-family: $font-family-accent;
+		}
+			.alc-ticket__team-logo {
+				width: 50px;
+				display: flex;
+				justify-content: flex-start;
+
+				@media (max-width: 479px) {
+					width: 40px;
+
+					img {
+						max-width: 60%;
+					}
+				}
+
+				img {
+
+				}
+			}
+
+			.alc-ticket__team-body {
+
+			}
+				.alc-ticket__team-info {
+					font-size: 9px;
+					line-height: 1.2em;
+				}
+				.alc-ticket__team-name {
+					font-size: $font-size-h5;
+					line-height: 1.2em;
+					margin-block-end: 0;
+				}
+				.alc-ticket__team-form-events {
+					padding-block-start: 3px;
+				}
+
+	// Details
+	.alc-ticket__details {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 16px;
+		list-style: none;
+		padding-inline: 32px;
+		margin: 0;
+
+		@media (max-width: 991px) {
+			flex-basis: 100%;
+			padding-inline: $card-horizontal-padding;
+			border-inline-start: none;
+			justify-content: center;
+		}
+
+		@media (min-width: 992px) {
+			gap: 10px 40px;
+		}
+	}
+		.alc-ticket__details-item {
+			font-size: 9px;
+			line-height: 1.2em;
+
+			@media (max-width: 991px) {
+				text-align: center;
+			}
+		}
+			.alc-ticket__details-item-label {
+				display: block;
+			}
+			.alc-ticket__details-item-value {
+				font-size: 11px;
+				font-weight: bold;
+				line-height: 1.2em;
+				color: $headings-color;
+				font-family: $font-family-accent;
+			}
+
+	// Countdown
+	.alc-ticket__countdown {
+		padding-inline: 32px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: 991px) {
+			border-inline-start: none;
+			padding-inline: 0;
+			flex-basis: 100%;
+		}
+
+		.alc-countdown-plain__item--title {
+			display: none;
+		}
+	}
+
+	// CTA (buy tickets)
+	.alc-ticket__cta {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-grow: 0.7;
+		padding-inline-start: $card-horizontal-padding;
+
+		@media (max-width: 991px) {
+			border-inline-start: none;
+			padding-inline: 0;
+			flex-basis: 100%;
+			justify-content: center;
+		}
+	}
+		.alc-ticket__cta-link {
+
+		}
+			.alc-ticket__cta-link-txt {
+
+			}
+}
+

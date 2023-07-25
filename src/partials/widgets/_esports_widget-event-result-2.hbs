@@ -1,0 +1,142 @@
+<!-- Widget: Event Result -->
+<Linkside className="widget card widget--sidebar widget-game-result">
+	<div className="widget__title card__header card__header--has-btn">
+		<h4>Last Game Result</h4>
+		<Link href="#" className="btn btn-default btn-xs card-header__button">See All Results</Link>
+	</div>
+	<div className="widget__content card__content">
+		<!-- Game Score -->
+		<div className="widget-game-result__section">
+			<div className="widget-game-result__section-inner">
+
+				<header className="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
+					<h3 className="widget-game-result__title">Striker GO</h3>
+					<time className="widget-game-result__date" datetime="2018-04-26">Friday, April 26th</time>
+				</header>
+
+				<header className="widget-game-result__header">
+					<h3 className="widget-game-result__title">Pro League - World Championship</h3>
+					<div className="widget-game-result__subtitle">Quater-Finals</div>
+				</header>
+
+				<div className="widget-game-result__main">
+					<!-- 1st Team -->
+					<div className="widget-game-result__team widget-game-result__team--first">
+						<figure className="widget-game-result__team-logo">
+							<Link href="#"><img src="{{../root}}assets/images/esports/logos/alchemists-86x98.png" alt=""></Link>
+						</figure>
+						<div className="widget-game-result__team-info">
+							<h5 className="widget-game-result__team-name">Idaho Esports</h5>
+							<div className="widget-game-result__team-desc">United States</div>
+						</div>
+					</div>
+					<!-- 1st Team / End -->
+
+					<div className="widget-game-result__score-wrap">
+						<div className="widget-game-result__score">
+							<span className="widget-game-result__score-result widget-game-result__score-result--winner">2</span> <span className="widget-game-result__score-dash">-</span> <span className="widget-game-result__score-result widget-game-result__score-result--loser">1</span>
+						</div>
+						<Link href="https://www.youtube.com/watch?v=XE0fU9PCrWE" className="widget-game-result__score-video-icon mp_iframe" data-toggle="tooltip" data-placement="bottom" title="Watch Replay"><i className="fas fa-play"></i></Link>
+					</div>
+
+					<!-- 2nd Team -->
+					<div className="widget-game-result__team widget-game-result__team--second">
+						<figure className="widget-game-result__team-logo">
+							<Link href="#"><img src="{{../root}}assets/images/esports/logos/pirates-114x98.png" alt=""></Link>
+						</figure>
+						<div className="widget-game-result__team-info">
+							<h5 className="widget-game-result__team-name">L.A. Pirates</h5>
+							<div className="widget-game-result__team-desc">United States</div>
+						</div>
+					</div>
+					<!-- 2nd Team / End -->
+				</div>
+			</div>
+		</div>
+		<!-- Game Score / End -->
+
+		<!-- Game Statistics -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Match Statistics</h5>
+			</header>
+			<div className="widget-game-result__section-inner">
+
+				<!-- Progress Stats Table -->
+				<table className="progress-table progress-table--sm-space">
+					<tbody>
+
+						{{#each esports.sp.event.widget-event-overview-2.stats}}
+						<tr>
+							<td className="progress-table__progress-label {{#if team1.highlight}}progress-table__progress-label--highlight{{/if}}">{{team1.value}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--first">
+								<div className="progress progress--lines">
+									<div className="progress__bar" style="width: {{team1.pct}}%;" role="progressbar" aria-valuenow="{{team1.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__title">{{label}}</td>
+							<td className="progress-table__progress-bar progress-table__progress-bar--second">
+								<div className="progress progress--lines">
+									<div className="progress__bar progress__bar--custom-color-1" style="width: {{team2.pct}}%;" role="progressbar" aria-valuenow="{{team2.value}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</td>
+							<td className="progress-table__progress-label {{#if team2.highlight}}progress-table__progress-label--highlight{{/if}}">{{team2.value}}</td>
+						</tr>
+						{{/each}}
+
+					</tbody>
+				</table>
+				<!-- Progress Stats Table / End -->
+
+			</div>
+		</div>
+		<!-- Game Statistics / End -->
+
+		<!-- Match MVP -->
+		<div className="widget-game-result__section">
+			<header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+				<h5 className="widget-game-result__subtitle">Match MVP</h5>
+			</header>
+			<div className="widget-game-result__section-inner">
+
+				<!-- MVP -->
+				<div className="game-result__mvp">
+					<div className="game-result__mvp-player">
+						<div className="game-result__mvp-player-icon-holder">
+							<span className="game-result__mvp-player-icon"><i className="far fa-star"></i></span>
+						</div>
+						<div className="game-result__mvp-player-meta">
+							<h6 className="game-result__mvp-player-name">Destroy Spiegel</h6>
+							<span className="game-result__mvp-player-team">The Idaho Esports</span>
+						</div>
+					</div>
+					<div className="game-result__mvp-stats">
+						<ul className="game-result__mvp-stats-list list-unstyled">
+							<li className="game-result__mvp-stats-item">
+								<span className="game-result__mvp-stats-value">37</span>
+								<span className="game-result__mvp-stats-label">Kills</span>
+							</li>
+							<li className="game-result__mvp-stats-item">
+								<span className="game-result__mvp-stats-value">2</span>
+								<span className="game-result__mvp-stats-label">Deaths</span>
+							</li>
+							<li className="game-result__mvp-stats-item">
+								<span className="game-result__mvp-stats-value">9</span>
+								<span className="game-result__mvp-stats-label">Assists</span>
+							</li>
+							<li className="game-result__mvp-stats-item">
+								<span className="game-result__mvp-stats-value">13</span>
+								<span className="game-result__mvp-stats-label">Pentakills</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- MVP / End -->
+
+			</div>
+		</div>
+		<!-- Match MVP / End -->
+
+	</div>
+</Linkside>
+<!-- Widget: Event Result / End -->

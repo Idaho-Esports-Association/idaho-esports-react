@@ -1,0 +1,83 @@
+// Text Transform
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Text Color
+.text-primary,
+.text-color-primary {
+  color: $color-primary !important;
+}
+
+// Text Transform
+.text-transform-normal {
+  text-transform: none !important;
+}
+
+// Text Align
+.text-start {
+	text-align: start !important;
+}
+.text-end {
+	text-align: end !important;
+}
+
+// Font Size
+.font-size-sm {
+	font-size: $font-size-sm;
+	line-height: 1.67em;
+}
+
+// Paddings
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+.p-0 {
+	padding: 0 !important;
+}
+
+// Margins
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+.mb-35 {
+  margin-bottom: 35px !important;
+}
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+.mb-80 {
+  margin-bottom: 80px !important;
+}
+
+// Responsive
+.mt-lg--80 {
+	@media (min-width: 992px) {
+		margin-top: -80px !important;
+	}
+}
+
+// Icon SVG
+.icon-svg {
+	vertical-align: middle;
+}

@@ -1,0 +1,39 @@
+/* Team Schedule & Tickets */
+.team-schedule {
+
+	> thead > tr > th {
+		vertical-align: middle;
+		text-align: center;
+
+		&:first-child {
+			text-align: start;
+			padding-inline-start: $card-horizontal-padding;
+		}
+		&:last-child {
+			padding-inline-end: $card-horizontal-padding;
+		}
+	}
+
+	> tbody > tr > td {
+		vertical-align: middle;
+		text-align: center;
+
+		&:first-child {
+			padding-inline-start: $card-horizontal-padding;
+		}
+		&:last-child {
+			padding-inline-end: $card-horizontal-padding;
+		}
+	}
+
+	.team-schedule__date,
+	.team-schedule__versus,
+	.team-schedule__compet,
+	.team-schedule__venue {
+		text-align: start;
+	}
+
+	td.team-schedule__prize {
+		color: $color-primary;
+	}
+}

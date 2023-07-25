@@ -1,0 +1,34 @@
+<!-- Header Posts
+================================================== -->
+<div className="container">
+	<div className="posts posts--tile posts--tile-alt post-grid grid-layout grid-layout--1-2-1 posts--tile-alt-nopaddings posts--tile-hero-post-grid posts--tile-meta-position">
+
+		{{#each esports.posts.hero-posts}}
+		<div className="post-grid__item posts__item posts__item--tile {{#each category}}posts__item--{{class}} {{/each}}">
+			{{#if thumb}}
+			<figure className="posts__thumb h-100">
+				<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="" className="h-100">
+				<Link href="_esports_blog-post-1.html" className="posts__item-link-overlay"></Link>
+				<div className="posts__inner posts__inner--noactive">
+					<div className="posts__cat">
+						{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+					</div>
+					<h6 className="posts__title {{#if @first}}posts__title--lg{{/if}}"><Link href="_esports_blog-post-1.html">{{title}}</Link></h6>
+					<time datetime="2018-08-23" className="posts__date">{{date}}</time>
+					<ul className="post__meta meta">
+						<li className="meta__item meta__item--views">{{meta.views}}</li>
+						<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+						<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+					</ul>
+					<div className="posts__excerpt">
+						{{excerpt-sm}}
+					</div>
+				</div>
+			</figure>
+			<Link href="_esports_blog-post-1.html" className="posts__cta"></Link>
+			{{/if}}
+		</div>
+		{{/each}}
+
+	</div>
+</div>

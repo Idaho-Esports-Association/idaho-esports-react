@@ -1,0 +1,40 @@
+<!-- Single Product Tabbed Content -->
+<div className="product-tabs card card--lg">
+
+	<!-- Nav tabs -->
+	<ul className="nav nav-tabs nav-justified nav-product-tabs" role="tablist">
+		<li className="nav-item"><Link className="nav-link active" href="#tab-desciption" role="tab" data-toggle="tab"><small>Product</small>Full Description</Link></li>
+		<li className="nav-item"><Link className="nav-link" href="#tab-info" role="tab" data-toggle="tab"><small>Product</small>Additional Information</Link></li>
+		<li className="nav-item"><Link className="nav-link" href="#tab-reviews" role="tab" data-toggle="tab"><small>Product</small>Customer Reviews (3)</Link></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div className="tab-content card__content">
+
+		<!-- Tab: Description -->
+		<div role="tabpanel" className="tab-pane fade show active" id="tab-desciption">
+
+			{{> _esports_product-tab-description }}
+
+		</div>
+		<!-- Tab: Description / End -->
+
+		<!-- Tab: Shipping -->
+		<div role="tabpanel" className="tab-pane fade" id="tab-info">
+
+			{{> _esports_product-tab-info }}
+
+		</div>
+		<!-- Tab: Shipping / End -->
+
+		<!-- Tab: Reviews -->
+		<div role="tabpanel" className="tab-pane fade" id="tab-reviews">
+
+			{{> _esports_product-tab-reviews }}
+
+		</div>
+		<!-- Tab: Reviews / End -->
+	</div>
+
+</div>
+<!-- Single Product Tabbed Content / End -->

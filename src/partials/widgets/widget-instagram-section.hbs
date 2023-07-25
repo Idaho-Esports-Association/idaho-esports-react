@@ -1,0 +1,18 @@
+<!-- Widget: Instagram Section -->
+<Linkside className="widget widget-instagram">
+	<div className="widget__content">
+		<ul id="instagram-feed-section" className="widget-instagram__list widget-instagram__list-section">
+			{{#each esports.instagram}}
+			<li className="widget-instagram__item">
+				<Link href="{{link}}" className="widget-instagram__link-wrapper" target="_blank">
+					<span className="widget-instagram__plus-sign">
+						<img src="{{image}}" className="widget-instagram__img" alt="" />
+					</span>
+				</Link>
+			</li>
+			{{/each}}
+		</ul>
+		<Link href="#" className="btn btn-default btn-icon" target="_blank"><i className="fas fa-link"></i> Follow Our Profile</Link>
+	</div>
+</Linkside>
+<!-- Widget: Instagram Section / End -->

@@ -1,0 +1,78 @@
+---
+layout: esports
+page-title: Team Album
+page-heading: "Team <span className=\"highlight\">Album</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Gallery",
+		link: "_esports_team-gallery.html"
+	},
+	{
+		label: "Album"
+	}
+]
+---
+
+{{> _esports_team-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Album Heading -->
+		<div className="album-heading">
+			<div className="album-heading__icon alc-icon alc-icon--circle alc-icon--sm alc-icon--outline alc-icon--outline-md">
+				<i className="icon-picture"></i>
+			</div>
+			<h2 className="album-heading__title">New Xenowatch Characters</h2>
+			<h6 className="album-heading__subtitle">Updated: March 12th, 2018</h6>
+		</div>
+		<!-- Album Heading / End -->
+
+		<!-- Album -->
+		<div className="album row js-album-masonry">
+
+			{{#each esports.sp.team.album}}
+			<div className="album__item {{col}}">
+				<div className="album__item-holder">
+					<Link href="{{../root}}assets/images/esports/samples/{{imgs.full}}" className="album__item-link mp_gallery">
+						<figure className="album__thumb">
+							<img src="{{../root}}assets/images/esports/samples/{{imgs.thumb}}" alt="">
+						</figure>
+						<div className="album__item-desc">
+							<h4 className="album__item-title">{{title}}</h4>
+							<time className="album__item-date" datetime="2016-08-23">{{date}}</time>
+						</div>
+					</Link>
+					<ul className="album__item-meta meta">
+						<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like meta-like--active icon-heart"></i> {{meta.likes}}</Link></li>
+					</ul>
+				</div>
+			</div>
+			{{/each}}
+
+		</div>
+		<!-- Gallery Album / End -->
+
+
+		<div className="spacer-lg"></div>
+
+		<div className="text-center">
+			<Link href="#" className="btn btn-primary-inverse btn-lg">Load More Photos...</Link>
+		</div>
+
+	</div>
+</div>
+
+<!-- Content / End -->

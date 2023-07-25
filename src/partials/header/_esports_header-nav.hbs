@@ -1,0 +1,180 @@
+<!-- Main Navigation -->
+<nav className="main-nav">
+	<ul className="main-nav__list">
+		<li className="{{#ifpage 'index' 'index-2'}}active{{/ifpage}}"><Link href="index.html">Home</Link>
+			<ul className="main-nav__sub">
+				<li className="{{#ifpage 'index'}}active{{/ifpage}}"><Link href="index.html">Home - version 1</Link></li>
+				<li className="{{#ifpage 'index-2'}}active{{/ifpage}}"><Link href="index-2.html">Home - version 2</Link></li>
+			</ul>
+		</li>
+		<li className="{{#ifpage '_esports_rules-overwatch' '_esports_features-typography' '_esports_features-widgets-blog' '_esports_features-widgets-shop' '_esports_features-widgets-sports' '_esports_features-404' '_esports_features-search-results' '_esports_page-contacts'}}active{{/ifpage}}"><Link href="#">Rules</Link>
+			<!-- Mega Menu -->
+			<div className="main-nav__megamenu">
+				<div className="row">
+					<div className="col-12">
+						{{> _esports_nav-widget-latest-news}}
+					</div>
+					<div className="w-100"></div>
+					<ul className="col-lg-5 col-md-3 col-12 main-nav__ul main-nav__ul-3cols">
+						<li className="main-nav__title">Game Specific</li>
+						<li><Link href="_esports_rules-overwatch.html">Overwatch 2</Link></li>
+						<li><Link href="_esports_rules-valorant.html">Valorant</Link></li>
+						<li><Link href="_esports_rules-apex.html">Apex</Link></li>
+						<li><Link href="_esports_rules-super_smash_bros.html">Super Smash Bros</Link></li>
+						<li><Link href="_esports_rules-rocket_league.html">Rocket League</Link></li>
+						<li><Link href="_esports_rules-league_of_legends.html">League of Legends</Link></li>
+						<li><Link href="_esports_rules-omega_strikers.html">Omega Strikers</Link></li>
+						<li><Link href="_esports_features-widgets-shop.html">Widgets - Shop</Link></li>
+						<li></li>
+						<li><Link href="_esports_features-search-results.html">Search Results</Link></li>
+						<li><Link href="_esports_shop-login.html">Login/Register</Link></li>
+					</ul>
+					<ul className="col-lg-3 col-md-3 col-12 main-nav__ul main-nav__ul-2cols">
+						<li className="main-nav__title">League Rules</li>
+						<li><Link href="_esports_blog-1.html">General</Link></li>
+						<li><Link href="_esports_blog-1.html">High School</Link></li>
+						<li><Link href="_esports_blog-post-1.html">Middle School</Link></li>
+					</ul>
+					<ul className="col-lg-2 col-md-3 col-12 main-nav__ul">
+						<li className="main-nav__title">Other Pages</li>
+						<li><Link href="_esports_page-sponsors.html">Sponsors</Link></li>
+						<li><Link href="_esports_page-faqs.html">FAQs</Link></li>
+						<li><Link href="_esports_page-contacts.html">Contacts</Link></li>
+						<li><Link href="_esports_features-404.html">404 Error</Link></li>
+					</ul>
+					<ul className="col-lg-2 col-md-3 col-12 main-nav__ul">
+						<li className="main-nav__title">Non-profit rules</li>
+						<li><Link href="_esports_bylaws.html">Bylaws</Link></li>
+						<li><Link href="_esports_articles_of_incorporation.html">Articles of Incorporation</Link></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li className="{{#ifpage '_esports_features-shortcodes' '_esports_features-typography' '_esports_features-widgets-blog' '_esports_features-widgets-shop' '_esports_features-widgets-sports' '_esports_features-404' '_esports_features-search-results' '_esports_page-contacts'}}active{{/ifpage}}"><Link href="#">Program Management</Link>
+			<!-- Mega Menu -->
+			<div className="main-nav__megamenu">
+				<div className="row">
+					<div className="col-12">
+						{{> _esports_nav-widget-latest-news}}
+					</div>
+					<div className="w-100"></div>
+					<ul className="col-lg-5 col-md-3 col-12 main-nav__ul main-nav__ul-3cols">
+						<li className="main-nav__title">Starting</li>
+						<li><Link href="_esports_features-shortcodes.html">General Process</Link></li>
+						<li><Link href="_esports_features-widgets-blog.html">School Approval</Link></li>
+						<li><Link href="index.html">Equipment</Link></li>
+						<li><Link href="_esports_features-typography.html">Funding</Link></li>
+						<li><Link href="_esports_features-widgets-sports.html">Competition</Link></li>
+						<li><Link href="index-2.html">Home V2</Link></li>
+						<li><Link href="_esports_features-404.html">404 Error</Link></li>
+						<li><Link href="_esports_features-widgets-shop.html">Widgets - Shop</Link></li>
+						<li></li>
+						<li><Link href="_esports_features-search-results.html">Search Results</Link></li>
+						<li><Link href="_esports_shop-login.html">Login/Register</Link></li>
+					</ul>
+					<ul className="col-lg-3 col-md-3 col-12 main-nav__ul main-nav__ul-2cols">
+						<li className="main-nav__title">Running</li>
+						<li><Link href="_esports_blog-1.html">Improving Image</Link></li>
+						<li><Link href="_esports_blog-post-1.html">Marketing</Link></li>
+						<li><Link href="_esports_blog-2.html">Engaging Players</Link></li>
+						<li><Link href="_esports_blog-post-2.html">Not Just Gaming</Link></li>
+						<li><Link href="_esports_blog-3.html">Health Life</Link></li>
+						<li><Link href="_esports_blog-post-3.html">Practice Ideas</Link></li>
+						<li><Link href="_esports_blog-4.html">Team Bonding</Link></li>
+					</ul>
+					<ul className="col-lg-2 col-md-3 col-12 main-nav__ul">
+						<li className="main-nav__title">Troubleshooting</li>
+						<li><Link href="_esports_page-sponsors.html">Engagement</Link></li>
+						<li><Link href="_esports_page-faqs.html">Parents</Link></li>
+						<li><Link href="_esports_page-contacts.html">Community</Link></li>
+						<li><Link href="_esports_features-404.html">404 Error</Link></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Mega Menu / End -->
+		</li>
+		
+		<li className="{{#ifpage '_football_team-overview' '_football_team-roster' '_football_team-standings' '_football_team-last-results' '_football_team-schedule' '_football_team-gallery' '_football_team-gallery' '_football_team-gallery-album' '_football_staff-single'}}active{{/ifpage}}"><Link href="_esports_team-overview.html">Competition</Link>
+			<!-- Mega Menu -->
+			<div className="main-nav__megamenu main-nav__megamenu--no-paddings {{#ifequal megamenu 'v3'}}main-nav__megamenu--has-bg{{/ifequal}}">
+				<div className="row">
+					<ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
+						<li className="main-nav__title main-nav-banner {{#ifequal megamenu 'v4'}}main-nav-banner--top{{/ifequal}} main-nav-banner--img-1">
+							<Link href="#" className="main-nav-banner__link">
+								<span className="main-nav-banner__subtitle"></span>
+								<span className="main-nav-banner__title">High School</span>
+							</Link>
+						</li>
+						<li><Link href="_esports_event-overview-1a.html">Overwatch 2</Link></li>
+						<li><Link href="_esports_event-overview-1b.html">Valorant</Link></li>
+						<li><Link href="_esports_event-overview-1c.html">Apex</Link></li>
+						<li><Link href="_esports_event-overview-2.html">Rocket League</Link></li>
+						<li><Link href="_esports_event-overview-3.html">Super Smash Bros</Link></li>
+						<li><Link href="_esports_event-calendar.html">Omega Strikers</Link></li>
+						<li><Link href="_esports_event-tournament.html">League of Legends</Link></li>
+					</ul>
+					<ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
+						<li className="main-nav__title main-nav-banner {{#ifequal megamenu 'v4'}}main-nav-banner--top{{/ifequal}} main-nav-banner--img-2">
+							<Link href="#" className="main-nav-banner__link">
+								<span className="main-nav-banner__subtitle"></span>
+								<span className="main-nav-banner__title">Middle School</span>
+							</Link>
+						</li>
+						<li><Link href="_esports_team-video-single.html">Single Video</Link></li>
+						<li><Link href="_esports_team-player.html">Player Page</Link></li>
+						<li><Link href="_esports_team-overview.html">Single Team Page</Link></li>
+						<li><Link href="_esports_blog-post-1.html">Single Post Page</Link></li>
+						<li><Link href="_esports_event-overview-3.html">Single Event</Link></li>
+						<li><Link href="_esports_shop-product.html">Single Product</Link></li>
+						<li><Link href="_esports_team-gallery-album.html">Single Album</Link></li>
+					</ul>
+					<ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
+						<li className="main-nav__title main-nav-banner {{#ifequal megamenu 'v4'}}main-nav-banner--top{{/ifequal}} main-nav-banner--img-3">
+							<Link href="#" className="main-nav-banner__link">
+								<span className="main-nav-banner__subtitle"></span>
+								<span className="main-nav-banner__title">Unaffiliated</span>
+							</Link>
+						</li>
+						<li><Link href="_esports_team-overview.html">Team Overview</Link></li>
+						<li><Link href="_esports_team-roster.html">Team Roster</Link></li>
+						<li><Link href="_esports_team-standings.html">Team Standings</Link></li>
+						<li><Link href="_esports_team-last-results.html">Latest Results</Link></li>
+						<li><Link href="_esports_team-schedule.html">Next Matches</Link></li>
+						<li><Link href="_esports_team-gallery.html">Team Gallery</Link></li>
+						<li><Link href="_esports_team-gallery-album.html">Team Album</Link></li>
+						<li><Link href="_esports_team-videos.html">Team Videos</Link></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Mega Menu / End -->
+		</li>
+		{{!-- <li className="{{#ifpage '_esports_shop-sidebar' '_esports_shop-fullwidth' '_esports_shop-product' '_esports_shop-checkout' '_esports_shop-wishlist' '_esports_shop-account' '_esports_shop-login' '_esports_shop-cart'}}active{{/ifpage}}">
+			<Link href="_esports_shop-fullwidth.html">Shop</Link>
+			<ul className="main-nav__sub">
+				<li className="{{#ifpage '_esports_shop-sidebar'}}active{{/ifpage}}"><Link href="_esports_shop-sidebar.html">Shop - Sidebar</Link></li>
+				<li className="{{#ifpage '_esports_shop-fullwidth'}}active{{/ifpage}}"><Link href="_esports_shop-fullwidth.html">Shop - Full Width</Link></li>
+				<li className="{{#ifpage '_esports_shop-product'}}active{{/ifpage}}"><Link href="_esports_shop-product.html">Single Product</Link></li>
+				<li className="{{#ifpage '_esports_shop-cart'}}active{{/ifpage}}"><Link href="_esports_shop-cart.html">Cart</Link></li>
+				<li className="{{#ifpage '_esports_shop-checkout'}}active{{/ifpage}}"><Link href="_esports_shop-checkout.html">Checkout</Link></li>
+				<li className="{{#ifpage '_esports_shop-wishlist'}}active{{/ifpage}}"><Link href="_esports_shop-wishlist.html">Wishlist</Link></li>
+				<li className="{{#ifpage '_esports_shop-login'}}active{{/ifpage}}"><Link href="_esports_shop-login.html">Login</Link></li>
+				<li className="{{#ifpage '_esports_shop-account'}}active{{/ifpage}}"><Link href="_esports_shop-account.html">Account</Link></li>
+			</ul>
+		</li> --}}
+
+		{{#if header-alt }}
+		<li className="{{#ifpage '_esports_event-tournament'}}active{{/ifpage}}"><Link href="_esports_event-tournament.html">Tournaments</Link></li>
+		<li className="{{#ifpage '_esports_blog-1' '_esports_blog-2' '_esports_blog-3'}}active{{/ifpage}}"><Link href="_esports_blog-1.html">News</Link>
+			<ul className="main-nav__sub">
+				<li className="{{#ifpage '_esports_blog-1'}}active{{/ifpage}}"><Link href="_esports_blog-1.html">News Page V1</Link></li>
+				<li className="{{#ifpage '_esports_blog-2'}}active{{/ifpage}}"><Link href="_esports_blog-2.html">News Page V2</Link></li>
+				<li className="{{#ifpage '_esports_blog-3'}}active{{/ifpage}}"><Link href="_esports_blog-3.html">News Page V3</Link></li>
+			</ul>
+		</li>
+		<li className="{{#ifpage '_esports_team-player'}}active{{/ifpage}}"><Link href="_esports_team-player.html">Player</Link></li>
+		<li className="{{#ifpage '_esports_page-contacts'}}active{{/ifpage}}"><Link href="_esports_page-contacts.html">Contact Us</Link></li>
+		{{/if}}
+
+	</ul>
+</nav>
+<!-- Main Navigation / End -->

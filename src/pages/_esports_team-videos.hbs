@@ -1,0 +1,72 @@
+---
+layout: esports
+page-title: Team Videos
+page-heading: "Team <span className=\"highlight\">Videos</span>"
+megamenu: v3
+
+breadcrumbs: [
+	{
+		label: "Teams",
+		link: "#"
+	},
+	{
+		label: "L.O. Heroes",
+		link: "#"
+	},
+	{
+		label: "Videos"
+	}
+]
+---
+
+{{> _esports_team-filter }}
+
+<!-- Content
+================================================== -->
+<div className="site-content">
+	<div className="container">
+
+		<!-- Filter -->
+		<ul className="isotope-filter js-isotope-filter list-unstyled">
+			<li className="isotope-filter__item"><button className="btn btn-link isotope-filter__link isotope-filter__link--active" data-filter="*">All Videos</button></li>
+			<li className="isotope-filter__item"><button className="btn btn-link isotope-filter__link" data-filter=".post-tag-1">Streams</button></li>
+			<li className="isotope-filter__item"><button className="btn btn-link isotope-filter__link" data-filter=".post-tag-2">Competitions</button></li>
+			<li className="isotope-filter__item"><button className="btn btn-link isotope-filter__link" data-filter=".post-tag-3">Gameplays</button></li>
+			<li className="isotope-filter__item"><button className="btn btn-link isotope-filter__link" data-filter=".post-tag-4">Unboxing</button></li>
+		</ul>
+		<!-- Filter / End -->
+
+		<!-- Posts - Videos -->
+		<div className="posts posts--card-compact row js-posts--filterable">
+
+			{{#each esports.sp.team.videos}}
+			<div className="post-grid__item {{#each tag}}post-{{class}} {{/each}} col-sm-6 col-lg-4">
+				<div className="posts__item {{#each category}}posts__item--{{class}} {{/each}} card">
+					<figure className="posts__thumb posts__thumb--video">
+						<Link href="{{video}}" className="mp_iframe"><img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt=""></Link>
+					</figure>
+					<div className="posts__inner card__content">
+						<div className="posts__cat">
+							{{#each category}}<span className="label posts__cat-label posts__cat-label--{{class}}">{{name}}</span>{{/each}}
+						</div>
+						<h6 className="posts__title posts__title--color-hover"><Link href="_esports_team-video-single.html">{{title}}</Link></h6>
+						<ul className="post__meta meta">
+							<li className="meta__item meta__item--date">{{date}}</li>
+							<li className="meta__item meta__item--views">{{meta.views}}</li>
+							<li className="meta__item meta__item--likes"><Link href="#"><i className="meta-like icon-heart"></i> {{meta.likes}}</Link></li>
+							<li className="meta__item meta__item--comments"><Link href="#">{{meta.comments}}</Link></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+
+		</div>
+		<!-- Posts - Videos / End -->
+
+		{{> _esports_team-pagination custom-className="justify-content-center" }}
+
+	</div>
+</div>
+
+<!-- Content / End -->

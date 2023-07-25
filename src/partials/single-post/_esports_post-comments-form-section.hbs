@@ -1,0 +1,32 @@
+<!-- Post Comment Form -->
+<div className="post-comment-form">
+	<header className="post-comment-form__header">
+		<h4>Write a Comment</h4>
+	</header>
+	<div className="post-comment-form__content">
+		<form action="#" className="comment-form">
+			<div className="row">
+				<div className="col-md-6">
+					<div className="form-group">
+						<label className="control-label" for="input-name">Your Name <span className="required">*</span></label>
+						<input type="text" id="input-name" name="input-name" className="form-control">
+					</div>
+				</div>
+				<div className="col-md-6">
+					<div className="form-group">
+						<label className="control-label" for="input-email">Your Email <span className="required">*</span></label>
+						<input type="email" id="input-email" name="input-email" className="form-control">
+					</div>
+				</div>
+			</div>
+			<div className="form-group">
+				<label className="control-label" for="textarea-comment">Your Comment <span className="required">*</span></label>
+				<textarea name="textarea-comment" id="textarea-comment" rows="4" className="form-control"></textarea>
+			</div>
+			<div className="form-group mb-0 text-right">
+				<button type="submit" className="btn btn-primary-inverse">Post Your Comment</button>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Post Comment Form / End -->

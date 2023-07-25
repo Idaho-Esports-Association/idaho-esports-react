@@ -1,0 +1,12 @@
+<!-- Event Pages Nav -->
+<nav className="content-filter">
+	<div className="container">
+		<Link href="#" className="content-filter__toggle"></Link>
+		<ul className="content-filter__list">
+			{{#each basketball.sp.event.nav}}
+			<li className="content-filter__item {{#ifpage url}}content-filter__item--active{{/ifpage}}"><Link href="{{url}}.html" className="content-filter__link"><small>{{subtitle}}</small>{{title}}</Link></li>
+			{{/each}}
+		</ul>
+	</div>
+</nav>
+<!-- Event Pages Nav / End -->

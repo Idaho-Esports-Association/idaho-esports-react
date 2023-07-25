@@ -1,0 +1,47 @@
+<!-- Widget: Character Stats -->
+<Linkside className="widget widget--sidebar card card--has-table widget-character-stats">
+	<div className="widget__title card__header">
+		<h4>Characters Played Stats</h4>
+	</div>
+	<div className="widget__content card__content">
+
+		<div className="table-responsive">
+			<table className="table character-stats-table">
+				<thead>
+					<tr>
+						<th className="character-stat__player">Character</th>
+						<th className="character-stat__total">M.Played</th>
+						<th className="character-stat__win">Win Rate</th>
+						<th className="character-stat__overal">K / D / A</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					{{#each esports.sp.single-player.widget-character-stats}}
+					<tr>
+						<td className="character-stat__player">
+							<div className="character-stat__player-info alc-img-object">
+								<figure className="character-stat__player-img alc-img-object__img alc-img-object__img--hexagon alc-img-object__img--hexagon-sm">
+									<img src="{{../root}}assets/images/esports/samples/{{character.img}}" alt="">
+								</figure>
+								<div className="character-stat__player-body alc-img-object__body">
+									<h5 className="character-stat__player-name alc-img-object__title">{{character.name}}</h5>
+									<span className="character-stat__player-position alc-img-object__desc">{{character.type}}</span>
+								</div>
+							</div>
+						</td>
+						<td className="character-stat__total highlight">{{stats.games}}</td>
+						<td className="character-stat__win highlight">{{stats.win-pct}}%</td>
+						<td className="character-stat__overal highlight">
+							{{stats.kills}} / {{stats.deaths}} / {{stats.assists}}
+						</td>
+					</tr>
+					{{/each}}
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</Linkside>
+<!-- Widget: Character Stats / End -->

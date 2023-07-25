@@ -1,0 +1,22 @@
+/* Widget: Tickets */
+.widget-tickets {
+
+	.card__subheader {
+		border-inline: 1px solid $card-border-color;
+
+		@media (min-width: 992px) {
+			padding-block: 13px;
+		}
+	}
+
+	.card__content {
+
+		.card__subheader:first-of-type {
+			border-block-start: 0;
+		}
+	}
+
+	.alc-ticket--1 {
+		margin-inline: 1px;
+	}
+}
