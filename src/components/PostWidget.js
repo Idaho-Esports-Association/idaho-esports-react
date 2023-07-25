@@ -55,12 +55,12 @@ function PostWidget(props) {
             <ul className="post__meta meta">
               <li className="meta__item meta__item--views">{props.views}</li>
               <li className="meta__item meta__item--likes">
-                <Link href="#">
+                <Link href="/" >
                   <i className="meta-like icon-heart"></i> {props.likes}
                 </Link>
               </li>
               <li className="meta__item meta__item--comments">
-                <Link href="#">{props.commentCount}</Link>
+                <Link href="/" >{props.commentCount}</Link>
               </li>
             </ul>
           </footer>

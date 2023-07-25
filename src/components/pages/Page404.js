@@ -29,7 +29,7 @@ export default function Page404() {
                   <Link to="/" className="btn btn-primary">
                     Return to Home
                   </Link>
-                  <a href="#" className="btn btn-primary-inverse">
+                  <a href="/"  className="btn btn-primary-inverse">
                     Keep Browsing
                   </a>
                 </footer>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import {ApexRules, LeagueOfLegendsRules, OverwatchRules, RocketLeagueRules, SuperSmashRules, ValorantRules} from "../RulesListed";
 import Page404 from "./Page404";
 
