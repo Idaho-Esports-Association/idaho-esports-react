@@ -160,37 +160,37 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-account__item">
-                  <Link href="#">
+                  <Link href="/" >
                     Currency: <span className="highlight">USD</span>
                   </Link>
                   {/* <ul className="main-nav__sub">
                     <li>
-                      <Link href="#">USD</Link>
+                      <Link href="/" >USD</Link>
                     </li>
                     <li>
-                      <Link href="#">EUR</Link>
+                      <Link href="/" >EUR</Link>
                     </li>
                     <li>
-                      <Link href="#">GBP</Link>
+                      <Link href="/" >GBP</Link>
                     </li>
                   </ul> */}
                 </li>
                 <li className="nav-account__item">
-                  <Link href="#">
+                  <Link href="/" >
                     Language: <span className="highlight">EN</span>
                   </Link>
                   {/* <ul className="main-nav__sub">
                     <li>
-                      <Link href="#">English</Link>
+                      <Link href="/" >English</Link>
                     </li>
                     <li>
-                      <Link href="#">Spanish</Link>
+                      <Link href="/" >Spanish</Link>
                     </li>
                     <li>
-                      <Link href="#">French</Link>
+                      <Link href="/" >French</Link>
                     </li>
                     <li>
-                      <Link href="#">German</Link>
+                      <Link href="/" >German</Link>
                     </li>
                   </ul> */}
                 </li>
@@ -230,7 +230,7 @@ function Header() {
                     <Link to="/">Home</Link>
                   </li>
                   <li className={HighlightMenu("Info")} id="Info">
-                    <Link href="#">Information</Link>
+                    <Link href="/" >Information</Link>
                     {/* <!-- Mega Menu --> */}
                     <div className="main-nav__megamenu">
                       <div className="row">
@@ -360,7 +360,7 @@ function Header() {
                     {/* <!-- Mega Menu / End --> */}
                   </li>
                   <li className={HighlightMenu("Program")} id="Program">
-                    <Link href="#">Program Management</Link>
+                    <Link href="/" >Program Management</Link>
                     {/* <!-- Mega Menu --> */}
                     <div className="main-nav__megamenu">
                       <div className="row">
@@ -520,7 +520,7 @@ function Header() {
                       <div className="row">
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-1">
-                            <Link href="#" className="main-nav-banner__link">
+                            <Link href="/"  className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 High School
@@ -565,7 +565,7 @@ function Header() {
                         </ul>
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-2">
-                            <Link href="#" className="main-nav-banner__link">
+                            <Link href="/"  className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 Middle School
@@ -610,7 +610,7 @@ function Header() {
                         </ul>
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-3">
-                            <Link href="#" className="main-nav-banner__link">
+                            <Link href="/"  className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 Unaffiliated

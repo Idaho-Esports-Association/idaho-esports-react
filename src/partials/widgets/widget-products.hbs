@@ -9,13 +9,13 @@
 			{{#each basketball.products.widget-products}}
 			<li className="products-list__item">
 				<figure className="products-list__product-thumb">
-					<Link href="#">
+					<Link href="/" >
 						<img src="{{../root}}assets/images/samples/{{thumb}}.jpg" alt="">
 					</Link>
 				</figure>
 				<div className="products-list__inner">
 					<span className="products-list__product-cat">{{category}}</span>
-					<h5 className="products-list__product-name"><Link href="#">{{title}}</Link></h5>
+					<h5 className="products-list__product-name"><Link href="/" >{{title}}</Link></h5>
 					<div className="products-list__product-ratings">
 						{{#repeat rating.full}}
 						<i className="fas fa-star"></i>

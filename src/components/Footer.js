@@ -14,7 +14,7 @@ function Footer() {
             >
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -29,7 +29,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -44,7 +44,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -59,7 +59,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -74,7 +74,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -89,7 +89,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -104,7 +104,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -119,7 +119,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -134,7 +134,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -149,7 +149,7 @@ function Footer() {
               </li>
               <li className="widget-instagram__item">
                 <a
-                  href="#"
+                  href="/"
                   className="widget-instagram__link-wrapper"
                   target="_blank"
                 >
@@ -163,7 +163,7 @@ function Footer() {
                 </a>
               </li>
             </ul>
-            <a href="#" className="btn btn-default btn-icon" target="_blank"
+            <a href="/" className="btn btn-default btn-icon" target="_blank"
               ><i className="fas fa-link"></i> Follow Our Profile</a
             >
           </div>
@@ -176,7 +176,7 @@ function Footer() {
             <div className="sponsors">
               <ul className="sponsors-logos">
                 <li className="sponsors__item">
-                  <a href="#" target="_blank">
+                  <a href="/" target="_blank">
                     Sponsors spot
                     <img src="assets/images/esports/samples/sponsor-logo1.png" alt="" />
                   </a>
@@ -353,7 +353,7 @@ function Footer() {
                                   >Register/Login</a
                                 >
                               </li>
-                              <li><a href="#">Privacy Policy</a></li>
+                              <li><a href="/">Privacy Policy</a></li>
                             </ul>
                           </div>
                         </aside>
@@ -372,7 +372,7 @@ function Footer() {
                         <ul className="posts posts--simple-list">
                           <li className="posts__item posts__item--category-4">
                             <figure className="posts__thumb posts__thumb--hover">
-                              <a href="#"
+                              <a href="/"
                                 ><img
                                   src="assets/images/esports/samples/post-img4-xs.jpg"
                                   alt=""
@@ -400,7 +400,7 @@ function Footer() {
                           </li>
                           <li className="posts__item posts__item--category-2">
                             <figure className="posts__thumb posts__thumb--hover">
-                              <a href="#"
+                              <a href="/"
                                 ><img
                                   src="assets/images/esports/samples/post-img2-xs.jpg"
                                   alt=""
@@ -443,7 +443,7 @@ function Footer() {
                             className="posts__item posts__item--category-1 posts__item--category-3"
                           >
                             <figure className="posts__thumb posts__thumb--hover">
-                              <a href="#"
+                              <a href="/"
                                 ><img
                                   src="assets/images/esports/samples/post-img3-xs.jpg"
                                   alt=""
@@ -474,7 +474,7 @@ function Footer() {
                           </li>
                           <li className="posts__item posts__item--category-4">
                             <figure className="posts__thumb posts__thumb--hover">
-                              <a href="#"
+                              <a href="/"
                                 ><img
                                   src="assets/images/esports/samples/post-img13-xs.jpg"
                                   alt=""
@@ -516,7 +516,7 @@ function Footer() {
           <div className="container">
             <ul className="footer-social__list list-unstyled">
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-facebook"></i>
                   </span>
@@ -527,7 +527,7 @@ function Footer() {
                 </a>
               </li>
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-twitter"></i>
                   </span>
@@ -538,7 +538,7 @@ function Footer() {
                 </a>
               </li>
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-twitch"></i>
                   </span>
@@ -549,7 +549,7 @@ function Footer() {
                 </a>
               </li>
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-youtube"></i>
                   </span>
@@ -560,7 +560,7 @@ function Footer() {
                 </a>
               </li>
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-google-plus-g"></i>
                   </span>
@@ -571,7 +571,7 @@ function Footer() {
                 </a>
               </li>
               <li className="footer-social__item">
-                <a href="#" className="footer-social__link">
+                <a href="/" className="footer-social__link">
                   <span className="footer-social__icon">
                     <i className="fab fa-instagram"></i>
                   </span>

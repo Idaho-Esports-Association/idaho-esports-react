@@ -129,7 +129,7 @@ function Home() {
             <div className="sidebar col-lg-4">
               <aside className="widget widget--sidebar widget-social widget-social--buttons">
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--facebook"
                   target="_blank"
                 >
@@ -146,7 +146,7 @@ function Home() {
                   <span className="btn-social-counter__add-icon"></span>
                 </a>
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--twitter"
                   target="_blank"
                 >
@@ -163,7 +163,7 @@ function Home() {
                   <span className="btn-social-counter__add-icon"></span>
                 </a>
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--twitch"
                   target="_blank"
                 >
@@ -180,7 +180,7 @@ function Home() {
                   <span className="btn-social-counter__add-icon"></span>
                 </a>
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--youtube"
                   target="_blank"
                 >
@@ -197,7 +197,7 @@ function Home() {
                   <span className="btn-social-counter__add-icon"></span>
                 </a>
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--rss"
                   target="_blank"
                 >
@@ -214,7 +214,7 @@ function Home() {
                   <span className="btn-social-counter__add-icon"></span>
                 </a>
                 <a
-                  href="#"
+                  href="/" 
                   className="btn-social-counter btn-social-counter--instagram"
                   target="_blank"
                 >
@@ -236,7 +236,7 @@ function Home() {
                 <div className="widget__title card__header card__header--has-btn">
                   <h4>Latest Results</h4>
                   <a
-                    href="#"
+                    href="/" 
                     className="btn btn-default btn-xs card-header__button"
                   >
                     See Full Results

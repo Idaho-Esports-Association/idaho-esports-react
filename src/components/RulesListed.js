@@ -706,7 +706,7 @@ export function SuperSmashRules() {
       <p>Update: 4/30/2023</p>
 
       <h2>
-        <a></a>Overview{" "}
+        Overview{" "}
       </h2>
 
       <ul>
@@ -718,7 +718,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h2>
-        <a></a>Match Rules
+        Match Rules
       </h2>
 
       <ul>
@@ -731,7 +731,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h2>
-        <a></a>Weekly Meet Flow
+        Weekly Meet Flow
       </h2>
 
       <p>For the purposes of this Rules Document, </p>
@@ -760,7 +760,7 @@ export function SuperSmashRules() {
       </p>
 
       <h2>
-        <a></a>Match Day Flow
+        Match Day Flow
       </h2>
 
       <p>
@@ -823,11 +823,11 @@ export function SuperSmashRules() {
       </p>
 
       <h2>
-        <a></a>Game Rules
+        Game Rules
       </h2>
 
       <h3>
-        <a></a>Map Banning Rules
+        Map Banning Rules
       </h3>
 
       <p>
@@ -837,11 +837,11 @@ export function SuperSmashRules() {
       </p>
 
       <h4>
-        <a></a>Official Map List:
+        Official Map List:
       </h4>
 
       <h5>
-        <a></a>Starter Stages
+        Starter Stages
       </h5>
 
       <ul>
@@ -853,7 +853,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h5>
-        <a></a>Counterpick Stages
+        Counterpick Stages
       </h5>
 
       <ul>
@@ -863,7 +863,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h5>
-        <a></a>Stage Striking
+        Stage Striking
       </h5>
 
       <ul>
@@ -901,7 +901,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h3>
-        <a></a>Set Setup (Online Play)
+        Set Setup (Online Play)
       </h3>
 
       <p>
@@ -947,7 +947,7 @@ export function SuperSmashRules() {
       </p>
 
       <h3>
-        <a></a>Match Restrictions
+        Match Restrictions
       </h3>
 
       <ul>
@@ -996,7 +996,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h3>
-        <a></a>Conflict resolution
+        Conflict resolution
       </h3>
 
       <ul>
@@ -1017,7 +1017,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h2>
-        <a></a>Stoppage of Play
+        Stoppage of Play
       </h2>
 
       <ul>
@@ -1034,7 +1034,7 @@ export function SuperSmashRules() {
       </ul>
 
       <h2>
-        <a></a>Coaching
+        Coaching
       </h2>
 
       <ul>
@@ -1061,7 +1061,7 @@ export function RocketLeagueRules() {
       <p>Update: 4/22/2023</p>
 
       <h2>
-        <a></a>Overview{" "}
+        Overview{" "}
       </h2>
 
       <ul>
@@ -1073,13 +1073,13 @@ export function RocketLeagueRules() {
       </ul>
 
       <h2>
-        <a></a>Match Length
+        Match Length
       </h2>
 
       <p>Matches will be Best-of-5.</p>
 
       <h2>
-        <a></a>Match Settings
+        Match Settings
       </h2>
 
       <p>
@@ -1115,7 +1115,7 @@ export function RocketLeagueRules() {
       </ul>
 
       <h2>
-        <a></a>Stoppage of Play
+        Stoppage of Play
       </h2>
 
       <ul>
@@ -1144,7 +1144,7 @@ export function RocketLeagueRules() {
       </ul>
 
       <h2>
-        <a></a>Coaching
+        Coaching
       </h2>
 
       <ul>
@@ -1184,13 +1184,13 @@ export function LeagueOfLegendsRules() {
       <p>Update: 4/25/2023</p>
 
       <h2>
-        <a></a>1. Anti-Cheat
+        1. Anti-Cheat
       </h2>
 
       <p>No additional anti-cheat is required for official matches.</p>
 
       <h2>
-        <a></a>2. Match Procedure
+        2. Match Procedure
       </h2>
 
       <ul>
@@ -1215,19 +1215,19 @@ export function LeagueOfLegendsRules() {
       </ul>
 
       <h3>
-        <a></a>2.1. Series Lengths
+        2.1. Series Lengths
       </h3>
 
       <p>Matches are played as a best-of-1</p>
 
       <h3>
-        <a></a>2.2. Game Lobby
+        2.2. Game Lobby
       </h3>
 
       <p>The home team (pre-determined) will create the lobby.</p>
 
       <h4>
-        <a></a>2.2.1. Lobby Formation
+        2.2.1. Lobby Formation
       </h4>
 
       <p>
@@ -1240,17 +1240,17 @@ export function LeagueOfLegendsRules() {
       <p>- &nbsp; Support</p>
 
       <h3>
-        <a></a>2.3 Side Selection
+        2.3 Side Selection
       </h3>
 
       <h4>
-        <a></a>2.3.1 Regular Season
+        2.3.1 Regular Season
       </h4>
 
       <p>The away team will choose their side for game 1</p>
 
       <h4>
-        <a></a>2.3.2 Playoffs and Finals
+        2.3.2 Playoffs and Finals
       </h4>
 
       <p>The away team will choose their side for game 1</p>
@@ -1260,7 +1260,7 @@ export function LeagueOfLegendsRules() {
       <p>The loser of game 2 will choose their side for game 3 (if needed)</p>
 
       <h3>
-        <a></a>2.4. Drafting
+        2.4. Drafting
       </h3>
 
       <p>
@@ -1301,11 +1301,11 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h2>
-        <a></a>3. Tournament Rules{" "}
+        3. Tournament Rules{" "}
       </h2>
 
       <h3>
-        <a></a>3.1. Game Connections
+        3.1. Game Connections
       </h3>
 
       <p>
@@ -1327,7 +1327,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h4>
-        <a></a>3.1.1. Account Ownership
+        3.1.1. Account Ownership
       </h4>
 
       <p>
@@ -1338,7 +1338,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h4>
-        <a></a>3.1.2. School-Purchased Accounts
+        3.1.2. School-Purchased Accounts
       </h4>
 
       <p>
@@ -1352,11 +1352,11 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h3>
-        <a></a>3.2. Match Streaming
+        3.2. Match Streaming
       </h3>
 
       <h4>
-        <a></a>3.2.1. Spectators
+        3.2.1. Spectators
       </h4>
 
       <p>
@@ -1370,7 +1370,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h4>
-        <a></a>3.2.2. Player Streaming
+        3.2.2. Player Streaming
       </h4>
 
       <p>
@@ -1386,7 +1386,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h3>
-        <a></a>3.3. Playoff Qualification
+        3.3. Playoff Qualification
       </h3>
 
       <p>
@@ -1397,7 +1397,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h4>
-        <a></a>3.3.1. Unplayed Matches
+        3.3.1. Unplayed Matches
       </h4>
 
       <p>
@@ -1407,7 +1407,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h3>
-        <a></a>3.4. Playoff Qualification Tiebreakers
+        3.4. Playoff Qualification Tiebreakers
       </h3>
 
       <p>
@@ -1443,11 +1443,11 @@ export function LeagueOfLegendsRules() {
       </ol>
 
       <h2>
-        <a></a>4. Restrictions
+        4. Restrictions
       </h2>
 
       <h3>
-        <a></a>4.1 Disabled Content
+        4.1 Disabled Content
       </h3>
 
       <p>
@@ -1457,7 +1457,7 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h3>
-        <a></a>4.2. New or Reworked Champions
+        4.2. New or Reworked Champions
       </h3>
 
       <p>
@@ -1470,11 +1470,11 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h4>
-        <a></a>4.2.1. Currently Banned Champions
+        4.2.1. Currently Banned Champions
       </h4>
 
       <h3>
-        <a></a>4.3 Outside Apps and Other Programs
+        4.3 Outside Apps and Other Programs
       </h3>
 
       <p>
@@ -1504,11 +1504,11 @@ export function LeagueOfLegendsRules() {
       </p>
 
       <h2>
-        <a></a>5. Stoppage of Play
+        5. Stoppage of Play
       </h2>
 
       <h3>
-        <a></a>5.1. Game Pauses
+        5.1. Game Pauses
       </h3>
 
       <p>
@@ -1552,13 +1552,13 @@ export function LeagueOfLegendsRules() {
       </ul>
 
       <h3>
-        <a></a>5.2 Match Resets
+        5.2 Match Resets
       </h3>
 
       <p>Matches Resets will be made at the discretion of IHSEA officials.</p>
 
       <h2>
-        <a></a>6. Team Rosters
+        6. Team Rosters
       </h2>
 
       <p>

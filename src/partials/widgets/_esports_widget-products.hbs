@@ -9,12 +9,12 @@
 			{{#each esports.products.widget-products}}
 			<li className="products-list__item">
 				<figure className="products-list__product-thumb">
-					<Link href="#">
+					<Link href="/" >
 						<img src="{{../root}}assets/images/esports/samples/{{thumb}}" alt="">
 					</Link>
 				</figure>
 				<div className="products-list__inner">
-					<h5 className="products-list__product-name"><Link href="#">{{title}}</Link></h5>
+					<h5 className="products-list__product-name"><Link href="/" >{{title}}</Link></h5>
 					<span className="products-list__product-cat">{{category}}</span>
 					<div className="products-list__product-ratings">
 						{{#repeat rating.full}}
