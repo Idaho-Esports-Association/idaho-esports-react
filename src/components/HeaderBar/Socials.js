@@ -1,21 +1,31 @@
 import React from "react";
-import SocialItem from "./SocialItem";
+import { SocialRoutes } from "../../data/SocialRoutes";
 
 function Socials() {
   return (
-    <div className="cards">
-      <div className="cards__container">
-        <div className="cards__items">
+
           <ul className="social-links social-links--inline social-links--main-nav social-links--top-bar">
-            <SocialItem path="https://www.facebook.com/" title="facebook" />
-            <SocialItem path="https://www.twitter.com/" title="twitter" />
-            <SocialItem path="https://www.twitch.com/" title="twitch" />
-            <SocialItem path="https://www.youtube.com/" title="youtube" />
-            <SocialItem path="https://www.google.com/" title="google-plus" />
+            {SocialRoutes.map((social) => (
+              <>
+                <li className="social-links__item" key={"header-"+social.id}>
+                  <a
+                    to={social.url}
+                    className="social-links__link"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title={social.name}
+                    alt={social.name + " link"}
+                    target="_blank"
+                    href={social.url}
+                    rel="noopener noreferrer"
+                  >
+                    <i className={"fab fa-" + social.name}></i>
+                  </a>
+                </li>
+              </>
+            ))}
           </ul>
-        </div>
-      </div>
-    </div>
+
   );
 }
 

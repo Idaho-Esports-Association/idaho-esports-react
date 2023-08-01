@@ -1,4 +1,5 @@
 import React from "react";
+import FooterSocialWidget from "./widgets/FooterSocialWidget";
 
 function Footer() {
   return (
@@ -512,78 +513,7 @@ function Footer() {
         {/* <!-- Footer Widgets / End --> */}
 
         {/* <!-- Footer Social Links --> */}
-        <div className="footer-social">
-          <div className="container">
-            <ul className="footer-social__list list-unstyled">
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-facebook"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">Facebook</span>
-                    <span className="footer-social__user">/alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-twitter"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">Twitter</span>
-                    <span className="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-twitch"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">Twitch</span>
-                    <span className="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-youtube"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">YouTube</span>
-                    <span className="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-google-plus-g"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">Google+</span>
-                    <span className="footer-social__user">/alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li className="footer-social__item">
-                <a href="/" className="footer-social__link">
-                  <span className="footer-social__icon">
-                    <i className="fab fa-instagram"></i>
-                  </span>
-                  <div className="footer-social__txt">
-                    <span className="footer-social__name">Instagram</span>
-                    <span className="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <FooterSocialWidget />
         {/* <!-- Footer Social Links / End --> */}
       </footer>
       )
