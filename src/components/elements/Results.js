@@ -1,5 +1,5 @@
 import React from "react";
-import ResultWidget from "./ResultsWidget";
+import ResultWidget from ".//widgets/ResultsWidget";
 
 // needs team1score, team2score, team1logo, team1name, team1city, team2logo, team2name, team2city, competitionseries, competitiondate
 

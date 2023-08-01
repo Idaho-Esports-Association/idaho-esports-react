@@ -1,9 +1,9 @@
 import React from "react";
-import HeroSection from "../HeroSection";
-import PostWidget from "../PostWidget";
-import MarqueeArea from "../Marquee";
-import Result from "../Results";
-import TwitchWidget from "../TwitchWidget";
+import HeroSection from "..//elements/HeroSection";
+import PostWidget from "..//elements/widgets/PostWidget";
+import MarqueeArea from "..//elements/Marquee";
+import Result from "..//elements/Results";
+import TwitchWidget from "..//elements//widgets/TwitchWidget";
 import SocialCounter from "../elements/buttons/SocialCounter";
 
 function Home() {
@@ -65,6 +65,124 @@ function Home() {
       team2city: "United States",
     },
   ];
+  const stories = [
+    {
+      size: "6",
+      category: "4",
+      image: "https://picsum.photos/400",
+      alt: "test",
+      link: "_esports_blog-post-1.html",
+      categoryTitle: "Xenowatch",
+      title: "The Idaho Esports reach to the Xenowatch finals",
+      date: "August 27th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Erick Rodgers",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "2",
+      image: "https://picsum.photos/400",
+      alt: "testing",
+      link: "_esports_blog-post-1.html",
+      categoryTitle: "L.O. Heroes",
+      title: "The new hero is coming to the league",
+      date: "August 27th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Lagertha Dax",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "1",
+      image: "https://picsum.photos/400",
+      alt: "tester",
+      link: "_esports_blog-post-1.html",
+      categoryTitle: "The Team",
+      title:
+        "The Team defeated the L.A. Pirates 2-1 in the Pro League Quarterfinals",
+      date: "July 28th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Lagertha Dax",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "4",
+      image: "https://picsum.photos/400",
+      alt: "test",
+      categoryTitle: "Xenowatch",
+      title: "Xenowatch&#x27;s new patch will fix the faces bugs",
+      date: "July 24th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Lagertha Dax",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "2",
+      image: "https://picsum.photos/400",
+      alt: "test",
+      categoryTitle: "L.O. Heroes",
+      title: "A new class is added to the human&#x27;s race",
+      date: "July 16th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Lagertha Dax",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "1",
+      image: "https://picsum.photos/400",
+      alt: "test",
+      categoryTitle: "The Team",
+      title: 'The Idaho Esports welcome "Logan-X" to the team',
+      date: "June 3rd, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Eric Rodgers",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+    {
+      size: "6",
+      category: "1",
+      image: "https://picsum.photos/400",
+      alt: "test",
+      categoryTitle: "The Team",
+      title: "Kelly_Spiegel9 joins the Xenowatch team",
+      date: "May 15th, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...",
+      authorImage: "assets/images/esports/samples/avatar-12-xs.jpg",
+      author: "Eric Rodgers",
+      views: "2369",
+      likes: "530",
+      commentCount: "18",
+    },
+  ];
   return (
     <>
       <HeroSection />
@@ -75,124 +193,12 @@ function Home() {
             <div className="content col-lg-8">
               {/* Post Grid 1 */}
               <div className="posts posts--tile posts--tile-alt post-grid row">
-                <PostWidget
-                  size="6"
-                  category="4"
-                  image="https://picsum.photos/400"
-                  alt="test"
-                  link="_esports_blog-post-1.html"
-                  categoryTitle="Xenowatch"
-                  title="The Idaho Esports reach to the Xenowatch finals"
-                  date="August 27th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Erick Rodgers"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="2"
-                  image="https://picsum.photos/400"
-                  alt="testing"
-                  link="_esports_blog-post-1.html"
-                  categoryTitle="L.O. Heroes"
-                  title="The new hero is coming to the league"
-                  date="August 27th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Lagertha Dax"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="1"
-                  image="https://picsum.photos/400"
-                  alt="tester"
-                  link="_esports_blog-post-1.html"
-                  categoryTitle="The Team"
-                  title="The Team defeated the L.A. Pirates 2-1 in the Pro League Quarterfinals"
-                  date="July 28th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Lagertha Dax"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="4"
-                  image="https://picsum.photos/400"
-                  alt="test"
-                  categoryTitle="Xenowatch"
-                  title="Xenowatch&#x27;s new patch will fix the faces bugs"
-                  date="July 24th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Lagertha Dax"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="2"
-                  image="https://picsum.photos/400"
-                  alt="test"
-                  categoryTitle="L.O. Heroes"
-                  title="A new class is added to the human&#x27;s race"
-                  date="July 16th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Lagertha Dax"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="1"
-                  image="https://picsum.photos/400"
-                  alt="test"
-                  categoryTitle="The Team"
-                  title='The Idaho Esports welcome "Logan-X" to the team'
-                  date="June 3rd, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Eric Rodgers"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
-                <PostWidget
-                  size="6"
-                  category="1"
-                  image="https://picsum.photos/400"
-                  alt="test"
-                  categoryTitle="The Team"
-                  title="Kelly_Spiegel9 joins the Xenowatch team"
-                  date="May 15th, 2018"
-                  excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..."
-                  authorImage="assets/images/esports/samples/avatar-12-xs.jpg"
-                  author="Eric Rodgers"
-                  views="2369"
-                  likes="530"
-                  commentCount="18"
-                />
+                <PostWidget stories={stories} />
               </div>
             </div>
             <div className="sidebar col-lg-4">
               <aside className="widget widget--sidebar widget-social widget-social--buttons">
-                <SocialCounter type="facebook" />
-                <SocialCounter type="twitter" />
-                <SocialCounter type="twitch" />
-                <SocialCounter type="youtube" />
-                <SocialCounter type="rss" />
-                <SocialCounter type="instagram" />
+                <SocialCounter />
               </aside>
               {/* Latest results and all results */}
               <aside className="widget card widget--sidebar widget-results">

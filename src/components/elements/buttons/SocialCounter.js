@@ -1,69 +1,28 @@
 import React from "react";
+import { SocialRoutes } from "../../../data/SocialRoutes";
 
 export default function SocialCounter(props) {
-  var counter = "";
-  var link = "";
-  var message = "";
-  var follows = "";
-  switch (props.type) {
-    case "facebook":
-      counter = "facebook";
-      link = "https://www.facebook.com/";
-      message = "Like Our Facebook Page";
-      follows = "Likes";
-      break;
-    case "twitter":
-      counter = "twitter";
-      link = "https://twitter.com/";
-      message = "Follow Us On Twitter";
-      follows = "Followers";
-      break;
-    case "youtube":
-      counter = "youtube";
-      link = "https://www.youtube.com/";
-      message = "Subscribe To Our Youtube Channel";
-      follows = "Subs";
-      break;
-    case "instagram":
-      counter = "instagram";
-      link = "https://www.instagram.com/";
-      message = "Follow Us On Instagram";
-      follows = "Followers";
-      break;
-    case "twitch":
-      counter = "twitch";
-      link = "https://www.twitch.tv/";
-      message = "Follow Us On Twitch";
-      follows = "Subs";
-      break;
-    case "rss":
-      counter = "rss";
-      link = "https://www.rss.com/";
-      message = "Subscribe To Our RSS Feed";
-      follows = "Subs";
-      break;
-      default:
-        counter = "error";
-        link = "https://www.idahoesports.gg"
-        message = "Error"
-        follows = "Error"
-  }
   return (
+    <>
+    {SocialRoutes.map((social) => (
     <a
-      href={link}
-      className={"btn-social-counter btn-social-counter--" + counter}
+      href={social.url}
+      className={"btn-social-counter btn-social-counter--" + social.name}
       target="_blank"
       rel="noopener noreferrer"
+      key={social.id}
     >
       <div className="btn-social-counter__icon">
-        <i className={"fab fa-" + counter}></i>
+        <i className={"fab fa-" + social.name}></i>
       </div>
-      <h6 className="btn-social-counter__title">{message}</h6>
+      <h6 className="btn-social-counter__title">{social.message}</h6>
       <span className="btn-social-counter__count">
         <span className="btn-social-counter__count-num"></span>
-        {follows}
+        {social.follows}
       </span>
       <span className="btn-social-counter__add-icon"></span>
     </a>
+    ))}
+    </>
   );
 }
