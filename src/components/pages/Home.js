@@ -5,6 +5,9 @@ import MarqueeArea from "..//elements/Marquee";
 import Result from "..//elements/Results";
 import TwitchWidget from "..//elements//widgets/TwitchWidget";
 import SocialCounter from "../elements/buttons/SocialCounter";
+import GameResultWidget from "../elements/widgets/GameResultWidget";
+import CalendarWidget from "../elements/widgets/CalendarWidget";
+import MatchAnnouncement from "../elements/widgets/MatchAnnouncementWidget";
 
 function Home() {
   const results = [
@@ -228,7 +231,7 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="Destroy Plays Xenowatch"
                     streamDetail="Joined by Kelly and Saki"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
@@ -238,17 +241,17 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="Assassins League Gameplay"
                     streamDetail="We start the adventure mode!"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
                     streamStatus="Offline"
-                    streamStartTime="July 23, 2023 21:00:00"
+                    streamStartTime="2023-08-03T21:00"
                     streamerImage="assets/images/esports/samples/twitch-streamer-3.png"
                     streamerName="Datrix"
                     streamTitle="League of Heroes: Ether Quest"
                     streamDetail="I’m gonna take the hardest quest"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
@@ -258,11 +261,291 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="The Game Huntress&#x27;s Channel"
                     streamDetail="Join me to hunt them all!"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                 </div>
               </aside>
               {/* <!-- Widget: Twitch Streams / End --> */}
+              <aside className="widget card widget--sidebar widget-game-result">
+                <div className="widget__title card__header card__header--has-btn">
+                  <h4>Last Game Result</h4>
+                  <a
+                    href="https://www.twitch.com"
+                    className="btn btn-default btn-xs card-header__button"
+                  >
+                    See All Results
+                  </a>
+                </div>
+                <div className="widget__content card__content">
+                  <GameResultWidget
+                    gameid="1"
+                    gameTitle="Striker Go"
+                    gameDate="Friday, April 26th"
+                    competitionTitle="Pro League - World Championship"
+                    competitionRound="Quarter-Finals"
+                    team1Logo="assets/images/esports/logos/alchemists-22x25.png"
+                    team1Name="Idaho Esports"
+                    team1City="United States"
+                    team1Score="2"
+                    team2Logo="assets/images/samples/logos/pirates_shield.png"
+                    team2Name="L.A. Pirates"
+                    team2City="United States"
+                    team2Score="1"
+                    team1Kills="56"
+                    team1Deaths="23"
+                    team1Assists="14"
+                    team1Pentakills="19"
+                    team2Kills="40"
+                    team2Deaths="38"
+                    team2Assists="6"
+                    team2Pentakills="12"
+                    mvpName="Destory Spiegel"
+                    mvpTeam="Idaho Esports"
+                    mvpKills="37"
+                    mvpDeaths="2"
+                    mvpAssists="9"
+                    mvpPentakills="13"
+                  />
+                </div>
+              </aside>
+              <aside className="widget card card--no-paddings widget--sidebar widget-event-calendar">
+                <div className="widget__title card__header">
+                  <h4>Events Calendar</h4>
+                </div>
+                <div className="widget__content card__content">
+                  <div className="alc-event-calendar">
+                    <CalendarWidget/>
+                    <table className="table">
+                      <caption>
+                        <span className="alc-event-calendar__caption-inner">
+                          <span className="alc-event-calendar__caption-nav alc-event-calendar__caption-nav--prev">
+                            <a
+                              href="https://www.twitch.com"
+                              className="alc-event-calendar__caption-nav-link"
+                            >Example</a>
+                          </span>
+                          <span className="alc-event-calendar__caption-title">
+                            November 2018
+                          </span>
+                          <span className="alc-event-calendar__caption-nav alc-event-calendar__caption-nav--next">
+                            <a
+                              href="https://www.twitch.com"
+                              className="alc-event-calendar__caption-nav-link"
+                            >Example</a>
+                          </span>
+                        </span>
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th data-weekday-abbr="Mon">
+                            <span className="weekday">Mo</span>
+                          </th>
+                          <th data-weekday-abbr="Tue">
+                            <span className="weekday">Tu</span>
+                          </th>
+                          <th data-weekday-abbr="Wed">
+                            <span className="weekday">We</span>
+                          </th>
+                          <th data-weekday-abbr="Thu">
+                            <span className="weekday">Th</span>
+                          </th>
+                          <th data-weekday-abbr="Fri">
+                            <span className="weekday">Fr</span>
+                          </th>
+                          <th data-weekday-abbr="Sat">
+                            <span className="weekday">Sa</span>
+                          </th>
+                          <th data-weekday-abbr="Sun">
+                            <span className="weekday">Su</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span className="day day--muted">28</span>
+                          </td>
+                          <td>
+                            <span className="day day--muted">29</span>
+                          </td>
+                          <td>
+                            <span className="day day--muted">30</span>
+                          </td>
+                          <td>
+                            <span className="day day--muted">31</span>
+                          </td>
+                          <td>
+                            <span className="day">1</span>
+                          </td>
+                          <td>
+                            <span className="day">2</span>
+                          </td>
+                          <td>
+                            <span className="day">3</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span className="day">4</span>
+                          </td>
+                          <td>
+                            <span className="day">5</span>
+                          </td>
+                          <td>
+                            <span className="day">6</span>
+                          </td>
+                          <td>
+                            <span className="day">7</span>
+                          </td>
+                          <td>
+                            <span className="day">8</span>
+                          </td>
+                          <td>
+                            <span className="day day--active day--type-1">9</span>
+                          </td>
+                          <td>
+                            <span className="day">10</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span className="day">11</span>
+                          </td>
+                          <td>
+                            <span className="day">12</span>
+                          </td>
+                          <td>
+                            <span className="day">13</span>
+                          </td>
+                          <td>
+                            <span className="day">14</span>
+                          </td>
+                          <td>
+                            <span className="day">15</span>
+                          </td>
+                          <td>
+                            <span className="day">16</span>
+                          </td>
+                          <td>
+                            <span className="day">17</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span className="day">18</span>
+                          </td>
+                          <td>
+                            <span className="day">19</span>
+                          </td>
+                          <td>
+                            <span className="day day--active day--type-4">20</span>
+                          </td>
+                          <td>
+                            <span className="day">21</span>
+                          </td>
+                          <td>
+                            <span className="day">22</span>
+                          </td>
+                          <td>
+                            <span className="day">23</span>
+                          </td>
+                          <td>
+                            <span className="day">24</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span className="day">25</span>
+                          </td>
+                          <td>
+                            <span className="day">26</span>
+                          </td>
+                          <td>
+                            <span className="day">27</span>
+                          </td>
+                          <td>
+                            <span className="day">28</span>
+                          </td>
+                          <td>
+                            <span className="day">29</span>
+                          </td>
+                          <td>
+                            <span className="day">30</span>
+                          </td>
+                          <td>
+                            <span className="day day--muted">1</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <ul className="alc-event-list list-unstyled">
+                    <li className="alc-event-list__item alc-event-list-item alc-event-list-item--type-1">
+                      <div className="alc-event-list-item__header">
+                        <time className="alc-event-list-item__date">
+                          Friday, September 9th
+                        </time>
+                      </div>
+                      <div className="alc-event-list-item__body">
+                        <div className="alc-event-list-item__time">09:00 PM</div>
+                        <div className="alc-event-list-item__info">
+                          <h6 className="alc-event-list-item__title">
+                            <a href="_esports_event-overview-1a.html">
+                              Game Huntress "Inktoon 2" Stream
+                            </a>
+                          </h6>
+                          <p className="alc-event-list-item__desc">
+                            Join me to play the multiplayer
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="alc-event-list__item alc-event-list-item alc-event-list-item--type-4">
+                      <div className="alc-event-list-item__header">
+                        <time className="alc-event-list-item__date">
+                          Tuesday, September 20th
+                        </time>
+                      </div>
+                      <div className="alc-event-list-item__body">
+                        <div className="alc-event-list-item__time">11:00 PM</div>
+                        <div className="alc-event-list-item__info">
+                          <h6 className="alc-event-list-item__title">
+                            <a href="_esports_event-overview-1b.html">
+                              Xenowatch Patch 5.6 Update Release
+                            </a>
+                          </h6>
+                          <p className="alc-event-list-item__desc">
+                            Bug fixes and a new character!
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+              <aside class="widget widget--sidebar card widget-preview">
+                <div class="widget__title card__header">
+                  <h4>Next Match</h4>
+                </div>
+                <div class="widget__content card__content">
+                  <MatchAnnouncement
+                  gameTitle="Xenowatch"
+                  gameSpecificDate="Thursday, August 3rd"
+                  gameSpecificTime="21:00"
+                  seriesTitle="Xeno League"
+                  seriesMatch="Semifinals"
+                  team1Logo="assets/images/esports/logos/alchemists-22x25.png"
+                  team1Name="Idaho Esports"
+                  team1City="United States"
+                  team2Logo="assets/images/samples/logos/icarus_wings_shield.png"
+                  team2Name="Icarus Wings"
+                  team2City="Portugal"
+                  gameDateTime="2023-08-03T21:00"
+                  />
+                  
+                  </div>
+              </aside>
             </div>
           </div>
         </div>
