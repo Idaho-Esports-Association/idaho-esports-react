@@ -4,6 +4,35 @@ import { Link, useLocation } from "react-router-dom";
 import WidgetItem from "./WidgetItem";
 
 function Header() {
+  const highlights = [
+    {
+      category: "4",
+      image: "https://picsum.photos/400",
+      alt: "Xenowatch's new patch will fix the faces bugs",
+      title: "Xenowatch",
+      description: "Xenowatch's new patch will fix the faces bugs",
+      date: "August 27th, 2018",
+      link: "_esports_blog-post-1.html",
+    },
+    {
+      category: "2",
+      image: "https://picsum.photos/400",
+      alt: "A new mage character is coming to the League",
+      title: "L.O. Heroes",
+      description: "A new mage character is coming to the League",
+      date: "July 16th, 2018",
+      link: "_esports_blog-post-1.html",
+    },
+    {
+      category: "3",
+      image: "https://picsum.photos/400",
+      alt: "New Teach vehicles will be added in July's patch",
+      title: "Striker GO",
+      description: "New Teach vehicles will be added in July's patch",
+      date: "June 12th, 2018",
+      link: "_esports_blog-post-1.html",
+    },
+  ];
   const location = useLocation();
   const { part1, part2 } = getPageName(location.pathname);
   function getPageName(url) {
@@ -14,7 +43,7 @@ function Header() {
     const isEven = parts.length % 2 === 0;
     const middle = Math.floor(parts.length / 2);
     let part1, part2;
-  
+
     if (parts.length === 0) {
       part1 = "Home";
       part2 = "";
@@ -22,7 +51,7 @@ function Header() {
       part1 = parts.slice(0, isEven ? middle : middle + 1).join(" ");
       part2 = parts.slice(isEven ? middle : middle + 1).join(" ");
     }
-  
+
     return { part1, part2 };
   }
 
@@ -160,7 +189,7 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-account__item">
-                  <Link href="/" >
+                  <Link href="/">
                     Currency: <span className="highlight">USD</span>
                   </Link>
                   {/* <ul className="main-nav__sub">
@@ -176,7 +205,7 @@ function Header() {
                   </ul> */}
                 </li>
                 <li className="nav-account__item">
-                  <Link href="/" >
+                  <Link href="/">
                     Language: <span className="highlight">EN</span>
                   </Link>
                   {/* <ul className="main-nav__sub">
@@ -230,7 +259,7 @@ function Header() {
                     <Link to="/">Home</Link>
                   </li>
                   <li className={HighlightMenu("Info")} id="Info">
-                    <Link href="/" >Information</Link>
+                    <Link href="/">Information</Link>
                     {/* <!-- Mega Menu --> */}
                     <div className="main-nav__megamenu">
                       <div className="row">
@@ -239,40 +268,14 @@ function Header() {
                           <div className="widget widget--megamenu widget-latest-posts">
                             <div className="widget__content">
                               <ul className="posts posts--simple-list posts-layout-horizontal posts-layout-horizontal--3cols">
-                                <WidgetItem
-                                  category="4"
-                                  image="assets/images/esports/samples/post-img2-grid.jpg"
-                                  alt="Xenowatch&#x27;s new patch will fix the faces bugs"
-                                  title="Xenowatch"
-                                  description="Xenowatch&#x27;s new patch will fix the faces bugs"
-                                  date="August 27th, 2018"
-                                  link="_esports_blog-post-1.html"
-                                />
-                                <WidgetItem
-                                  category="2"
-                                  image="assets/images/esports/samples/post-img2-grid.jpg"
-                                  alt="A new mage character is coming to the League"
-                                  title="L.O. Heroes"
-                                  description="A new mage character is coming to the League"
-                                  date="July 16th, 2018"
-                                  link="_esports_blog-post-1.html"
-                                />
-                                <WidgetItem
-                                  category="3"
-                                  image="assets/images/esports/samples/post-img2-grid.jpg"
-                                  alt="New Teach vehicles will be added in July&#x27;s patch"
-                                  title="Striker GO"
-                                  description="New Teach vehicles will be added in July&#x27;s patch"
-                                  date="June 12th, 2018"
-                                  link="_esports_blog-post-1.html"
-                                />
+                                <WidgetItem highlights={highlights} />
                               </ul>
                             </div>
                           </div>
                           {/* <!-- Widget: Latest Posts / End --> */}
                         </div>
                         <div className="w-100"></div>
-                        <ul className="col-lg-5 col-md-3 col-12 main-nav__ul main-nav__ul-3cols">
+                        <ul className="col-lg-3 col-md-2 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title">Game Rules</li>
                           <li>
                             <Link to="/info/apex_legends">Apex Legends</Link>
@@ -302,7 +305,7 @@ function Header() {
                             </Link>
                           </li>
                         </ul>
-                        <ul className="col-lg-3 col-md-3 col-12 main-nav__ul main-nav__ul-2cols">
+                        <ul className="col-lg-2 col-md-2 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title">League Rules</li>
                           <li>
                             <Link href="_esports_blog-1.html">General</Link>
@@ -355,12 +358,28 @@ function Header() {
                             </Link>
                           </li>
                         </ul>
+                        <ul className="col-lg-2 col-md-3 col-12 main-nav__ul">
+                          <li className="main-nav__title">Our Schools</li>
+                          <li>
+                            <Link href="_esports_page-sponsors.html">
+                              High Schools
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href="_esports_page-faqs.html">Middle Schools</Link>
+                          </li>
+                          <li>
+                            <Link href="_esports_page-contacts.html">
+                              Join us
+                            </Link>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                     {/* <!-- Mega Menu / End --> */}
                   </li>
                   <li className={HighlightMenu("Program")} id="Program">
-                    <Link href="/" >Program Management</Link>
+                    <Link href="/">Program Management</Link>
                     {/* <!-- Mega Menu --> */}
                     <div className="main-nav__megamenu">
                       <div className="row">
@@ -520,7 +539,7 @@ function Header() {
                       <div className="row">
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-1">
-                            <Link href="/"  className="main-nav-banner__link">
+                            <Link href="/" className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 High School
@@ -565,7 +584,7 @@ function Header() {
                         </ul>
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-2">
-                            <Link href="/"  className="main-nav-banner__link">
+                            <Link href="/" className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 Middle School
@@ -610,7 +629,7 @@ function Header() {
                         </ul>
                         <ul className="col-lg-4 col-md-4 col-12 main-nav__ul main-nav__ul-2cols">
                           <li className="main-nav__title main-nav-banner  main-nav-banner--img-3">
-                            <Link href="/"  className="main-nav-banner__link">
+                            <Link href="/" className="main-nav-banner__link">
                               <span className="main-nav-banner__subtitle"></span>
                               <span className="main-nav-banner__title">
                                 Unaffiliated

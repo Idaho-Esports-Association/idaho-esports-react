@@ -1,4 +1,5 @@
 import React from "react";
+import CountDownWidget from "./CountDownWidget";
 
 // isFeatured, streamStatus, streamStartTime, streamerImage, streamerName, streamTitle, streamDetail, link
 
@@ -30,7 +31,7 @@ function TwitchWidget(props) {
             <div
               className="twitch-stream__countdown-counter countdown-counter"
               data-date={props.streamStartTime}
-            ></div>
+            ><CountDownWidget dateTime={props.streamStartTime}/></div>
           </div>
         </>
       );
