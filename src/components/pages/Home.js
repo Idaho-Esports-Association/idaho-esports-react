@@ -231,7 +231,7 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="Destroy Plays Xenowatch"
                     streamDetail="Joined by Kelly and Saki"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
@@ -241,7 +241,7 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="Assassins League Gameplay"
                     streamDetail="We start the adventure mode!"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
@@ -251,7 +251,7 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="League of Heroes: Ether Quest"
                     streamDetail="I’m gonna take the hardest quest"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                   <TwitchWidget
                     isFeatured={false}
@@ -261,7 +261,7 @@ function Home() {
                     streamerName="Datrix"
                     streamTitle="The Game Huntress&#x27;s Channel"
                     streamDetail="Join me to hunt them all!"
-                    link="#"
+                    link="https://www.twitch.com"
                   />
                 </div>
               </aside>
@@ -270,7 +270,7 @@ function Home() {
                 <div className="widget__title card__header card__header--has-btn">
                   <h4>Last Game Result</h4>
                   <a
-                    href="#"
+                    href="https://www.twitch.com"
                     className="btn btn-default btn-xs card-header__button"
                   >
                     See All Results
@@ -320,18 +320,18 @@ function Home() {
                         <span className="alc-event-calendar__caption-inner">
                           <span className="alc-event-calendar__caption-nav alc-event-calendar__caption-nav--prev">
                             <a
-                              href="#"
+                              href="https://www.twitch.com"
                               className="alc-event-calendar__caption-nav-link"
-                            ></a>
+                            >Example</a>
                           </span>
                           <span className="alc-event-calendar__caption-title">
                             November 2018
                           </span>
                           <span className="alc-event-calendar__caption-nav alc-event-calendar__caption-nav--next">
                             <a
-                              href="#"
+                              href="https://www.twitch.com"
                               className="alc-event-calendar__caption-nav-link"
-                            ></a>
+                            >Example</a>
                           </span>
                         </span>
                       </caption>

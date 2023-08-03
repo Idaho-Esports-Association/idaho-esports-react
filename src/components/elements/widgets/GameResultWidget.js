@@ -9,10 +9,6 @@ export default function GameResultWidget(props) {
   const team2Assists = parseInt(props.team2Assists, 10);
   const team1Pentakills = parseInt(props.team1Pentakills, 10);
   const team2Pentakills = parseInt(props.team2Pentakills, 10);
-  const mvpKills = parseInt(props.mvpKills, 10);
-  const mvpDeaths = parseInt(props.mvpDeaths, 10);
-  const mvpAssists = parseInt(props.mvpAssists, 10);
-  const mvpPentakills = parseInt(props.mvpPentakills, 10);
   const team1Score = parseInt(props.team1Score, 10);
   const team2Score = parseInt(props.team2Score, 10);
 

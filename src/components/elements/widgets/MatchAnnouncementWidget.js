@@ -1,6 +1,5 @@
 import React from "react";
 import CountDownWidget from "./CountDownWidget";
-import { react } from "@babel/types";
 
 export default function MatchAnnouncement(props) {
   return (
@@ -62,7 +61,7 @@ export default function MatchAnnouncement(props) {
         </div>
 
         <div class="match-preview__action match-preview__action--ticket text-center">
-          <a href="#" class="btn btn-primary-inverse">
+          <a href="https://www.twitch.com" class="btn btn-primary-inverse">
             Buy Tickets Now
           </a>
         </div>

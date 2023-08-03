@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calendar from 'react-calendar';
 import { differenceInCalendarDays, isTomorrow } from 'date-fns';
 function isSameDay(a, b) {
@@ -18,7 +18,7 @@ function tileClassName({ date, view }) {
 }
 
 export default function CalendarWidget() {
-  const [value, setValue] = useState(new Date());
+
   return (
     <Calendar
     showNeighboringMonth={true}
