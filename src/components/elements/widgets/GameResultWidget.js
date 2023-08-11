@@ -15,24 +15,24 @@ export default function GameResultWidget(props) {
   function WinOrLose(team1Score, team2Score) {
     if (team1Score > team2Score) {
       return (
-        <div class="widget-game-result__score">
-          <span class="widget-game-result__score-result widget-game-result__score-result--winner">
+        <div className="widget-game-result__score">
+          <span className="widget-game-result__score-result widget-game-result__score-result--winner">
             {team1Score}
           </span>
-          <span class="widget-game-result__score-dash">-</span>
-          <span class="widget-game-result__score-result widget-game-result__score-result--loser">
+          <span className="widget-game-result__score-dash">-</span>
+          <span className="widget-game-result__score-result widget-game-result__score-result--loser">
             {team2Score}
           </span>
         </div>
       );
     } else {
       return (
-        <div class="widget-game-result__score">
-          <span class="widget-game-result__score-result widget-game-result__score-result--loser">
+        <div className="widget-game-result__score">
+          <span className="widget-game-result__score-result widget-game-result__score-result--loser">
             {team1Score}
           </span>
-          <span class="widget-game-result__score-dash">-</span>
-          <span class="widget-game-result__score-result widget-game-result__score-result--winner">
+          <span className="widget-game-result__score-dash">-</span>
+          <span className="widget-game-result__score-result widget-game-result__score-result--winner">
             {team2Score}
           </span>
         </div>
@@ -41,59 +41,59 @@ export default function GameResultWidget(props) {
   }
   return (
     <>
-      <div class="widget-game-result__section">
-        <div class="widget-game-result__section-inner">
-          <header class="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
-            <h3 class="widget-game-result__title">{props.gameTitle}</h3>
-            <time class="widget-game-result__date" datetime="2018-04-26">
+      <div className="widget-game-result__section">
+        <div className="widget-game-result__section-inner">
+          <header className="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
+            <h3 className="widget-game-result__title">{props.gameTitle}</h3>
+            <time className="widget-game-result__date" datetime="2018-04-26">
               {props.gameDate}
             </time>
           </header>
 
-          <header class="widget-game-result__header">
-            <h3 class="widget-game-result__title">{props.competitionTitle}</h3>
-            <div class="widget-game-result__subtitle">
+          <header className="widget-game-result__header">
+            <h3 className="widget-game-result__title">{props.competitionTitle}</h3>
+            <div className="widget-game-result__subtitle">
               {props.competitionRound}
             </div>
           </header>
 
-          <div class="widget-game-result__main">
-            <div class="widget-game-result__team widget-game-result__team--first">
-              <figure class="widget-game-result__team-logo">
+          <div className="widget-game-result__main">
+            <div className="widget-game-result__team widget-game-result__team--first">
+              <figure className="widget-game-result__team-logo">
                 <a href={props.team1Link}>
                   <img src={props.team1Logo} alt={props.team1Name} />
                 </a>
               </figure>
-              <div class="widget-game-result__team-info">
-                <h5 class="widget-game-result__team-name">{props.team1Name}</h5>
-                <div class="widget-game-result__team-desc">
+              <div className="widget-game-result__team-info">
+                <h5 className="widget-game-result__team-name">{props.team1Name}</h5>
+                <div className="widget-game-result__team-desc">
                   {props.team1City}
                 </div>
               </div>
             </div>
 
-            <div class="widget-game-result__score-wrap">
+            <div className="widget-game-result__score-wrap">
               {WinOrLose(team1Score, team2Score)}
               <a
                 href={props.gameVideoLink}
-                class="widget-game-result__score-video-icon mp_iframe"
+                className="widget-game-result__score-video-icon mp_iframe"
                 data-toggle="tooltip"
                 data-placement="bottom"
                 title="Watch Replay"
               >
-                <i class="fas fa-play"></i>
+                <i className="fas fa-play"></i>
               </a>
             </div>
 
-            <div class="widget-game-result__team widget-game-result__team--second">
-              <figure class="widget-game-result__team-logo">
+            <div className="widget-game-result__team widget-game-result__team--second">
+              <figure className="widget-game-result__team-logo">
                 <a href={props.team2Link}>
                   <img src={props.team2Logo} alt={props.team2Name} />
                 </a>
               </figure>
-              <div class="widget-game-result__team-info">
-                <h5 class="widget-game-result__team-name">{props.team2Name}</h5>
-                <div class="widget-game-result__team-desc">
+              <div className="widget-game-result__team-info">
+                <h5 className="widget-game-result__team-name">{props.team2Name}</h5>
+                <div className="widget-game-result__team-desc">
                   {props.team2City}
                 </div>
               </div>
@@ -102,21 +102,21 @@ export default function GameResultWidget(props) {
         </div>
       </div>
 
-      <div class="widget-game-result__section">
-        <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
-          <h5 class="widget-game-result__subtitle">Match Statistics</h5>
+      <div className="widget-game-result__section">
+        <header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+          <h5 className="widget-game-result__subtitle">Match Statistics</h5>
         </header>
-        <div class="widget-game-result__section-inner">
-          <table class="progress-table progress-table--sm-space">
+        <div className="widget-game-result__section-inner">
+          <table className="progress-table progress-table--sm-space">
             <tbody>
               <tr>
-                <td class="progress-table__progress-label progress-table__progress-label--highlight">
+                <td className="progress-table__progress-label progress-table__progress-label--highlight">
                   {props.team1Kills}
                 </td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--first">
-                  <div class="progress progress--lines">
+                <td className="progress-table__progress-bar progress-table__progress-bar--first">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar"
+                      className="progress__bar"
                       style={{
                         width:
                           (team1Kills /
@@ -131,11 +131,11 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__title">Total Kills</td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--second">
-                  <div class="progress progress--lines">
+                <td className="progress-table__title">Total Kills</td>
+                <td className="progress-table__progress-bar progress-table__progress-bar--second">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar progress__bar--custom-color-1"
+                      className="progress__bar progress__bar--custom-color-1"
                       style={{
                         width:
                           +(
@@ -152,18 +152,18 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__progress-label">
+                <td className="progress-table__progress-label">
                   {props.team2Kills}
                 </td>
               </tr>
               <tr>
-                <td class="progress-table__progress-label">
+                <td className="progress-table__progress-label">
                   {props.team1Deaths}
                 </td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--first">
-                  <div class="progress progress--lines">
+                <td className="progress-table__progress-bar progress-table__progress-bar--first">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar"
+                      className="progress__bar"
                       style={{
                         width:
                           +(
@@ -179,11 +179,11 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__title">Total Deaths</td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--second">
-                  <div class="progress progress--lines">
+                <td className="progress-table__title">Total Deaths</td>
+                <td className="progress-table__progress-bar progress-table__progress-bar--second">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar progress__bar--custom-color-1"
+                      className="progress__bar progress__bar--custom-color-1"
                       style={{
                         width:
                           +(
@@ -199,18 +199,18 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__progress-label progress-table__progress-label--highlight">
+                <td className="progress-table__progress-label progress-table__progress-label--highlight">
                   {props.team2Deaths}
                 </td>
               </tr>
               <tr>
-                <td class="progress-table__progress-label progress-table__progress-label--highlight">
+                <td className="progress-table__progress-label progress-table__progress-label--highlight">
                   {props.team1Assists}
                 </td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--first">
-                  <div class="progress progress--lines">
+                <td className="progress-table__progress-bar progress-table__progress-bar--first">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar"
+                      className="progress__bar"
                       style={{
                         width:
                           +(
@@ -226,11 +226,11 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__title">Total Assists</td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--second">
-                  <div class="progress progress--lines">
+                <td className="progress-table__title">Total Assists</td>
+                <td className="progress-table__progress-bar progress-table__progress-bar--second">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar progress__bar--custom-color-1"
+                      className="progress__bar progress__bar--custom-color-1"
                       style={{
                         width:
                           +(
@@ -246,18 +246,18 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__progress-label">
+                <td className="progress-table__progress-label">
                   {props.team2Assists}
                 </td>
               </tr>
               <tr>
-                <td class="progress-table__progress-label progress-table__progress-label--highlight">
+                <td className="progress-table__progress-label progress-table__progress-label--highlight">
                   {props.team1Pentakills}
                 </td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--first">
-                  <div class="progress progress--lines">
+                <td className="progress-table__progress-bar progress-table__progress-bar--first">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar"
+                      className="progress__bar"
                       style={{
                         width:
                           +(
@@ -273,11 +273,11 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__title">Pentakills</td>
-                <td class="progress-table__progress-bar progress-table__progress-bar--second">
-                  <div class="progress progress--lines">
+                <td className="progress-table__title">Pentakills</td>
+                <td className="progress-table__progress-bar progress-table__progress-bar--second">
+                  <div className="progress progress--lines">
                     <div
-                      class="progress__bar progress__bar--custom-color-1"
+                      className="progress__bar progress__bar--custom-color-1"
                       style={{
                         width:
                           +(
@@ -293,7 +293,7 @@ export default function GameResultWidget(props) {
                     ></div>
                   </div>
                 </td>
-                <td class="progress-table__progress-label">
+                <td className="progress-table__progress-label">
                   {props.team2Pentakills}
                 </td>
               </tr>
@@ -302,50 +302,50 @@ export default function GameResultWidget(props) {
         </div>
       </div>
 
-      <div class="widget-game-result__section">
-        <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
-          <h5 class="widget-game-result__subtitle">Match MVP</h5>
+      <div className="widget-game-result__section">
+        <header className="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+          <h5 className="widget-game-result__subtitle">Match MVP</h5>
         </header>
-        <div class="widget-game-result__section-inner">
-          <div class="game-result__mvp">
-            <div class="game-result__mvp-player">
-              <div class="game-result__mvp-player-icon-holder">
-                <span class="game-result__mvp-player-icon">
-                  <i class="far fa-star"></i>
+        <div className="widget-game-result__section-inner">
+          <div className="game-result__mvp">
+            <div className="game-result__mvp-player">
+              <div className="game-result__mvp-player-icon-holder">
+                <span className="game-result__mvp-player-icon">
+                  <i className="far fa-star"></i>
                 </span>
               </div>
-              <div class="game-result__mvp-player-meta">
-                <h6 class="game-result__mvp-player-name">{props.mvpName}</h6>
-                <span class="game-result__mvp-player-team">
+              <div className="game-result__mvp-player-meta">
+                <h6 className="game-result__mvp-player-name">{props.mvpName}</h6>
+                <span className="game-result__mvp-player-team">
                   {props.mvpTeam}
                 </span>
               </div>
             </div>
-            <div class="game-result__mvp-stats">
-              <ul class="game-result__mvp-stats-list list-unstyled">
-                <li class="game-result__mvp-stats-item">
-                  <span class="game-result__mvp-stats-value">
+            <div className="game-result__mvp-stats">
+              <ul className="game-result__mvp-stats-list list-unstyled">
+                <li className="game-result__mvp-stats-item">
+                  <span className="game-result__mvp-stats-value">
                     {props.mvpKills}
                   </span>
-                  <span class="game-result__mvp-stats-label">Kills</span>
+                  <span className="game-result__mvp-stats-label">Kills</span>
                 </li>
-                <li class="game-result__mvp-stats-item">
-                  <span class="game-result__mvp-stats-value">
+                <li className="game-result__mvp-stats-item">
+                  <span className="game-result__mvp-stats-value">
                     {props.mvpDeaths}
                   </span>
-                  <span class="game-result__mvp-stats-label">Deaths</span>
+                  <span className="game-result__mvp-stats-label">Deaths</span>
                 </li>
-                <li class="game-result__mvp-stats-item">
-                  <span class="game-result__mvp-stats-value">
+                <li className="game-result__mvp-stats-item">
+                  <span className="game-result__mvp-stats-value">
                     {props.mvpAssists}
                   </span>
-                  <span class="game-result__mvp-stats-label">Assists</span>
+                  <span className="game-result__mvp-stats-label">Assists</span>
                 </li>
-                <li class="game-result__mvp-stats-item">
-                  <span class="game-result__mvp-stats-value">
+                <li className="game-result__mvp-stats-item">
+                  <span className="game-result__mvp-stats-value">
                     {props.mvpPentakills}
                   </span>
-                  <span class="game-result__mvp-stats-label">Pentakills</span>
+                  <span className="game-result__mvp-stats-label">Pentakills</span>
                 </li>
               </ul>
             </div>

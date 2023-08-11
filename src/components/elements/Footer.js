@@ -1,5 +1,6 @@
 import React from "react";
 import FooterSocialWidget from "./widgets/FooterSocialWidget";
+import Button from "./buttons/Button";
 
 function Footer() {
   return (
@@ -164,9 +165,7 @@ function Footer() {
                 </a>
               </li>
             </ul>
-            <a href="/" className="btn btn-default btn-icon" target="_blank"
-              ><i className="fas fa-link"></i> Follow Our Profile</a
-            >
+            <Button ButtonText="Follow Our Profile" ButtonType="default" ButtonSize="md" ButtonLink="/" ButtonIconSpot="left" ButtonIcon="fas fa-link" TargetType="_blank"/>
           </div>
         </aside>
         {/* <!-- Widget: Instagram Section / End --> */}
