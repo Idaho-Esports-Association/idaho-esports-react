@@ -8,6 +8,7 @@ import SocialCounter from "../elements/buttons/SocialCounter";
 import GameResultWidget from "../elements/widgets/GameResultWidget";
 import CalendarWidget from "../elements/widgets/CalendarWidget";
 import MatchAnnouncement from "../elements/widgets/MatchAnnouncementWidget";
+import Button from "../elements/buttons/Button";
 
 function Home() {
   const results = [
@@ -207,12 +208,7 @@ function Home() {
               <aside className="widget card widget--sidebar widget-results">
                 <div className="widget__title card__header card__header--has-btn">
                   <h4>Latest Results</h4>
-                  <a
-                    href="/"
-                    className="btn btn-default btn-xs card-header__button"
-                  >
-                    See Full Results
-                  </a>
+                  <Button ButtonText="See Full Results" ButtonLink="/" ButtonSize="xs" ButtonType="default"/>
                 </div>
                 <div className="widget__content card__content">
                   <dl className="widget-results__dl">
@@ -269,12 +265,7 @@ function Home() {
               <aside className="widget card widget--sidebar widget-game-result">
                 <div className="widget__title card__header card__header--has-btn">
                   <h4>Last Game Result</h4>
-                  <a
-                    href="https://www.twitch.com"
-                    className="btn btn-default btn-xs card-header__button"
-                  >
-                    See All Results
-                  </a>
+                  <Button ButtonText="See All Results" ButtonLink="/" ButtonSize="xs" ButtonType="default"/>
                 </div>
                 <div className="widget__content card__content">
                   <GameResultWidget
@@ -524,11 +515,11 @@ function Home() {
                   </ul>
                 </div>
               </aside>
-              <aside class="widget widget--sidebar card widget-preview">
-                <div class="widget__title card__header">
+              <aside className="widget widget--sidebar card widget-preview">
+                <div className="widget__title card__header">
                   <h4>Next Match</h4>
                 </div>
-                <div class="widget__content card__content">
+                <div className="widget__content card__content">
                   <MatchAnnouncement
                   gameTitle="Xenowatch"
                   gameSpecificDate="Thursday, August 3rd"

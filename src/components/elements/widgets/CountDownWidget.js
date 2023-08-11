@@ -5,19 +5,19 @@ const renderer = ({ days, hours, minutes, seconds }) => {
     <span>
       <div className="countdown-counter__item countdown-counter__item--days">
         {days}
-        <span class="countdown-counter__label">days</span>
+        <span className="countdown-counter__label">days</span>
       </div>
       <div className="countdown-counter__item countdown-counter__item--hours">
         {hours}
-        <span class="countdown-counter__label">hours</span>
+        <span className="countdown-counter__label">hours</span>
       </div>
       <div className="countdown-counter__item countdown-counter__item--minutes">
         {minutes}
-        <span class="countdown-counter__label">minutes</span>
+        <span className="countdown-counter__label">minutes</span>
       </div>
       <div className="countdown-counter__item countdown-counter__item--seconds">
         {seconds}
-        <span class="countdown-counter__label">seconds</span>
+        <span className="countdown-counter__label">seconds</span>
       </div>
     </span>
   );

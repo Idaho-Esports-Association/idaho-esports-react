@@ -10,17 +10,28 @@ function MarqueeArea(props) {
         <div className="marquee-label">
           <i className="fas fa-star"></i> Breaking News
         </div>
+        <div
+            style={{
+              width: "150%",
+              transform: "translateX(0px)",
+              animation:
+                "28.359s linear 1s infinite normal none running marqueeAnimation-1147840",
+            }}
+            className="js-marquee-wrapper"
+          >
         <div className="marquee">
-        <Marquee 
-          pauseOnHover={true}
-          speed="80"
-          autoFill={false}
-          children={[
-            <ul className="posts posts--inline" key="1">
-              <MarqueeWidget />
-            </ul>,
-          ]}
-        />
+          
+            <Marquee pauseOnHover={true} speed="80" autoFill={false}>
+              <div
+                className="js-marquee"
+                style={{ marginRight: "10px", float: "left" }}
+              >
+                <ul className="posts posts--inline">
+                  <MarqueeWidget />
+                </ul>
+              </div>
+            </Marquee>
+          </div>
         </div>
       </div>
     </div>

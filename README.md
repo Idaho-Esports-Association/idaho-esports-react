@@ -39,6 +39,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Storybook
+
+This project has a Storybook for React UI components. To run it, use the following command:
+
+### `npm run storybook` or `npx sb init`
+
+Open [http://localhost:6006](http://localhost:6006) to view it in your browser.
+
+Developers should create their components stories as they go utilizing the Storybook. This will allow for a more modular approach to development and will allow for the creation of a design system.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

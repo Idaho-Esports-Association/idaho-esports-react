@@ -4,13 +4,11 @@ import SocialCounter from './SocialCounter'; // Adjust the import path based on 
 export default {
   title: 'SocialCounter',
   component: SocialCounter,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
+    layout: 'centered',
+  },
 };
 
 // Story for each social media type
-export const Facebook = () => <SocialCounter type="facebook" />;
-export const Twitter = () => <SocialCounter type="twitter" />;
-export const YouTube = () => <SocialCounter type="youtube" />;
-export const Instagram = () => <SocialCounter type="instagram" />;
-export const Twitch = () => <SocialCounter type="twitch" />;
-export const RSS = () => <SocialCounter type="rss" />;
-export const Error = () => <SocialCounter />;
+export const Facebook = () => <SocialCounter />;
